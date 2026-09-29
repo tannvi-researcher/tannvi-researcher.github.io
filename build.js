@@ -275,7 +275,6 @@ function scratchPage(depth) {
 <section class="page-head">
   <p class="kicker">a little internet journal</p>
   <h1>Scratch</h1>
-  <p class="page-intro">${pieces.length} poems, songs and small essays written between ${years[years.length - 1]} and ${years[0]}. Blue ones are from Blues, violet ones from Purple, and the red ones sit on their own.</p>
 </section>
 
 <section class="controls" aria-label="Filter pieces">
@@ -307,7 +306,6 @@ function scratchPage(depth) {
   <div class="legend">
     <span><i class="dot dot-blues"></i>Blues</span>
     <span><i class="dot dot-purple"></i>Purple</span>
-    <span><i class="dot dot-ember"></i>Neither</span>
   </div>
 </section>
 </main>

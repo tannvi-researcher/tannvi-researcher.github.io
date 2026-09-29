@@ -1,7 +1,7 @@
 ---
 title: "Starving Doom"
 date: 2021-05-20
-collections: [Poetry]
+collections: [Poetry, Purple]
 style: italic
 slug: starving-doom
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Vulnerable"
 date: 2020-09-28
-collections: [Poetry]
+collections: [Blues, Poetry]
 style: italic
 slug: vulnerable
 ---

@@ -123,7 +123,7 @@
     var y0 = new Date(new Date(t0).getFullYear(), 0, 1).getTime(), y1 = new Date(new Date(t1).getFullYear() + 1, 0, 1).getTime();
     function X(t) { return padX + (t - y0) / (y1 - y0) * (W2 - padX * 2); }
     function h(s) { var x = 0; for (var i = 0; i < s.length; i++) x = (x * 31 + s.charCodeAt(i)) >>> 0; return x; }
-    var bands = { blues: 0.26, ember: 0.52, purple: 0.78 };
+    var bands = { blues: 0.3, ember: 0.5, purple: 0.72 };
     var svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('viewBox', '0 0 ' + W2 + ' ' + H2); svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
     var html = '<defs><radialGradient id="halo"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>';

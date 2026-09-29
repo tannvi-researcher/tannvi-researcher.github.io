@@ -1,7 +1,7 @@
 ---
 title: "The Midnight Scratch"
 date: 2021-03-05
-collections: [Poetry]
+collections: [Poetry, Purple]
 slug: the-midnight-scratch
 ---
 ...................................................

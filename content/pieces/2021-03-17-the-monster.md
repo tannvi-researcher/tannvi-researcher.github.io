@@ -1,7 +1,7 @@
 ---
 title: "The Monster"
 date: 2021-03-17
-collections: [Poetry]
+collections: [Poetry, Purple]
 style: italic
 warning: "SEXUAL ABUSE AND VIOLENCE"
 slug: the-monster

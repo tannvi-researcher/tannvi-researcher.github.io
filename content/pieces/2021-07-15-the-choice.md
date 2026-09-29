@@ -1,7 +1,7 @@
 ---
 title: "The Choice"
 date: 2021-07-15
-collections: [Poetry]
+collections: [Poetry, Purple]
 style: italic
 slug: the-choice
 ---
