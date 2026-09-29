@@ -395,7 +395,6 @@ lists.forEach((l, idx) => {
 <section class="page-head">
   <p class="kicker">things to do</p>
   <h1>Bucket lists</h1>
-  <p class="page-intro">Two lists of things I want to do. Pick one to open it.</p>
 </section>
 <section class="list-cards">
   ${lists.map((l, i) => {
