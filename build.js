@@ -154,7 +154,6 @@ ${body}
   <div class="footer-inner">
     <p class="footer-name"><em>tannvi</em></p>
     <p class="footer-links">${(links['Find me'] || []).map(l => `<a href="${esc(l.href)}" rel="me">${esc(l.label)}</a>`).join('<span>·</span>')}</p>
-    <p class="footer-small">Words © Tannvi. Built with care, set in Garamond.</p>
   </div>
 </footer>
 <script src="${link('assets/art.js')}"></script>
@@ -299,7 +298,6 @@ function scratchPage(depth) {
 <section class="sky-wrap">
   <div class="sky-head">
     <h2>The timeline</h2>
-    <p>Every piece as a star, placed by the day it was written. Hover to read its first line, click to open it.</p>
   </div>
   <div class="sky" data-sky role="img" aria-label="Every piece plotted by date"></div>
   <div class="sky-tip" data-sky-tip hidden></div>
