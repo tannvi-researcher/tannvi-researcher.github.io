@@ -1,0 +1,12 @@
+{
+  "name": "tannvi-site",
+  "private": true,
+  "description": "Tannvi's personal website",
+  "scripts": {
+    "build": "node build.js",
+    "preview": "PREVIEW=1 node build.js"
+  },
+  "dependencies": {
+    "marked": "^14.1.4"
+  }
+}
