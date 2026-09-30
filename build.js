@@ -127,9 +127,9 @@ const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
     const { data, body } = frontMatter(read('content/articles/' + f));
     const slug = data.slug || f.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
     const words = body.split(/\s+/).filter(w => /\w/.test(w)).length;
-    return { title: data.title, date: String(data.date), subtitle: data.subtitle || '', published: data.published || '', link: data.link || '', slug, words, html: marked.parse(body), url: `opinions/${slug}/` };
+    return { title: data.title, date: String(data.date), subtitle: data.subtitle || '', published: data.published || '', link: data.link || '', image: data.image || '', draft: data.draft === 'true', slug, words, html: marked.parse(body), url: `opinions/${slug}/` };
   })
-  .filter(a => a.title && a.date)
+  .filter(a => a.title && a.date && (!a.draft || process.env.DRAFTS === '1'))
   .sort((a, b) => b.date.localeCompare(a.date));
 
 // ---------- layout ----------
@@ -468,13 +468,13 @@ lists.forEach((l, idx) => {
   const depth = 1;
   const link = makeLinker(depth);
   const list = articles.length
-    ? `<ol class="op-list">
-  ${articles.map(a => `<li><a class="op-row glow" href="${link(a.url)}">
-    <time datetime="${a.date}">${niceDate(a.date)}</time>
-    <span class="op-title">${esc(a.title)}</span>
-    ${a.subtitle ? `<span class="op-sub">${esc(a.subtitle)}</span>` : ''}
-  </a></li>`).join('\n  ')}
-</ol>`
+    ? `<div class="op-tiles">
+  ${articles.map(a => `<a class="op-tile" href="${link(a.url)}">
+    ${a.image ? `<img src="${link(a.image)}" alt="" loading="lazy">` : '<span class="op-tile-blank"></span>'}
+    <span class="op-tile-date">${esc(niceDate(a.date))}</span>
+    <span class="op-tile-title">${esc(a.title)}</span>
+  </a>`).join('\n  ')}
+</div>`
     : `<p class="op-empty">Coming soon.</p>`;
   const body = `
 <main>
