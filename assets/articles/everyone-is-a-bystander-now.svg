@@ -1,65 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A pair of smart glasses in the dark, the small recording light glowing">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A pair of smart glasses resting on a grey surface, arms open, the small recording light glowing">
   <defs>
-    <radialGradient id="bg" cx="62%" cy="44%" r="75%">
-      <stop offset="0" stop-color="#3a0f18"/>
-      <stop offset=".55" stop-color="#1a0709"/>
-      <stop offset="1" stop-color="#0b0607"/>
+    <radialGradient id="bg" cx="55%" cy="38%" r="80%">
+      <stop offset="0" stop-color="#5a5557"/>
+      <stop offset=".5" stop-color="#3a3638"/>
+      <stop offset="1" stop-color="#1e1b1c"/>
     </radialGradient>
+    <linearGradient id="surface" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a4547" stop-opacity="0"/>
+      <stop offset="1" stop-color="#141213" stop-opacity=".85"/>
+    </linearGradient>
     <linearGradient id="frame" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2b2426"/>
-      <stop offset=".5" stop-color="#141011"/>
-      <stop offset="1" stop-color="#070506"/>
+      <stop offset="0" stop-color="#3a3334"/>
+      <stop offset=".45" stop-color="#1a1516"/>
+      <stop offset="1" stop-color="#0a0708"/>
+    </linearGradient>
+    <linearGradient id="arm" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#171314"/>
+      <stop offset="1" stop-color="#2c2627"/>
     </linearGradient>
     <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#241317"/>
-      <stop offset=".45" stop-color="#0c0708"/>
-      <stop offset="1" stop-color="#1c0d10"/>
+      <stop offset="0" stop-color="#2a2426"/>
+      <stop offset=".5" stop-color="#0e0b0c"/>
+      <stop offset="1" stop-color="#241e20"/>
     </linearGradient>
     <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#efe6dc" stop-opacity=".22"/>
-      <stop offset=".35" stop-color="#efe6dc" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".2"/>
+      <stop offset=".35" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
       <stop offset="0" stop-color="#ffffff" stop-opacity="1"/>
-      <stop offset=".18" stop-color="#fff4ea" stop-opacity=".9"/>
-      <stop offset=".45" stop-color="#e7a393" stop-opacity=".35"/>
+      <stop offset=".2" stop-color="#fff6ee" stop-opacity=".9"/>
+      <stop offset=".5" stop-color="#e7a393" stop-opacity=".3"/>
       <stop offset="1" stop-color="#d0492f" stop-opacity="0"/>
     </radialGradient>
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 .95  0 0 0 0 .9  0 0 0 .06 0"/></filter>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="soft" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .05 0"/></filter>
   </defs>
 
   <rect width="800" height="800" fill="url(#bg)"/>
+  <rect y="420" width="800" height="380" fill="url(#surface)"/>
 
-  <!-- shadow under the glasses -->
-  <ellipse cx="410" cy="560" rx="300" ry="34" fill="#000" opacity=".6" filter="url(#soft)"/>
+  <!-- soft shadow on the surface -->
+  <ellipse cx="400" cy="560" rx="310" ry="40" fill="#000" opacity=".55" filter="url(#soft)"/>
+  <ellipse cx="400" cy="330" rx="200" ry="40" fill="#000" opacity=".25" filter="url(#soft)"/>
 
-  <g transform="translate(400 420) rotate(-6) translate(-400 -420)">
-    <!-- temple arm going back, left -->
-    <path d="M118 372 L40 350 L36 362 L112 392 Z" fill="#0d0a0b"/>
-    <!-- temple arm, right (the camera side) -->
-    <path d="M682 372 L770 344 L774 356 L690 392 Z" fill="#161213"/>
+  <!-- temple arms, open, running back from the hinges; ear hooks bend down at the ends -->
+  <path d="M124 380 L228 238 Q236 228 246 232 L252 236 Q258 244 252 256 L262 292 Q264 300 256 300 L250 298 L240 262 L146 392 Z" fill="url(#arm)"/>
+  <path d="M676 380 L572 238 Q564 228 554 232 L548 236 Q542 244 548 256 L538 292 Q536 300 544 300 L550 298 L560 262 L654 392 Z" fill="url(#arm)"/>
+  <!-- arm top highlights -->
+  <path d="M130 378 L232 240" stroke="#ffffff" stroke-opacity=".12" stroke-width="2" fill="none"/>
+  <path d="M670 378 L568 240" stroke="#ffffff" stroke-opacity=".12" stroke-width="2" fill="none"/>
 
-    <!-- frame front -->
-    <path d="M110 350 Q110 330 132 328 L372 328 Q392 328 396 346 L404 346 Q408 328 428 328 L668 328 Q690 330 690 350 L686 404 Q680 478 610 488 L500 488 Q438 486 426 430 L416 392 Q400 380 384 392 L374 430 Q362 486 300 488 L190 488 Q120 478 114 404 Z" fill="url(#frame)"/>
-    <!-- lenses -->
-    <path d="M140 356 L362 356 Q370 356 368 366 L350 436 Q340 464 298 464 L196 464 Q150 460 144 410 Z" fill="url(#lens)"/>
-    <path d="M438 356 L660 356 Q668 358 662 410 Q654 460 604 464 L502 464 Q460 464 450 436 L432 366 Q430 356 438 356 Z" fill="url(#lens)"/>
-    <!-- lens sheen -->
-    <path d="M140 356 L362 356 Q370 356 368 366 L350 436 Q340 464 298 464 L196 464 Q150 460 144 410 Z" fill="url(#sheen)"/>
-    <path d="M438 356 L660 356 Q668 358 662 410 Q654 460 604 464 L502 464 Q460 464 450 436 L432 366 Q430 356 438 356 Z" fill="url(#sheen)"/>
-    <!-- top edge highlight -->
-    <path d="M132 330 L372 330 M428 330 L668 330" stroke="#efe6dc" stroke-opacity=".18" stroke-width="2" fill="none"/>
+  <!-- frame front -->
+  <path d="M104 368 Q104 346 128 344 L370 344 Q392 344 396 362 L404 362 Q408 344 430 344 L672 344 Q696 346 696 368 L690 420 Q682 494 610 502 L500 502 Q438 500 426 446 L416 408 Q400 396 384 408 L374 446 Q362 500 300 502 L190 502 Q118 494 110 420 Z" fill="url(#frame)"/>
+  <!-- hinges -->
+  <rect x="100" y="360" width="30" height="26" rx="6" fill="#241e1f"/>
+  <rect x="670" y="360" width="30" height="26" rx="6" fill="#241e1f"/>
+  <!-- lenses -->
+  <path d="M136 372 L360 372 Q368 372 366 382 L350 450 Q340 478 298 478 L196 478 Q148 474 140 426 Z" fill="url(#lens)"/>
+  <path d="M440 372 L664 372 Q672 374 666 426 Q658 474 604 478 L502 478 Q460 478 450 450 L434 382 Q432 372 440 372 Z" fill="url(#lens)"/>
+  <path d="M136 372 L360 372 Q368 372 366 382 L350 450 Q340 478 298 478 L196 478 Q148 474 140 426 Z" fill="url(#sheen)"/>
+  <path d="M440 372 L664 372 Q672 374 666 426 Q658 474 604 478 L502 478 Q460 478 450 450 L434 382 Q432 372 440 372 Z" fill="url(#sheen)"/>
+  <path d="M128 346 L370 346 M430 346 L672 346" stroke="#ffffff" stroke-opacity=".16" stroke-width="2" fill="none"/>
 
-    <!-- camera lens at the left corner -->
-    <circle cx="128" cy="352" r="13" fill="#050304" stroke="#3a3032" stroke-width="3"/>
-    <circle cx="124" cy="348" r="4" fill="#6f5c57" opacity=".7"/>
+  <!-- camera, left corner -->
+  <circle cx="126" cy="372" r="12" fill="#050304" stroke="#4a4042" stroke-width="3"/>
+  <circle cx="122" cy="368" r="3.5" fill="#8a7a74" opacity=".7"/>
 
-    <!-- recording light at the right corner, glowing -->
-    <circle cx="672" cy="352" r="70" fill="url(#glow)" opacity=".9"/>
-    <circle cx="672" cy="352" r="26" fill="url(#glow)"/>
-    <circle cx="672" cy="352" r="6.5" fill="#ffffff"/>
-  </g>
+  <!-- recording light, right corner -->
+  <circle cx="674" cy="372" r="74" fill="url(#glow)" opacity=".85"/>
+  <circle cx="674" cy="372" r="26" fill="url(#glow)"/>
+  <circle cx="674" cy="372" r="6.5" fill="#ffffff"/>
 
   <rect width="800" height="800" filter="url(#grain)"/>
 </svg>
