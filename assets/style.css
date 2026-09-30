@@ -488,3 +488,6 @@ main { display: block; }
 .op-tile:hover img { transform: scale(1.05); }
 .op-tile-date { position: absolute; top: clamp(8px, 1.4vw, 14px); left: clamp(8px, 1.6vw, 16px); font-size: clamp(.55rem, 1.1vw, .68rem); letter-spacing: .2em; text-transform: uppercase; color: rgba(239,230,220,.75); }
 .op-tile-title { font-style: italic; font-size: clamp(.95rem, 2.3vw, 1.55rem); line-height: 1.12; text-wrap: balance; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* keep the italic overhang of the last letter inside the gradient paint area */
+.hero-name { display: inline-block; width: max-content; max-width: none; padding: 0 .14em .06em .04em; margin-left: -.04em; }
