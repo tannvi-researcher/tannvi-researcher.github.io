@@ -1,6 +1,6 @@
 ---
 title: "Is Persuasion a Dark Pattern, or Just Marketing?"
-date: 2026-09-30
+date: 2026-05-06
 image: assets/articles/is-persuasion-a-dark-pattern-or-just-marketing.svg
 slug: is-persuasion-a-dark-pattern-or-just-marketing
 ---

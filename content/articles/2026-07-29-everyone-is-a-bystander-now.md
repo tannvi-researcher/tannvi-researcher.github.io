@@ -1,6 +1,6 @@
 ---
 title: "Everyone Is a Bystander Now"
-date: 2026-09-30
+date: 2026-07-29
 image: assets/articles/everyone-is-a-bystander-now.svg
 ---
 In October 2024, I saw a [YouTube video](https://www.youtube.com/watch?v=8DEvsaVJwpM) by a bunch of these [undergraduate kids from Harvard](https://idtechwire.com/harvard-students-connect-meta-ray-bans-to-pimeyes-face-search-provoking-privacy-concerns/), who were using Ray-Ban Meta glasses attached to PimEyes, a public face-search website, and to people-search websites. And they go around wearing those glasses, recording people's conversations, and the people they're conversing with don't even have any idea that they've been recorded. And within seconds, I swear, seconds, you can actually pull out their name, their gender, their background, where they belong, what's their address, what course they have enrolled into, etc., etc.
