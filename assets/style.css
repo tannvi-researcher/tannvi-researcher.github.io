@@ -491,3 +491,12 @@ main { display: block; }
 
 /* keep the italic overhang of the last letter inside the gradient paint area */
 .hero-name { display: inline-block; width: max-content; max-width: none; padding: 0 .14em .06em .04em; margin-left: -.04em; }
+
+/* phone: keep the whole menu on one row */
+@media (max-width: 560px) {
+  .topbar nav { flex-wrap: nowrap; justify-content: space-between; gap: 10px; overflow: visible; }
+  .topbar nav a { font-size: .68rem; letter-spacing: .1em; }
+}
+@media (max-width: 360px) {
+  .topbar nav a { font-size: .62rem; letter-spacing: .06em; }
+}

@@ -135,7 +135,7 @@ const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
 // ---------- layout ----------
 function layout({ title, description = about.data.intro, depth, body, bodyClass = '', active = '' }) {
   const link = makeLinker(depth);
-  const nav = [['About', ''], ['Scratch', 'scratch/'], ['Opinions', 'opinions/'], ['Bucket lists', 'lists/', lists], ['Anthologies', 'anthologies/']];
+  const nav = [['About', ''], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Anthologies', 'anthologies/']];
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -428,7 +428,7 @@ lists.forEach((l, idx) => {
   ${l.items.map(it => `<li class="wish-item glow${it.done ? ' done' : ''}" data-done="${it.done}"><span class="wish-n">${String(it.n).padStart(2, '0')}</span><span class="wish-t">${it.html}</span><span class="wish-mark" aria-label="${it.done ? 'done' : 'not yet'}">${it.done ? '✓' : ''}</span></li>`).join('\n  ')}
 </ol>
 </main>`;
-  write(l.url.replace(/^\//, '') + 'index.html', layout({ title: `${l.title} · tannvi`, depth, body, bodyClass: 'list-page', active: 'Bucket lists' }));
+  write(l.url.replace(/^\//, '') + 'index.html', layout({ title: `${l.title} · tannvi`, depth, body, bodyClass: 'list-page', active: 'Lists' }));
 });
 
 // Bucket lists landing page
@@ -460,7 +460,7 @@ lists.forEach((l, idx) => {
   }).join('\n  ')}
 </section>
 </main>`;
-  write('lists/index.html', layout({ title: 'Bucket lists · tannvi', depth, body, bodyClass: 'lists-page', active: 'Bucket lists' }));
+  write('lists/index.html', layout({ title: 'Bucket lists · tannvi', depth, body, bodyClass: 'lists-page', active: 'Lists' }));
 }
 
 // Opinions: list page and one page per article
@@ -485,7 +485,7 @@ lists.forEach((l, idx) => {
 ${list}
 </section>
 </main>`;
-  write('opinions/index.html', layout({ title: 'Opinions · tannvi', depth, body, bodyClass: 'opinions-page', active: 'Opinions' }));
+  write('opinions/index.html', layout({ title: 'Opinions · tannvi', depth, body, bodyClass: 'opinions-page', active: 'Op-Ed' }));
 }
 articles.forEach(a => {
   const depth = 2;
@@ -507,7 +507,7 @@ articles.forEach(a => {
     <span></span><a class="pn pn-all" href="${link('opinions/')}">all opinions</a><span></span>
   </nav>
 </main>`;
-  write(a.url + 'index.html', layout({ title: `${a.title} · tannvi`, description: a.subtitle, depth, body, bodyClass: 'piece-page', active: 'Opinions' }));
+  write(a.url + 'index.html', layout({ title: `${a.title} · tannvi`, description: a.subtitle, depth, body, bodyClass: 'piece-page', active: 'Op-Ed' }));
 });
 
 // Anthologies
