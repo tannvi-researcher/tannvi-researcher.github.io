@@ -456,3 +456,23 @@ main { display: block; }
 .hero.has-photo .ink { opacity: .3; -webkit-mask-image: linear-gradient(90deg, #000 30%, transparent 60%); mask-image: linear-gradient(90deg, #000 30%, transparent 60%); }
 @media (max-width: 760px) { .hero.has-photo .ink { -webkit-mask-image: linear-gradient(to bottom, transparent 20%, #000 65%); mask-image: linear-gradient(to bottom, transparent 20%, #000 65%); } }
 .about-lead p::first-letter { float: none; font-size: inherit; line-height: inherit; padding: 0; font-style: normal; color: inherit; }
+
+/* ---------- Opinions ---------- */
+.op-wrap { max-width: 900px; margin: 0 auto 90px; padding: 0 var(--gut); }
+.op-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.op-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 28px; padding: 22px 8px; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding .35s; }
+.op-row:hover { padding-left: 18px; }
+.op-row time { grid-row: span 2; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); padding-top: 8px; }
+.op-title { font-style: italic; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.15; }
+.op-sub { color: var(--mute); font-size: 1rem; }
+.op-empty { color: var(--mute); font-style: italic; font-size: 1.2rem; margin: 0; }
+.op-head { max-width: var(--read); margin: 0 auto; padding: clamp(120px, 16vw, 170px) var(--gut) 10px; }
+.op-head h1 { font-weight: 400; font-style: italic; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.05; margin: 12px 0 12px; text-wrap: balance; }
+.op-head-sub { font-size: 1.25rem; color: #d9cbc0; margin: 0 0 10px; }
+.op-pub { font-size: .9rem; color: var(--mute); margin: 0; }
+@media (max-width: 560px) { .op-row { grid-template-columns: 1fr; } .op-row time { grid-row: auto; padding-top: 0; } }
+.opinions-page .page-head { max-width: 900px; }
+@media (max-width: 560px) {
+  .topbar nav { flex-wrap: wrap; justify-content: flex-start; gap: 6px 16px; overflow: visible; }
+  .topbar nav a { font-size: .64rem; letter-spacing: .1em; }
+}

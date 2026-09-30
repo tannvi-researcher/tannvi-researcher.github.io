@@ -118,10 +118,23 @@ function parseBooks() {
 }
 const books = parseBooks();
 
+// Opinion articles: one Markdown file per article in content/articles/
+const articlesDir = path.join(ROOT, 'content/articles');
+const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
+  .filter(f => f.endsWith('.md') && !f.startsWith('_'))
+  .map(f => {
+    const { data, body } = frontMatter(read('content/articles/' + f));
+    const slug = data.slug || f.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
+    const words = body.split(/\s+/).filter(w => /\w/.test(w)).length;
+    return { title: data.title, date: String(data.date), subtitle: data.subtitle || '', published: data.published || '', link: data.link || '', slug, words, html: marked.parse(body), url: `opinions/${slug}/` };
+  })
+  .filter(a => a.title && a.date)
+  .sort((a, b) => b.date.localeCompare(a.date));
+
 // ---------- layout ----------
 function layout({ title, description = about.data.intro, depth, body, bodyClass = '', active = '' }) {
   const link = makeLinker(depth);
-  const nav = [['About', ''], ['Scratch', 'scratch/'], ['Bucket lists', 'lists/', lists], ['Anthologies', 'anthologies/']];
+  const nav = [['About', ''], ['Scratch', 'scratch/'], ['Opinions', 'opinions/'], ['Bucket lists', 'lists/', lists], ['Anthologies', 'anthologies/']];
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -442,6 +455,53 @@ lists.forEach((l, idx) => {
   write('lists/index.html', layout({ title: 'Bucket lists · tannvi', depth, body, bodyClass: 'lists-page', active: 'Bucket lists' }));
 }
 
+// Opinions: list page and one page per article
+{
+  const depth = 1;
+  const link = makeLinker(depth);
+  const list = articles.length
+    ? `<ol class="op-list">
+  ${articles.map(a => `<li><a class="op-row glow" href="${link(a.url)}">
+    <time datetime="${a.date}">${niceDate(a.date)}</time>
+    <span class="op-title">${esc(a.title)}</span>
+    ${a.subtitle ? `<span class="op-sub">${esc(a.subtitle)}</span>` : ''}
+  </a></li>`).join('\n  ')}
+</ol>`
+    : `<p class="op-empty">Coming soon.</p>`;
+  const body = `
+<main>
+<section class="page-head">
+  <h1>Opinions</h1>
+</section>
+<section class="op-wrap">
+${list}
+</section>
+</main>`;
+  write('opinions/index.html', layout({ title: 'Opinions · tannvi', depth, body, bodyClass: 'opinions-page', active: 'Opinions' }));
+}
+articles.forEach(a => {
+  const depth = 2;
+  const link = makeLinker(depth);
+  const mins = Math.max(1, Math.round(a.words / 200));
+  const body = `
+<div class="progress" aria-hidden="true"><span></span></div>
+<main class="piece">
+  <header class="op-head">
+    <p class="piece-meta"><time datetime="${a.date}">${niceDate(a.date)}</time><span>·</span>${mins} min</p>
+    <h1>${esc(a.title)}</h1>
+    ${a.subtitle ? `<p class="op-head-sub">${esc(a.subtitle)}</p>` : ''}
+    ${a.published ? `<p class="op-pub">First published in ${a.link ? `<a class="text-link" href="${esc(a.link)}">${esc(a.published)}</a>` : esc(a.published)}</p>` : ''}
+  </header>
+  <article class="piece-body prose">
+    <div class="piece-text">${fixRootLinks(a.html, link)}</div>
+  </article>
+  <nav class="piece-nav" aria-label="More">
+    <span></span><a class="pn pn-all" href="${link('opinions/')}">all opinions</a><span></span>
+  </nav>
+</main>`;
+  write(a.url + 'index.html', layout({ title: `${a.title} · tannvi`, description: a.subtitle, depth, body, bodyClass: 'piece-page', active: 'Opinions' }));
+});
+
 // Anthologies
 {
   const depth = 1;
@@ -472,6 +532,6 @@ lists.forEach((l, idx) => {
 // Static assets
 fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), { recursive: true });
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
-fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'before-i-die/', '25-before-25/', 'anthologies/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
+fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'opinions/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'anthologies/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
 
 console.log(`Built ${pieces.length} pieces, ${lists.length} lists, ${books.length} books into _site/${PREVIEW ? ' (preview links)' : ''}`);

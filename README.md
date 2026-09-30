@@ -39,6 +39,23 @@ a new stanza starts after an empty line
 - `*like this*` makes italics, `**like this**` makes bold.
 - If a line is only `--` or `~~`, or starts with a number and a full stop, put a backslash in front (`\-\-`, `\~\~`, `1\.`) so it shows exactly as typed.
 
+## Adding an opinion article
+
+Open `content/articles/`, click **Add file → Create new file**, and name it like `2026-10-05-short-name.md`. Start it with:
+
+```
+---
+title: "Your title"
+date: 2026-10-05
+subtitle: "An optional line under the title"
+published: "Mint"
+link: "https://where-it-first-appeared"
+---
+Your article starts here. An empty line starts a new paragraph.
+```
+
+Only `title` and `date` are required. It appears on the Opinions page, newest first.
+
 ## Taking a piece down
 
 Delete its file, or move it into a folder called `content/archive/` (anything outside `content/pieces/` is not published).
