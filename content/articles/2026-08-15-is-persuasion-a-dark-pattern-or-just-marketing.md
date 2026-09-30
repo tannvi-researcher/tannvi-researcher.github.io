@@ -1,6 +1,6 @@
 ---
 title: "Is Persuasion a Dark Pattern, or Just Marketing?"
-date: 2026-05-06
+date: 2026-08-15
 image: assets/articles/is-persuasion-a-dark-pattern-or-just-marketing.svg
 slug: is-persuasion-a-dark-pattern-or-just-marketing
 ---
@@ -35,7 +35,6 @@ So what I want to say about this is how the guidelines kind of also half know th
 - December 2025: [Zepto fined ₹7 lakh](https://www.medianama.com/2025/12/223-zepto-fined-7-lakh-dark-patterns-ahead-ipo/) for drip pricing and basket sneaking
 - June 2026: [PhysicsWallah fined ₹5 lakh and McAfee ₹1 lakh](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2268302&reg=3&lang=1) for basket sneaking, confirm shaming, forced action and trick questions
 - August 2026: [nine platforms penalised](https://www.outlookbusiness.com/corporate/ccpa-fines-9-digital-platforms-including-zepto-indigo-over-dark-patterns), including IndiGo, BookMyShow, FirstCry, PharmaEasy and SpiceJet
-- September 2026: [Rapido fined ₹10 lakh](https://www.business-standard.com/companies/news/ccpa-fines-rapido-10-lakh-over-dark-patterns-uber-ola-under-review-126091501415_1.html) for confirm shaming and interface interference in its fare prompts
 
 indicating that we are kind of engineering a hostage negotiation on how exactly you should look at cancellation policies, at materialising final screens, and at what exactly it would look like. That will just make everything fucking look black and white, and it will not be interesting at all.
 
