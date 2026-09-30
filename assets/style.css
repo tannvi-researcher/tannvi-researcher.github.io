@@ -455,3 +455,4 @@ main { display: block; }
 .hero.has-photo .scroll-cue { display: none; }
 .hero.has-photo .ink { opacity: .3; -webkit-mask-image: linear-gradient(90deg, #000 30%, transparent 60%); mask-image: linear-gradient(90deg, #000 30%, transparent 60%); }
 @media (max-width: 760px) { .hero.has-photo .ink { -webkit-mask-image: linear-gradient(to bottom, transparent 20%, #000 65%); mask-image: linear-gradient(to bottom, transparent 20%, #000 65%); } }
+.about-lead p::first-letter { float: none; font-size: inherit; line-height: inherit; padding: 0; font-style: normal; color: inherit; }
