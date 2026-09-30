@@ -247,15 +247,6 @@ fs.mkdirSync(OUT, { recursive: true });
   </ul>
 </section>
 
-<section class="from-scratch">
-  <div class="section-label"><span>From Scratch</span></div>
-  <div class="fs-head">
-    <p>Poems and small essays, 2018 to 2023. Here are three at random.</p>
-    <button class="btn" type="button" data-shuffle>shuffle ↻</button>
-  </div>
-  <div class="tiles" data-random-cards></div>
-  <p class="fs-more"><a class="text-link" href="${link('scratch/')}">all ${pieces.length} pieces →</a></p>
-</section>
 </main>
 <script type="application/json" id="pieces-data">${piecesData(link)}</script>`;
   write('index.html', layout({ title: `${about.data.name}`, depth: 0, body: html, bodyClass: 'home', active: 'About' }));
