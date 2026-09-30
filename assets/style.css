@@ -476,16 +476,3 @@ main { display: block; }
   .topbar nav { flex-wrap: wrap; justify-content: flex-start; gap: 6px 16px; overflow: visible; }
   .topbar nav a { font-size: .64rem; letter-spacing: .1em; }
 }
-
-/* ---------- smaller home cover ---------- */
-.hero.has-photo { height: clamp(340px, 54svh, 500px); }
-.hero.has-photo .hero-name { font-size: clamp(3rem, 8.5vw, 6.6rem); }
-.hero.has-photo .hero-line { font-size: clamp(1rem, 1.8vw, 1.3rem); margin-top: 14px; }
-.hero.has-photo .kicker { margin-bottom: 12px; }
-.hero-photo { background-position: 72% 38%; }
-@media (max-width: 760px) {
-  .hero.has-photo { height: clamp(380px, 64svh, 520px); }
-  .hero.has-photo .hero-name { font-size: clamp(2.8rem, 13vw, 4rem); }
-  .hero.has-photo .hero-inner { padding-bottom: 40px; }
-  .hero-photo { background-position: 64% 28%; }
-}
