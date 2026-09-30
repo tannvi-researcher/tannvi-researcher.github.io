@@ -78,6 +78,7 @@ const pieces = fs.readdirSync(path.join(ROOT, 'content/pieces'))
       style: data.style || '', warning: data.warning || '',
       firstLine: firstLine.slice(0, 140),
       url: `${y}/${mo}/${d}/${slug}/`,
+      oldUrl: data.old_url || '',
     };
   })
   .sort((a, b) => b.date.localeCompare(a.date));
@@ -386,6 +387,13 @@ pieces.forEach((p, i) => {
   </nav>
 </main>`;
   write(p.url + 'index.html', layout({ title: `${p.title} · tannvi`, description: p.firstLine, depth, body, bodyClass: 'piece-page', active: 'Scratch' }));
+});
+
+// Old addresses for pieces whose date changed: send visitors to the new page
+pieces.filter(p => p.oldUrl).forEach(p => {
+  const depth = p.oldUrl.split('/').filter(Boolean).length;
+  const target = makeLinker(depth)(p.url);
+  write(p.oldUrl.replace(/^\//, '') + 'index.html', `<!doctype html><meta charset="utf-8"><title>${esc(p.title)}</title><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${target}"><a href="${target}">${esc(p.title)}</a>`);
 });
 
 // Lists
