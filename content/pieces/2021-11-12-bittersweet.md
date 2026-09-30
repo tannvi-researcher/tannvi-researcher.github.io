@@ -2,6 +2,7 @@
 title: "bittersweet"
 date: 2021-11-12
 collections: [Blues, Poetry]
+style: italic
 slug: bittersweet
 ---
 (no subscription to poetry, please)

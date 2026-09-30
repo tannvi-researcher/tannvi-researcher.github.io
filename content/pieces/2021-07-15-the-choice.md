@@ -5,8 +5,6 @@ collections: [Poetry, Purple]
 style: italic
 slug: the-choice
 ---
-...
-
 Don't push back, I said
 Remember who you were
 And what you did
@@ -36,5 +34,3 @@ In a rattling shower,
 I made a drowning downpour
 I grew, between those self-questioning
 But, I fear the choices now.
-
-...

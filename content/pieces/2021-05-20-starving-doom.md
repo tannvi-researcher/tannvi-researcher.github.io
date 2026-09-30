@@ -5,8 +5,6 @@ collections: [Poetry, Purple]
 style: italic
 slug: starving-doom
 ---
-.....................
-
 Smacking in the May, Leaving me in the Grey
 
 With a grudge of touch, with the dark slush
@@ -26,5 +24,3 @@ Cutting my vein, you really were the cocaine.
 You left the pages blank, and broke my flank
 
 And I still persist in this starving doom
-
-...................

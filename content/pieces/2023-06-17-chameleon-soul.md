@@ -2,6 +2,7 @@
 title: "Chameleon Soul"
 date: 2023-06-17
 collections: [Poetry, Purple]
+style: italic
 slug: chameleon-soul
 ---
 (Verse 1)

@@ -2,6 +2,7 @@
 title: "evaporating love"
 date: 2023-11-01
 collections: [Blues, Poetry]
+style: italic
 slug: evaporating-love
 ---
 Wasn't it supposed to be easy?
@@ -23,5 +24,3 @@ My love did not disappear, instead it EVAPORATES, slowly, steadily and fascinati
 But some nights, the cold nights, it STAYS, in all its glory and beauty. It stays to help me withstand that cold night. It sticks on my skin, and makes me forget about the burn it caused.
 
 But like every cold night, and like that LOVE, I too await for the warm sunny morning to come back, for it to burn again, and EVAPORATE.
-
-—

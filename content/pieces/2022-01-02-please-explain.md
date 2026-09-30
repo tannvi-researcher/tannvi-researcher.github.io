@@ -48,5 +48,3 @@ Did I lose to the mighty flames,
 Or did my Lover turn into Cain?
 
 Someone, please, explain!
-
-.....

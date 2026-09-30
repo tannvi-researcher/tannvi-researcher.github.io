@@ -2,11 +2,8 @@
 title: "the next one"
 date: 2021-07-26
 collections: [Blues]
-style: italic
 slug: the-next-one
 ---
-..........................
-
 i know that you want her
 i saw when you saw her
 she looked like a goddamn angel, to me
@@ -75,4 +72,3 @@ it was hard to stay happy
 
 oh god, i hate her
 but i hope your meant to be...
-...........................................................................................................................

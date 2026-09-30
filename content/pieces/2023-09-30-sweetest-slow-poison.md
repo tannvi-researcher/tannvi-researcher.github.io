@@ -2,6 +2,7 @@
 title: "sweetest slow poison"
 date: 2023-09-30
 collections: [Poetry, Purple]
+style: italic
 slug: sweetest-slow-poison
 ---
 I woke up today
@@ -33,5 +34,3 @@ Like the first sip of tea in the morning
 & Like the first gulp of beer after a long day at work
 Like ecstacy with a twist of craziness
 & Like the sweetest slow poison.
-
-\-\-

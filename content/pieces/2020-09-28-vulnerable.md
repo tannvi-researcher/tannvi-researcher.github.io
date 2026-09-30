@@ -5,11 +5,10 @@ collections: [Blues, Poetry]
 style: italic
 slug: vulnerable
 ---
-*Why Am I Being Pulled? Why Am I Staying?*
+Why Am I Being Pulled? Why Am I Staying?
 
-*Questions to the Unknown*
+Questions to the Unknown
 
-........................................
 The day I opened
 My vulnerability couldn’t find space in you
 Well it was me, it wasn’t you.
@@ -36,5 +35,3 @@ You were becoming my centre of the universe
 I felt myself dependent, incapable, defenceless, feeble and vulnerable
 
 You know I hate being vulnerable.
-
-......................

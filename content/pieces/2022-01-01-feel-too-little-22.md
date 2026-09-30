@@ -4,8 +4,6 @@ date: 2022-01-01
 collections: [Purple]
 slug: feel-too-little-22
 ---
-.......................
-
 I am not usually the kind of person who spends any time in designing or planning a year. I have never had resolutions. Instead, I am that sucker who hates when questioned about how the year was or what plans I have for the 31st or how I plan the first morning of the new year. Part of me fears failure (yes, I said it) and other half loves surprises. I mean 2021 was not how imagined it would be, and so wasn't 2020. So, it has been a bumpy few years.
 
 But this time, even after trying so hard to avoid such self- reflection time, I fell to knees wondering what all 2021 did to me. So many hurdles, so many decisions, so many people, so many learnings,... just too much for my poor soul to handle.
@@ -27,5 +25,3 @@ But there are some things that 2021 has left imprinted on me, forever, which are
 11\. Do not beg for bare minimum reciprocation.
 12\. You are allowed to throw people out of your life, if you wish to.
 13\. This one is for all the T- Swizzles, out there!
-
-.......................

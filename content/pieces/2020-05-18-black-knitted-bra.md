@@ -3,6 +3,7 @@ title: "Black Knitted Bra"
 date: 2020-05-18
 collections: [Blues, Poetry]
 warning: "GENDER- BASED VIOLENCE"
+style: italic
 slug: black-knitted-bra
 ---
 Under my black knitted bra,

@@ -2,6 +2,7 @@
 title: "people like you"
 date: 2022-02-27
 collections: [Blues, Poetry]
+style: italic
 slug: people-like-you
 ---
 people like you say it's all fine

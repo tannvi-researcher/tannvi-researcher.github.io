@@ -2,6 +2,7 @@
 title: "Cloaked Echoes"
 date: 2023-10-28
 collections: [Poetry, Purple]
+style: italic
 slug: cloaked-echoes
 ---
 Do you recall that initial instance when you were labeled a bother?

@@ -2,10 +2,9 @@
 title: "reeking memory"
 date: 2022-11-17
 collections: [Blues, Poetry]
+style: italic
 slug: reeking-memory
 ---
-*.........*
-
 when the morning came, I was cleaning your scents
 of my mind, because we lost track of time.
 I remember laughing while leaning on your back,
@@ -30,10 +29,8 @@ I think I lost my sight again; sobbing in my head, smile on my face
 this shit had to end somehow,
 I cannot see me go down this dark, anyhow
 you are coming back to me, when I am throwing us apart
-*"but like you and I are more, like I know you more"*, you say, and I break.
+"but like you and I are more, like I know you more", you say, and I break.
 I wake up with your memory all over me, I need to stop dreaming, I see
 I am waiting for a dream to come true, and hurting people while I do,
 I couldn't save it, but then why am I still waiting.
 So, I decide to create distance, as I saw that this is only a reeking memory
-
-*........*..

@@ -10,7 +10,7 @@ Does it stay forever? Or is it the “honeymoon” phase of a relationship?
 
 Is our generation drawn to the idea of screaming and crying and fighting and kissing “IN” love, and not waiting and helping and fighting “FOR” love?
 
-*\[yes, the ‘and'(s) are on purpose*\]
+\[yes, the ‘and'(s) are on purpose\]
 
 When people ask me what is my biggest fear or what scares me the most, I tend to LOSE MYSELF in a dark slush of sorts, a monstrous place.
 
@@ -18,7 +18,7 @@ I don’t know how am I supposed to explain this to people.
 
 Very early in my life, I learnt that most often than not, people fall out of love for the same reasons that they fell in it. Their lover’s once endearing stubbornness has now become a refusal to compromise and their one-track mind is now immaturity and their habits that you once adored are now money down the drain. Yes, their spontaneity becomes reckless and irresponsible and their feet up on your dashboard are no longer sexy, just another distraction in your busy life.
 
-*\[yes, again, the ‘and'(s) are on purpose*\]
+\[yes, again, the ‘and'(s) are on purpose\]
 
 Nothing saddens and scares me like the thought that I can become ugly to someone who once thought all the stars were in my eyes
 
@@ -40,7 +40,7 @@ And then yesterday, I read, this:
 >
 >
 >
-> **True love is being the biggest cheerleader and toughest critic.**
+> True love is being the biggest cheerleader and toughest critic.
 >
 >
 >
@@ -52,16 +52,16 @@ And then yesterday, I read, this:
 >
 >
 >
-> ***“no matter what, I got you.”***
+> “no matter what, I got you.”
 >
 >
 > \~Sylvester Mcnutt\~
 
 So, relationships are then supposed to be a conscious choice of commitment. One needs to learn to choose each other, and work, rather better make it work, every day, with the person who we have chosen for… you know…
 
-**“should be reciprocating the same.”**
+“should be reciprocating the same.”
 
-In marriage and long-term relationships, the ***“feeling of love”*** will vanish and fade. And that doesn’t make it an unhappy marriage or relationship or an end of the road. Feelings are meant to change, and we are evolving beings, who are bound to change in both behaviour and likes-dislikes. And a bonding, a relationship, at least the one that lasts, cannot be made on a shaky and tangible foundation like that of “feelings”.
+In marriage and long-term relationships, the “feeling of love” will vanish and fade. And that doesn’t make it an unhappy marriage or relationship or an end of the road. Feelings are meant to change, and we are evolving beings, who are bound to change in both behaviour and likes-dislikes. And a bonding, a relationship, at least the one that lasts, cannot be made on a shaky and tangible foundation like that of “feelings”.
 
 One needs to learn to choose communication, chose to identify what bent was encountered on the trail of love and how to fix it and choose to recreate something worth falling in love with.
 

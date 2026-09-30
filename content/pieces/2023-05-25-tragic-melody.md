@@ -2,6 +2,7 @@
 title: "tragic melody"
 date: 2023-05-25
 collections: [Poetry, Purple]
+style: italic
 slug: tragic-melody
 ---
 dark sky has clouded my vision
@@ -18,14 +19,14 @@ something always comes to cloud my daydreams
 this is not my story, my heart screams
 oh baby, I hope sun shines bright
 but I must return before twilight
-\~\~
+
 are we ready to lose us in this complex destiny
 we are truly, truly not in harmony
 this curve we took from being enemies
 oh, this is truly heavenly
 but, but, I tremble breathlessly
 in keeping up with this tragic melody
-\~\~
+
 I was hoping that you would come and make it right
 but still it rains, it rains in this paradise
 no, I know, it's not easy
@@ -37,15 +38,15 @@ stick with me, I say, and melt
 but, how am I so sure that it would be felt?
 I would feel when I lose
 you are really all my blues
-\~\~
+
 are we ready to lose us in this complex destiny
 we are truly, truly not in harmony
 this curve we took from being enemies
 oh, this is truly heavenly
 but, but, I tremble breathlessly
 in keeping up with this tragic melody
-\~\~
-**\*sigh\***
-\~\~
-*where are we now? what have we done?*
-*this is, this is truly the worst case scenario, huh?*
+
+\*sigh\*
+
+where are we now? what have we done?
+this is, this is truly the worst case scenario, huh?

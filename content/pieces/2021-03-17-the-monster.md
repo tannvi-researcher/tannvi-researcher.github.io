@@ -2,8 +2,8 @@
 title: "The Monster"
 date: 2021-03-17
 collections: [Poetry, Purple]
-style: italic
 warning: "SEXUAL ABUSE AND VIOLENCE"
+style: italic
 slug: the-monster
 ---
 Our mother's don't tell us that sometimes,

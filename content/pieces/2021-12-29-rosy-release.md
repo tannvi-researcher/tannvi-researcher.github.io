@@ -2,10 +2,9 @@
 title: "rosy release"
 date: 2021-12-29
 collections: [Blues, Poetry]
+style: italic
 slug: rosy-release
 ---
-........................................
-
 (this one was tough)
 
 With time, it all started to make complete and no sense at all.
@@ -55,5 +54,3 @@ but it's time we clean our eyes of that grease
 and wish each other growth and peace
 you will be in here, in one of this heart's piece
 but it's time I give us a rosy release
-
-...

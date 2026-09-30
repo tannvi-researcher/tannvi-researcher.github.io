@@ -20,8 +20,8 @@ I vow you will look for me in crowded spaces.
 You will breath and remember those lingering traces.
 my heart boils and traps me in these chases.
 
-**Atleast not without tasting me like blood in your mouth,**
-**you won't breath again in another lover's cloud.**
+Atleast not without tasting me like blood in your mouth,
+you won't breath again in another lover's cloud.
 You will remember me like the fondness of truth.
 Gosh, there are secrets untold, concealed behind my mysterious shroud.
 
@@ -31,11 +31,11 @@ In the depths of despair, we appeared, a divine miracle?
 In your embrace, I'm lost, you're simply irresistible.
 
 In this web of fate, our paths never intertwined,
-**we're parallel lines**
+we're parallel lines
 But when I leave, you will finally understand,
 that it was never us, we have many knots in this strand
 
-**and that is why storms are named after people,**
+and that is why storms are named after people,
 our love is too feeble.
 no action will ever create a ripple,
 but let me make you my today's scribble.

@@ -2,14 +2,12 @@
 title: "we are grey"
 date: 2023-11-02
 collections: [Blues, Poetry]
-style: bold italic
+style: italic
 slug: we-are-grey
 ---
 Friendship often ends in love, but love in friendship - never.
 
 \~ Albert Camus
-
-......
 
 In the realm of shadows, we are the friends in grey,
 Once lovers entwined, and now in disarray.
@@ -46,5 +44,3 @@ In this grey palette, we are emotions amassed.
 And here is Camus' absurdity- a silent chime,
 And Kafkaesque twists- in the hands of time.
 We are the friends in grey- atleast, a poetic rhyme.
-
-….

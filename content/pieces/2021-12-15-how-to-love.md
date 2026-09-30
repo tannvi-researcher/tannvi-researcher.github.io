@@ -2,17 +2,14 @@
 title: "draft song: how to love"
 date: 2021-12-15
 collections: [Blues, Poetry]
+style: italic
 slug: how-to-love
 ---
-............................
+C Major  F Major G Major A Minor
 
-***C Major  F Major G Major A Minor***
+C Major C Major A Major D Major C Major
 
-***C Major C Major A Major D Major C Major***
-
-***G Major A Minor C Major F Major***
-
-............................
+G Major A Minor C Major F Major
 
 never have i ever felt this way before
 and now my heart feels like a bore
@@ -53,5 +50,3 @@ but i am lighting candles and firing homes
 untying my hair and cleaning the combs
 but thank you for being the one i knew
 as now i know how to love and fall through
-
-...........................

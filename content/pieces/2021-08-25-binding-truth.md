@@ -23,9 +23,9 @@ I shut off the people who you despised
 I convinced myself that I didn't change
 While I was begging you to mend the strain
 Why didn't I know, that, that was strange?
-...
+
 But, now...all that binds us now is how we fooled me again
 Throwed me down the drain
-...
+
 This, the binding truth we carry is how you were never mine
 While I cried at 3 AM., trying to erase the line.

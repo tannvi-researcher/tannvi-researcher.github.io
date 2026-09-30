@@ -380,3 +380,17 @@ main { display: block; }
   .topbar nav { width: 100%; justify-content: space-between; gap: 8px; }
   .topbar nav a { font-size: .66rem; letter-spacing: .12em; }
 }
+
+/* ---------- one consistent reading style ---------- */
+.piece-text, .piece-text p, .piece-text strong, .piece-text b { font-weight: 400; }
+.piece-body.prose .piece-text, .piece-body.prose .piece-text em, .piece-body.prose .piece-text blockquote { font-style: normal; }
+.piece-body.prose .piece-text > p:first-child::first-letter { font-style: normal; }
+.piece-body.poem .piece-text { font-style: italic; }
+
+/* ---------- shorter home cover, so the page invites a scroll ---------- */
+.hero { min-height: 0; height: clamp(420px, 64svh, 620px); }
+.hero-name { font-size: clamp(3.6rem, 13vw, 9.5rem); }
+.scroll-cue { bottom: 18px; }
+.scroll-cue span { height: 28px; }
+.home main > section.about { padding-top: clamp(28px, 5vw, 60px); }
+.piece-body.prose .piece-text h3, .piece-body.prose .piece-text h4 { font-style: normal; }
