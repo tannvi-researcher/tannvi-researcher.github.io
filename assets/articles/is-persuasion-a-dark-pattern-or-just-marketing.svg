@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A half-eaten chocolate chip cookie with crumbs, on a grey surface">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0" stop-color="#5a5557"/>
+      <stop offset=".5" stop-color="#3a3638"/>
+      <stop offset="1" stop-color="#1e1b1c"/>
+    </radialGradient>
+    <radialGradient id="dough" cx="42%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#e2b577"/>
+      <stop offset=".55" stop-color="#c98f4e"/>
+      <stop offset="1" stop-color="#9a6330"/>
+    </radialGradient>
+    <radialGradient id="inside" cx="50%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#e9c48a"/>
+      <stop offset="1" stop-color="#c79050"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="14"/></filter>
+    <filter id="texture"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="3" seed="9"/><feColorMatrix values="0 0 0 0 .35  0 0 0 0 .2  0 0 0 0 .08  0 0 0 .35 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .05 0"/></filter>
+    <clipPath id="bitten">
+      <!-- the cookie disc minus a big bite taken from the upper right -->
+      <path d="M360 153 A250 250 0 1 0 648 432 Q606 446 580 418 Q544 438 516 404 Q474 414 458 374 Q416 370 418 330 Q378 318 392 280 Q354 262 374 226 Q340 206 360 170 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <ellipse cx="410" cy="640" rx="260" ry="46" fill="#000" opacity=".5" filter="url(#soft)"/>
+
+  <g filter="url(#rough)">
+    <g clip-path="url(#bitten)">
+      <circle cx="400" cy="400" r="250" fill="url(#dough)"/>
+      <circle cx="400" cy="400" r="250" fill="#000" filter="url(#texture)"/>
+      <!-- lighter crumbly edge along the bite -->
+      <path d="M648 432 Q606 446 580 418 Q544 438 516 404 Q474 414 458 374 Q416 370 418 330 Q378 318 392 280 Q354 262 374 226 Q340 206 360 170" fill="none" stroke="url(#inside)" stroke-width="26" stroke-linejoin="round"/>
+      <!-- chocolate chips -->
+      <g fill="#3a1f14">
+        <path d="M300 260 q22 -8 34 10 q4 20 -18 26 q-24 2 -26 -14 z"/>
+        <path d="M232 390 q18 -14 36 0 q8 22 -14 30 q-26 -2 -22 -30 z"/>
+        <path d="M380 330 q20 -6 28 10 q-2 22 -22 22 q-18 -8 -6 -32 z"/>
+        <path d="M322 480 q24 -10 36 8 q2 24 -22 28 q-24 -4 -14 -36 z"/>
+        <path d="M450 450 q20 -12 34 4 q6 22 -16 28 q-24 -2 -18 -32 z"/>
+        <path d="M540 520 q20 -8 30 8 q0 20 -20 24 q-20 -4 -10 -32 z"/>
+        <path d="M410 570 q18 -8 28 6 q0 18 -18 22 q-20 -4 -10 -28 z"/>
+        <path d="M260 560 q16 -8 26 6 q0 16 -16 20 q-18 -2 -10 -26 z"/>
+        <path d="M560 430 q14 -6 22 6 q0 14 -14 16 q-14 -4 -8 -22 z"/>
+        <path d="M215 300 q14 -6 22 6 q0 14 -14 16 q-14 -4 -8 -22 z"/>
+      </g>
+      <g fill="#6b3a24" opacity=".6">
+        <circle cx="306" cy="266" r="5"/><circle cx="240" cy="396" r="5"/><circle cx="330" cy="486" r="5"/><circle cx="458" cy="456" r="5"/>
+      </g>
+      <!-- chocolate chips broken at the bite edge -->
+      <path d="M462 380 q14 -4 18 8 l-10 10 z" fill="#3a1f14"/>
+      <path d="M384 286 q12 -2 14 10 l-12 6 z" fill="#3a1f14"/>
+    </g>
+  </g>
+
+  <!-- crumbs -->
+  <g fill="#c98f4e">
+    <path d="M640 250 l12 -4 l6 10 l-10 8 l-10 -4 z"/>
+    <path d="M690 320 l8 -2 l4 7 l-7 5 l-6 -3 z"/>
+    <path d="M600 190 l7 -3 l5 6 l-6 5 l-6 -2 z"/>
+    <path d="M700 420 l6 -2 l3 6 l-5 4 l-5 -2 z"/>
+    <path d="M560 150 l5 -2 l3 5 l-4 3 l-4 -2 z"/>
+    <path d="M150 640 l9 -3 l5 8 l-8 6 l-7 -3 z"/>
+    <path d="M665 520 l7 -2 l4 6 l-6 5 l-6 -3 z"/>
+  </g>
+  <circle cx="712" cy="360" r="3" fill="#3a1f14"/>
+  <g fill="#c98f4e"><path d="M520 300 l9 -3 l5 7 l-7 6 l-7 -3 z"/><path d="M470 250 l6 -2 l4 5 l-5 4 l-5 -2 z"/><path d="M590 360 l7 -2 l4 6 l-6 4 l-5 -3 z"/></g>
+  <circle cx="628" cy="296" r="4" fill="#3a1f14"/>
+
+  <rect width="800" height="800" filter="url(#grain)"/>
+</svg>
