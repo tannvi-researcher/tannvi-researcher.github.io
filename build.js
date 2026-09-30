@@ -68,11 +68,12 @@ const pieces = fs.readdirSync(path.join(ROOT, 'content/pieces'))
     const html = marked.parse(body);
     const plain = body.replace(/\\(.)/g, '$1').replace(/[*_>#]/g, '');
     const words = plain.split(/\s+/).filter(w => /\w/.test(w)).length;
+    const lines = body.trim().split('\n').length;
     const firstLine = plain.split('\n').map(s => s.trim())
       .find(s => s.length > 12 && /[a-z]/i.test(s) && !/^[.…\-–—~()]+$/.test(s) && !/^\(.*\)$/.test(s) && !/^(tuning|key|capo|draft)/i.test(s)) || '';
     const mood = collections.includes('Blues') ? 'blues' : collections.includes('Purple') ? 'purple' : 'ember';
     return {
-      title: data.title, date, slug, collections, mood, html, words,
+      title: data.title, date, slug, collections, mood, html, words, lines,
       form: collections.includes('Poetry') ? 'poem' : 'prose',
       style: data.style || '', warning: data.warning || '',
       firstLine: firstLine.slice(0, 140),
@@ -187,6 +188,36 @@ function tile(p, link) {
   <span class="tile-hover"><span class="tile-line">${esc(p.firstLine)}</span><time datetime="${p.date}">${MONTHS[+m - 1].slice(0, 3)} ${y}</time></span>
 </a>`;
 }
+const SHADES = {
+  blues: [['#16224a', '#a9bdf0'], ['#1c2c5e', '#c4d2f5'], ['#101a3a', '#8ea6e6'], ['#23346b', '#d8e1f8'], ['#0e1733', '#a9bdf0']],
+  purple: [['#2e1240', '#dcb6ef'], ['#3c1752', '#e8cdf5'], ['#24103a', '#c79be0'], ['#4a1c5e', '#f0dcf8'], ['#2a0f3a', '#d7aef0']],
+};
+function hashStr(str) { let x = 2166136261; for (const c of str) { x ^= c.charCodeAt(0); x = Math.imul(x, 16777619); } return x >>> 0; }
+function spine(p, link, maxW, maxL) {
+  const [bg, fg] = (SHADES[p.mood] || SHADES.purple)[hashStr(p.slug) % 5];
+  const hv = Math.sqrt(p.words / maxW).toFixed(3), wv = Math.sqrt(p.lines / maxL).toFixed(3);
+  const d = niceDate(p.date);
+  return `<div class="slot" data-collections="${p.collections.join(' ').toLowerCase()} ${p.form}" data-title="${esc(p.title.toLowerCase())} ${esc(p.firstLine.toLowerCase())}">
+    <a class="spine" href="${link(p.url)}" style="--h:${hv};--w:${wv};--bg:${bg};--fg:${fg}" data-t="${esc(p.title)}" data-d="${d}" data-f="${p.form}" data-m="${p.mood}" data-y="${p.date.slice(0, 4)}" aria-label="${esc(p.title)}, ${d}">
+      <span class="spine-mark">${p.form === 'poem' ? '❦' : '¶'}</span>
+      <span class="spine-title">${esc(p.title)}</span>
+      <span class="spine-mark">${p.date.slice(2, 4)}</span>
+    </a>
+  </div>`;
+}
+function shelves(link) {
+  const maxW = Math.max(...pieces.map(p => p.words)), maxL = Math.max(...pieces.map(p => p.lines));
+  const years = [...new Set(pieces.map(p => p.date.slice(0, 4)))];
+  return years.map(y => {
+    const items = pieces.filter(p => p.date.startsWith(y));
+    return `<div class="shelf" data-year="${y}">
+  <p class="shelf-year">${y}<span>${items.length} ${items.length === 1 ? 'piece' : 'pieces'}</span></p>
+  <div class="row">
+  ${items.map(p => spine(p, link, maxW, maxL)).join('\n  ')}
+  </div>
+</div>`;
+  }).join('\n');
+}
 function piecesData(link) {
   return JSON.stringify(pieces.map(p => ({ t: p.title, d: p.date, s: p.slug, c: p.collections, m: p.mood, f: p.form, l: p.firstLine, w: p.words, u: link(p.url) }))).replace(/</g, '\\u003c');
 }
@@ -208,7 +239,8 @@ fs.mkdirSync(OUT, { recursive: true });
   const before = (sections['Before this'] || '').match(/<li>([\s\S]*?)<\/li>/g) || [];
   const html = `
 <main id="top">
-<section class="hero">
+<section class="hero has-photo">
+  <div class="hero-photo" style="background-image:url('${link('assets/hero.jpg')}')" role="img" aria-label="Tannvi as a child, in a yellow sweater, on a garden chair"></div>
   <canvas class="ink" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <p class="kicker">law · technology · policy · poetry</p>
@@ -281,8 +313,9 @@ function scratchPage(depth) {
   </div>
 </section>
 
-<section class="tiles tiles-page" data-cards>
-  ${pieces.map(p => tile(p, link)).join('\n  ')}
+<section class="shelves" data-cards>
+  <div class="book-open" data-book hidden aria-live="polite"></div>
+  ${shelves(link)}
 </section>
 <p class="empty" data-empty hidden>Nothing here with that word. Try another?</p>
 

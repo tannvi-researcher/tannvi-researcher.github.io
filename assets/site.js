@@ -173,23 +173,44 @@
     sky.appendChild(svg);
   }
 
-  // ---------- scratch: filters, search, surprise ----------
+  // ---------- scratch: shelves, filters, search, surprise ----------
   var cardsWrap = $('[data-cards]');
   if (cardsWrap) {
     var filter = 'all', query = '';
     var chips = $$('[data-filter]'), search = $('[data-search]'), empty = $('[data-empty]');
+    var book = $('[data-book]'), pulled = null;
+    function closeBook() { if (pulled) pulled.classList.remove('pulled'); pulled = null; if (book) book.hidden = true; }
     function apply() {
       var shown = 0;
-      $$('.tile', cardsWrap).forEach(function (c) {
+      $$('.slot', cardsWrap).forEach(function (c) {
         var ok = (filter === 'all' || c.getAttribute('data-collections').split(' ').indexOf(filter) > -1) && (!query || c.getAttribute('data-title').indexOf(query) > -1);
         c.classList.toggle('is-hidden', !ok); if (ok) shown++;
       });
+      $$('.shelf', cardsWrap).forEach(function (sh) { sh.classList.toggle('is-hidden', !$$('.slot:not(.is-hidden)', sh).length); });
       stars.forEach(function (g) {
         var ok = (filter === 'all' || g.getAttribute('data-f').split(' ').indexOf(filter) > -1) && (!query || g.getAttribute('data-q').indexOf(query) > -1);
         g.classList.toggle('dim', !ok);
       });
       if (empty) empty.hidden = shown > 0;
+      closeBook();
     }
+    // click a spine: pull it out and show its cover above the shelf
+    $$('.spine', cardsWrap).forEach(function (sp) {
+      sp.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        if (pulled === sp) { closeBook(); return; }
+        if (pulled) pulled.classList.remove('pulled');
+        pulled = sp; sp.classList.add('pulled');
+        var m = sp.getAttribute('data-m');
+        book.innerHTML = '<div class="cover" style="--bg:' + sp.style.getPropertyValue('--bg') + ';--fg:' + sp.style.getPropertyValue('--fg') + '"><span>' + (m === 'blues' ? 'Blues' : 'Purple') + '</span><strong>' + esc(sp.getAttribute('data-t')) + '</strong><span>' + sp.getAttribute('data-y') + '</span></div>' +
+          '<div class="book-info"><h2>' + esc(sp.getAttribute('data-t')) + '</h2><p>' + sp.getAttribute('data-d') + ' · ' + sp.getAttribute('data-f') + '</p><a class="btn btn-solid" href="' + sp.getAttribute('href') + '">read it →</a> <button class="btn" type="button" data-close>put it back</button></div>';
+        book.hidden = false;
+        var shelf = sp.closest('.shelf'); shelf.parentNode.insertBefore(book, shelf);
+        book.querySelector('[data-close]').addEventListener('click', closeBook);
+        book.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
+      });
+    });
     chips.forEach(function (ch) {
       ch.addEventListener('click', function () {
         filter = ch.getAttribute('data-filter');
@@ -201,10 +222,10 @@
     if (search) search.addEventListener('input', function () { query = search.value.trim().toLowerCase(); apply(); });
     var h0 = location.hash.replace('#', '');
     if (h0) { var pre = chips.filter(function (c) { return c.getAttribute('data-filter') === h0; })[0]; if (pre) pre.click(); }
-    var sp = $('[data-surprise]');
-    if (sp) sp.addEventListener('click', function () {
-      var vis = $$('.tile:not(.is-hidden)', cardsWrap); if (!vis.length) vis = $$('.tile', cardsWrap);
-      location.href = vis[(Math.random() * vis.length) | 0].getAttribute('href');
+    var sr = $('[data-surprise]');
+    if (sr) sr.addEventListener('click', function () {
+      var vis = $$('.slot:not(.is-hidden) .spine', cardsWrap); if (!vis.length) vis = $$('.spine', cardsWrap);
+      vis[(Math.random() * vis.length) | 0].click();
     });
   }
 
