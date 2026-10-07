@@ -1,6 +1,7 @@
 ---
 title: "session notes #1"
-date: 2026-05-25
+date: 2025-11-09
+old_url: 2026/05/25/session-notes-1/
 collections: [Blues]
 slug: session-notes-1
 ---

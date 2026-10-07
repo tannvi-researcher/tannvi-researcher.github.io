@@ -22,7 +22,7 @@ see, i tell stories about myself which i know will be liked. i am that version o
 
 and to give this its true ending, i think the truth is that gym helps make bigger muscles, and bigger muscles store bigger pain. that's a joke.
 
-so when i wrote [session notes #1](/2026/05/25/session-notes-1/), i thought i was being very clever. it turns out that self-diagnosis is not the way to go, and i was exactly doing that for many, many months. so the defeat is mine, it's nobody else's. it's when i talk constantly about becoming better and then do nothing about it. i just became better at explaining it.
+so when i wrote [session notes #1](/2025/11/09/session-notes-1/), i thought i was being very clever. it turns out that self-diagnosis is not the way to go, and i was exactly doing that for many, many months. so the defeat is mine, it's nobody else's. it's when i talk constantly about becoming better and then do nothing about it. i just became better at explaining it.
 
 and the solution is there, the solution is right there. the solution is that i can start again. and there's a version of me who wants to start again, who wants to see how i begin again, who wants to see what i changed this time around. but how can i get this year back? how can you just give your notebooks to someone else and ask them to give me this year back? that's not how you know someone. i can't do it from scratch. and the thought of doing it seems like i'm performing. and that makes me tired, if nothing else. and maybe that's a good word. tired.
 
