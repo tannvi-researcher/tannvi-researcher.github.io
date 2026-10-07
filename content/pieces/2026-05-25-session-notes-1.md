@@ -4,28 +4,24 @@ date: 2026-05-25
 collections: [Blues]
 slug: session-notes-1
 ---
-the one thing i get to hear the most from him these days is that i'm not being honest. and let's be honest, he's right.
+he told me, can we be honest? and i, with a very straight face, responded, yeah, i'm honest.
 
-i just tell him that i need space. i tell him that i just need you to push me a little bit more sometimes and just give me space the other times. and the moment you see the colour of, of, on my face change, and the moment you see me fidgeting, you need to push even more. which is true, but not the whole truth again. a part of me really wants that to happen. a part of me would hate if that, if that does.
+i told him that i need you to push me sometimes. scratch the surface, ask me more questions. when you see the change on my face, ask me more questions. try to understand why did the colour on my face change. and he was like, i'm not gonna push you. that's not how i do it.
 
-i say it all as if i have figured myself out, as if i know how i am. i told him the first time, the first session i ever met him, that i am a liar. i told him that i know myself enough and at this very moment i'm not waiting to be asked about if i know myself enough or not. but then he says, where did you go? and then my colour changed. because that's not me speaking, that's a different person speaking, because i wouldn't say that. if i knew i knew myself, and if i knew i want to help myself, and i knew i want to change and i want to modify and i want to speak about those things and i want to get it out of my body, then i wouldn't be, then i wouldn't be here.
+so i changed. i said, okay. i need some space. i need some time off. i need to reevaluate and reconfigure. and he was like, okay.
 
-the truth is that it's way more smaller of an issue and way more embarrassing. it's smaller in my head, i'd say though. the full truth is that i need attention. and when the room slightly turns in a way that i don't want it to, i don't, i get very quiet and very, very closed very soon. and this all happens without me even consciously deciding to do so. it's happening without me consulting my own parts and my own brain and my own heart to be doing this. it happens because i don't want to disappear, but that's my mechanism, i think. it's not that i, i don't want to be alone. it's that i want to be found.
+that okay hurt me. that okay hurt me because i don't know how to react to that.
 
-and again, i know this about myself. and i have known this for a while. and i kept it in a part of myself, which i don't give out in sessions. and that particular part just nods away and says, yeah, there is a background behind this. yeah, there's a story behind this. yeah, there's a stem, it's stemming from childhood. yeah, i see the pattern. i will work on it. yes, i will actually think about every time my body feels a little twitchy. yes, i will get better at describing it. yes, this makes me feel happy. and yes, this makes me feel sad. i don't know what this makes me feel anymore.
+see, i realised very quickly after that, that i love attention. i crave attention. i yearn for attention. i love when people remember what i said. the names, the events, the specific details. i love when people ask me questions. i love when people are interested in me. i love being noticed. i love being seen. i love being remembered, small gifts that have come up from some funny inside story. i love when people compliment about things more specifically, because i mentioned that i want to be complimented that way. and i hated when i didn't get attention.
 
-see, there's a child inside of me, which many, many, many years ago learned that disappearing was a reliable way. it's when someone's looking at you and you just don't want to say plainly that, please don't ignore me. the absence of somebody's attention is a great place to start for seeking that attention. the absence is when the door is not opening, so you just sit behind the door wanting someone to knock on it. the absence is when i don't want anyone to ask me where i went.
+see, i know this is a lot to do about who i am. or at least it has become about that. it has become about the personality that i think i have imbibed myself to believe, that that's who i am. that i've told myself that i am. it is about, it is about the person i tell myself in the mirror that i am.
 
-and i learned it. and i learned it in a very complicated way, in a very narcissistic, i don't know, in a self-consuming manner. and i still let myself do it even now. i still let myself slip even now. i let her do what she wants.
+it's the person who becomes very quiet and isolated when she doesn't get attention. not because she is withdrawing from a conversation or trying to move away, but because she wants to be found. she wants someone to ask her to come. she wants someone to ask.
 
-and you know what happens? this usually remains in my control, because i can see it. i can actually fathom what's happening inside my head and how i'm reacting to it. but then the moment someone says, oh, you're not good enough, oh, here it comes. the child actually comes back, in a way that no one really asked for. and this kind of behaviour is for no one. that kind of happens in my head, because sometimes truth is more terrible than to say it out loud. and it is not something my body is intending to do. it is something i have learned to do. it's, it's my instinct, it's my muscle.
+that person would quickly run to her room the moment she felt that the party wasn't about her. and then sit behind the closed door, waiting for someone to come and knock and ask her to join the party again.
 
-i tell him that i have a really good relationship with criticism and i can deal with it. i take criticism very well. that's a lie i've told out to way too many people, way too many times. and it has started to feel like that's my personality now. i don't know. the lying? or the criticism not being taken well?
+it's self-consuming, narcissistic. exceptionally complicated.
 
-the truth is, i fold. i fold, like, completely, without showing how, when and where. and then i go somewhere else. somewhere i'm trying to get noticed. somewhere i'm, like, no longer trying to be in the room, but waiting for someone to ask me to come.
+so i tell him, with a very clean face, that i know who i am, and exactly who i am. i told him that i lie a lot, and i told him that i lie with utmost confidence, and with a clean face you will not be able to catch me in my life. i told him that i know myself way too much, and i hated it when he didn't ask me, tell me about it then.
 
-and when no one does, i tell myself that that's the way i wanted it. that's the way i would prefer. i needed myself to be alone. i needed myself to give myself that space. i needed this independence, the solitude, and this is how i'm trying to become a better woman for myself.
-
-trust me, she's lying. she's sitting by the door. she's sitting behind the door. so quietly, so quietly, so that she can listen to the first footstep that is approaching her.
-
-i guess no one does.
+let's be honest, he asked. how do i tell him that that's the last thing i can be to him?
