@@ -4,7 +4,7 @@ date: 2026-08-15
 image: assets/articles/is-persuasion-a-dark-pattern-or-just-marketing.svg
 slug: is-persuasion-a-dark-pattern-or-just-marketing
 ---
-I was using [Flo](https://flo.health/), which is a period tracking app, earlier today, and I realised something very interesting. The interesting part is the fact that there was a sudden pop-up to subscribe, another countdown timer on a discount to see a full report on my mood swings, and another feature, maybe, another coupon to buy certain conversations with a gynaecologist, all right?
+I was using [Flo](https://flo.health/), which is a period tracking app, earlier today, and I realised something very interesting. The interesting part is the fact that there was a sudden pop-up to subscribe, another countdown timer on a discount to see a full report on my mood swings, and another feature, maybe, another coupon to buy certain conversations with a gynaecologist.
 
 And that made me think: is this like a flash sale on a bad mood of mine, because I'm going through my period right now? Is this supposed to be funny, because I can be in a bad mood and want to really see why my bad mood is fucking up my day, and just buy on this?
 
