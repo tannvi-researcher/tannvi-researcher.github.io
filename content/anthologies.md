@@ -9,5 +9,5 @@ cover: https://m.media-amazon.com/images/I/71FsGCPk+LL._SL1500_.jpg
 - [Amazon (Kindle)](https://www.amazon.in/Beginning-nirmal-rathore-ebook/dp/B09B49W11B)
 
 # Windows to the World
-cover: https://tannvi.home.blog/wp-content/uploads/2021/08/29d96-b2a390_3e8ffe2f21bd4dd2a23a0e7ff1e762f2mv2.png
+cover: /assets/anthologies/windows-to-the-world.jpg
 - [Verses Kindler Publications](https://www.verseskindlerpublication.com/product-page/windows-to-the-world)

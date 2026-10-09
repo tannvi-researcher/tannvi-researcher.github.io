@@ -500,3 +500,6 @@ main { display: block; }
 @media (max-width: 360px) {
   .topbar nav a { font-size: .62rem; letter-spacing: .06em; }
 }
+
+/* anthology covers: frame matches real book-cover proportions so titles and logos aren't cropped */
+.book-3d { aspect-ratio: 61 / 100; }
