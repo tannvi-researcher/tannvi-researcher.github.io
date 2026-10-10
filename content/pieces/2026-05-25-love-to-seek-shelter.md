@@ -1,5 +1,5 @@
 ---
-title: "love: to seek shelter"
+title: "love: to seek shelter (v4)"
 date: 2026-05-25
 collections: [Blues, Purple]
 slug: love-to-seek-shelter

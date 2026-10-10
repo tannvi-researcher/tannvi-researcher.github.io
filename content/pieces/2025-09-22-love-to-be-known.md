@@ -1,5 +1,5 @@
 ---
-title: "love: to be known"
+title: "love: to be known (v2)"
 date: 2025-09-22
 collections: [Blues, Purple]
 slug: love-to-be-known

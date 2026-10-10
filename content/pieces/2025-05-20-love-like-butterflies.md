@@ -1,9 +1,8 @@
 ---
-title: "love: like butterflies"
+title: "love: like butterflies (v1)"
 date: 2025-05-20
 collections: [Blues, Purple]
 slug: love-like-butterflies
-old_url: 2026/09/25/love-the-consequence/
 ---
 i remember checking my phone a bazillion times for that one notification. i remember i'd found a way through which you could change the notification sound for a particular person's texts, and i did. because i really wanted to just pick up my phone and respond back when there was a certain kind of sound. it's like that scientific experiment they do on a mouse with a ring of a bell. the sense of nervousness, as well as hope for a reward in return. reward is an interesting use of word.
 

@@ -1,8 +1,9 @@
 ---
-title: "love: to hope"
+title: "love: the consequence (v5)"
 date: 2026-09-25
 collections: [Blues, Purple]
-slug: love-to-hope
+slug: love-the-consequence
+old_url: 2026/09/25/love-to-hope/
 ---
 the consequential price you pay of being in love is the hopes and wishes it leaves you with. these things don't leave you, long after love has. it reveals something deeper about who you are. sometimes you perform healing. and other days you use that same healing to project anger for self-development (maybe also, sometimes, self-sabotage). and sometimes, when you are honest with yourself, you realise that the number of times you search their name up on the internet to see what they're doing is indicative of where you stand.
 

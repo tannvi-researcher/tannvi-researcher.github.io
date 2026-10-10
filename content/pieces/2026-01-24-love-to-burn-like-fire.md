@@ -1,5 +1,5 @@
 ---
-title: "love: to burn like fire"
+title: "love: to burn like fire (v3)"
 date: 2026-01-24
 collections: [Blues, Purple]
 slug: love-to-burn-like-fire
