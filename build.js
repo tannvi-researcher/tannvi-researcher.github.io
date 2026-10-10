@@ -302,7 +302,7 @@ fs.mkdirSync(OUT, { recursive: true });
 function scratchPage(depth) {
   const link = makeLinker(depth);
   const years = [...new Set(pieces.map(p => p.date.slice(0, 4)))];
-  const count = f => pieces.filter(p => p.form === f || p.mood === f).length;
+  const count = f => pieces.filter(p => p.form === f || p.collections.map(c => c.toLowerCase()).includes(f)).length;
   return layout({
     title: 'Scratch · tannvi', depth, active: 'Scratch', bodyClass: 'scratch',
     description: 'A little internet journal: poems and small essays.',

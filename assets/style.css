@@ -503,3 +503,9 @@ main { display: block; }
 
 /* anthology covers: frame matches real book-cover proportions so titles and logos aren't cropped */
 .book-3d { aspect-ratio: 61 / 100; }
+
+/* section headings inside multi-part pieces */
+.piece-text > p.part-head { margin: 2.6em 0 1.1em; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--mute); display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; }
+.piece-text > p.part-head:first-child { margin-top: 0; }
+.piece-text > p.part-head span { font-size: 1.5rem; letter-spacing: 0; text-transform: none; font-style: italic; color: var(--bone); }
+.piece-body.prose .piece-text > p.part-head:first-child::first-letter { float: none; font-size: inherit; line-height: inherit; padding: 0; color: inherit; font-style: inherit; }
