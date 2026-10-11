@@ -3,13 +3,13 @@ title: 25 before 25
 url: /25-before-25/
 intro: Crossed-out ones are done.
 ---
-1. perform/read a writing to audience, open mic/voice note posted publicly
+1. ~~perform/read a writing to audience, open mic/voice note posted publicly~~
 2. write a letter to 30-year-old tannvi, don't read, just seal it
 3. write a short love story, something way out of my usual writing style
-4. exercise, find your way and get into your best shape
+4. ~~exercise, find your way and get into your best shape~~
 5. go for a trek/hike in a planned way
 6. let's go to mysore one more time, get it out of our system
-7. solo dinner at a fancy restaurant
+7. ~~solo dinner at a fancy restaurant~~
 8. have a photoshoot in 2-3 new outfits
 9. enrol for the CIPP-E certificate
 10. read 5 books, not work/self-improvement related, write reviews for all 5 on your blog
