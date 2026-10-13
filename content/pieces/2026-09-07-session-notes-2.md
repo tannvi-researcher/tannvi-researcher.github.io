@@ -6,15 +6,15 @@ slug: session-notes-2
 ---
 how long does it take? how many years does it take to forget a moment? and how many years does it take to make a stranger family?
 
-i remember this day so particularly. i was wearing my brown shorts and a grey t-shirt. i had just washed my hair. and he asked me how i'm taking the session, when he knew that my parents were in the next door room. i remember, i remember that i was chuckling too much, because i don't want my parents to think, why? i'm on a video call, we're just so quiet. i told him that i could tell them. i don't think they'll react in any bad way. but then their first question will be why. and i don't think i'll have the answer for that why.
+i remember this day so particularly. i was wearing my brown shorts and a grey t-shirt. i had just washed my hair. and he asked me how i'm taking the session, when he knew that my parents were in the next door room. i remember that i was chuckling too much, because i don't want my parents to think, why? i'm on a video call, we're just so quiet. i told him that i could tell them. i don't think they'll react in any bad way. but then their first question will be why. and i don't think i'll have the answer for that why.
 
 and then he asked me, okay, you can't answer them on that why. can you answer yourself?
 
-i remember saying, it's a service you give when someone cannot help themselves. it is like, i needed a nail to put a photograph in my room. and that's the hammer i get. and that's the hammer i can use to make my job easier.
+i remember saying, it's a service you give when someone cannot help themselves. it is like i needed a nail to put a photograph in my room. and that's the hammer i get. and that's the hammer i can use to make my job easier.
 
 and then he told me, very kindly, do you think it's going to work between us? and like always, i said something rational. i said something a 24-year-old should be saying, something i didn't want to say, but i had to. i said, it's okay. it's a service and we can end the contract.
 
-i think this landed somewhere way deeper than it should have, at least for me. i mean, obviously, for me only. so we have terminated the contract. why does it feel like i'm terminating the relationship? this is way worse than actual goodbyes.
+i think this landed somewhere way deeper than it should have, at least for me. so we have terminated the contract. why does it feel like i'm terminating the relationship? this is way worse than actual goodbyes.
 
 so i did the dirty maths under all of this. he didn't think we trusted each other. he didn't think i told him enough. he didn't think i understood why i'm doing it, the meaning behind it. he didn't think i was doing anything to improve myself. i was just describing it better. and he was right. he was so right. because i told him to push me and he didn't. i told him to give me space and he did. i gave him the booklet on me, on how to deal with this client. and he didn't even open it. and that somehow is evidence of me not working enough towards this, quote unquote, service.
 

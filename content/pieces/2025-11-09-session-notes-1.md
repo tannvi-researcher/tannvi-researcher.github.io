@@ -15,7 +15,7 @@ that okay hurt me. that okay hurt me because i don't know how to react to that.
 
 see, i realised very quickly after that, that i love attention. i crave attention. i yearn for attention. i love when people remember what i said. the names, the events, the specific details. i love when people ask me questions. i love when people are interested in me. i love being noticed. i love being seen. i love being remembered, small gifts that have come up from some funny inside story. i love when people compliment about things more specifically, because i mentioned that i want to be complimented that way. and i hated when i didn't get attention.
 
-see, i know this is a lot to do about who i am. or at least it has become about that. it has become about the personality that i think i have imbibed myself to believe, that that's who i am. that i've told myself that i am. it is about, it is about the person i tell myself in the mirror that i am.
+see, i know this is a lot to do about who i am. or at least it has become about that. it has become about the personality that i think i have imbibed myself to believe, that that's who i am. that i've told myself that i am. it is about the person i tell myself in the mirror that i am.
 
 it's the person who becomes very quiet and isolated when she doesn't get attention. not because she is withdrawing from a conversation or trying to move away, but because she wants to be found. she wants someone to ask her to come. she wants someone to ask.
 
