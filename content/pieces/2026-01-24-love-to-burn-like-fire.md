@@ -1,7 +1,7 @@
 ---
 title: "love: to burn like fire (v3)"
 date: 2026-01-24
-collections: [Blues, Purple]
+collections: [Purple]
 slug: love-to-burn-like-fire
 ---
 there's a quote from bojack horseman that goes something like: was it worth it to be happy for a little bit, even though it ended up sad? or would it have been better if the whole thing never happened?

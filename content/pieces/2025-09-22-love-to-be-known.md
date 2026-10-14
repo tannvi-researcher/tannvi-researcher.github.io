@@ -1,7 +1,7 @@
 ---
 title: "love: to be known (v2)"
 date: 2025-09-22
-collections: [Blues, Purple]
+collections: [Blues]
 slug: love-to-be-known
 ---
 he is the only one who knew the stories that i probably didn't tell anyone before that. i've always known that i acted weird around him from the very beginning. even before it all started, even before the possibility of it had even struck me. i used to pick fights on things which were not necessary as such. things which were the most stupid. but that was an opportunity for me to talk a little bit more with him, i guess. and he got it as well, and would mirror my behaviour. i don't know, it was flirting. it was weird, it was flirting.

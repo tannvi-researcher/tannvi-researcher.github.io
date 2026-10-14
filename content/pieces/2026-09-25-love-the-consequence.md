@@ -1,7 +1,7 @@
 ---
 title: "love: the consequence (v5)"
 date: 2026-09-25
-collections: [Blues, Purple]
+collections: [Purple]
 slug: love-the-consequence
 old_url: 2026/09/25/love-to-hope/
 ---
