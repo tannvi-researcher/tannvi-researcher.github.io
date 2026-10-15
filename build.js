@@ -289,7 +289,7 @@ fs.mkdirSync(OUT, { recursive: true });
 <section class="elsewhere">
   <div class="section-label"><span>Writing elsewhere</span></div>
   <ul class="link-rows">
-    ${(links['Writing elsewhere'] || []).map(l => `<li class="reveal"><a class="glow" href="${esc(l.href)}"><span class="lr-label">${esc(l.label)}</span><span class="lr-note">${esc(l.note)}</span><span class="lr-arrow" aria-hidden="true">↗</span></a></li>`).join('\n    ')}
+    ${(links['Writing elsewhere'] || []).map(l => `<li class="reveal"><a class="glow" href="${esc(l.href)}" target="_blank" rel="noopener"><span class="lr-label">${esc(l.label)}</span><span class="lr-note">${esc(l.note)}</span><span class="lr-arrow" aria-hidden="true">↗</span></a></li>`).join('\n    ')}
   </ul>
 </section>
 
