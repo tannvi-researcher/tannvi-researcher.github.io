@@ -34,7 +34,7 @@ ivy's daughter says, "i assume you'll have a flashback of your whole life, child
 
 "i don't think i will have a flashback of my happy moments," ivy says. "i think i'll remember the exact moment when i held his hand for the last time."
 
-"whose hand? grandad's?"
+"whose hand? dad's?"
 
 "no. there was a boy. i was 23 when i met him."
 
