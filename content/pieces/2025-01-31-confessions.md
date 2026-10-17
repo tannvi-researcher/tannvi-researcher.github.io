@@ -1,7 +1,7 @@
 ---
 title: "confessions"
 date: 2025-01-31
-collections: [Blues]
+collections: [Purple]
 slug: confessions
 ---
 i think we are all strange, sad, lonely, complicated and gullible. i think with this piece today, i want to tell you that we should look at those complicated parts of us. those parts which we did not filter out to make them look pretty. those parts which are sitting in some corners of your heart and your mind, which don't really seem to have words to them, and they defy interpretability and explainability. i want this to be an observation on things i wish i could say aloud, but don't wish to as well, at the same time. this is like uncovering a shadow story. it's you, but it's not you. it's the ghost of you. it's the thing which doesn't really fit in this world. it's the part of you you don't want to see in the mirror. and maybe, in reading this, this resonates with you.
