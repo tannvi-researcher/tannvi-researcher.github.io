@@ -1,7 +1,7 @@
 ---
 title: "to be 20 something"
 date: 2026-01-02
-collections: [Purple]
+collections: [Purple, Red]
 slug: to-be-20-something
 ---
 when i look back at where it all started, every day that i live today feels like a dream come true. but when i sit with myself, i feel like i'm living each day like a rebel. i have the freedom i wanted. i have the life that i wanted. the people, the friends, the career. i have been persistent, but i hate myself.
