@@ -1,7 +1,7 @@
 ---
 title: "august"
 date: 2021-08-28
-collections: [Poetry, Purple]
+collections: [Blues, Purple, Poetry]
 style: italic
 slug: my-august-home
 ---

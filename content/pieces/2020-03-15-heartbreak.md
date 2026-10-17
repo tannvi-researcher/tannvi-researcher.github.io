@@ -1,7 +1,7 @@
 ---
 title: "Heartbreak"
 date: 2020-03-15
-collections: [Blues]
+collections: [Blues, Maroon]
 slug: heartbreak
 ---
 When you’re deep in the mire of heartbreak, chances are that you feel pain somewhere in your body—probably in your chest or stomach. Some people describe it as a dull ache, others as piercing, while still others experience it as a crushing sensation.

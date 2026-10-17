@@ -19,10 +19,11 @@
     var pal = pals[0], pal2 = pals[pals.length - 1];
     var r = rng(hashStr(el.getAttribute('data-seed') || 'x'));
     var id = 'a' + (uid++), S = 400;
-    var vertical = r() < 0.35;
-    var fields = 1 + Math.floor(r() * 3);
+    var mixed = pals.length > 1;
+    var vertical = mixed || r() < 0.35;
+    var fields = mixed ? 2 + Math.floor(r() * 2) : 1 + Math.floor(r() * 3);
     var s = '<svg viewBox="0 0 ' + S + ' ' + S + '" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs>' +
-      '<linearGradient id="' + id + 'g" x1="0" y1="0" x2="' + (vertical ? 1 : 0) + '" y2="' + (vertical ? 0 : 1) + '"><stop offset="0" stop-color="' + pal[1] + '"/><stop offset="1" stop-color="' + pal2[0] + '"/></linearGradient>' +
+      '<linearGradient id="' + id + 'g" x1="0" y1="0" x2="' + (vertical || mixed ? 1 : 0) + '" y2="' + (vertical || mixed ? 0 : 1) + '"><stop offset="0" stop-color="' + (mixed ? pal[2] : pal[1]) + '"/><stop offset="1" stop-color="' + (mixed ? pal2[2] : pal2[0]) + '"/></linearGradient>' +
       '<filter id="' + id + 'b" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="' + f(6 + r() * 10) + '"/></filter>' +
       '<filter id="' + id + 'n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="' + Math.floor(r() * 99) + '"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .07 0"/></filter>' +
       '</defs><rect width="100%" height="100%" fill="url(#' + id + 'g)"/>';

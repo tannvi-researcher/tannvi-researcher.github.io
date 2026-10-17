@@ -1,7 +1,7 @@
 ---
 title: "bittersweet"
 date: 2021-11-12
-collections: [Blues, Poetry]
+collections: [Blues, Maroon, Poetry]
 style: italic
 slug: bittersweet
 ---

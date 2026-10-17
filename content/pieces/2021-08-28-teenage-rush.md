@@ -1,7 +1,7 @@
 ---
 title: "Teenage Rush (Draft)"
 date: 2021-08-28
-collections: [Poetry, Purple]
+collections: [Blues, Maroon, Poetry]
 warning: "SELF HARM"
 style: italic
 slug: teenage-rush

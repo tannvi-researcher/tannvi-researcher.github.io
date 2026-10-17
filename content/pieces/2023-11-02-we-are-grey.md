@@ -1,7 +1,7 @@
 ---
 title: "we are grey"
 date: 2023-11-02
-collections: [Blues, Poetry]
+collections: [Blues, Maroon, Poetry]
 style: italic
 slug: we-are-grey
 ---

@@ -1,7 +1,7 @@
 ---
 title: "session notes #2"
 date: 2026-09-07
-collections: [Blues]
+collections: [Blues, Maroon]
 slug: session-notes-2
 ---
 how long does it take? how many years does it take to forget a moment? and how many years does it take to make a stranger family?
