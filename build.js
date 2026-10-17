@@ -71,9 +71,11 @@ const pieces = fs.readdirSync(path.join(ROOT, 'content/pieces'))
     const lines = body.trim().split('\n').length;
     const firstLine = plain.split('\n').map(s => s.trim())
       .find(s => s.length > 12 && /[a-z]/i.test(s) && !/^[.…\-–—~()]+$/.test(s) && !/^\(.*\)$/.test(s) && !/^(tuning|key|capo|draft)/i.test(s)) || '';
-    const mood = collections.includes('Blues') ? 'blues' : collections.includes('Purple') ? 'purple' : 'ember';
+    const moods = [['Blues', 'blues'], ['Purple', 'purple'], ['Red', 'red']].filter(([c]) => collections.includes(c)).map(([, m]) => m);
+    if (!moods.length) moods.push('red');
+    const mood = moods.join(' ');
     return {
-      title: data.title, date, slug, collections, mood, html, words, lines,
+      title: data.title, date, slug, collections, mood, moods, html, words, lines,
       form: collections.includes('Poetry') ? 'poem' : collections.includes('Story') ? 'story' : 'prose',
       style: data.style || '', warning: data.warning || '',
       firstLine: firstLine.slice(0, 140),
@@ -195,7 +197,7 @@ function card(p, link) {
 }
 function tile(p, link) {
   const [y, m] = p.date.split('-');
-  return `<a class="tile tile-${p.mood}" href="${link(p.url)}" data-collections="${p.collections.join(' ').toLowerCase()} ${p.form}" data-title="${esc(p.title.toLowerCase())} ${esc(p.firstLine.toLowerCase())}">
+  return `<a class="${tileClass(p.moods)}" style="${moodVars(p.moods)}" href="${link(p.url)}" data-collections="${p.collections.join(' ').toLowerCase()} ${p.form}" data-title="${esc(p.title.toLowerCase())} ${esc(p.firstLine.toLowerCase())}">
   ${artTag(p, 'art-tile')}
   <span class="tile-kind"><i></i>${p.form}</span>
   <span class="tile-title">${esc(p.title)}</span>
@@ -205,14 +207,20 @@ function tile(p, link) {
 const SHADES = {
   blues: [['#16224a', '#a9bdf0'], ['#1c2c5e', '#c4d2f5'], ['#101a3a', '#8ea6e6'], ['#23346b', '#d8e1f8'], ['#0e1733', '#a9bdf0']],
   purple: [['#2e1240', '#dcb6ef'], ['#3c1752', '#e8cdf5'], ['#24103a', '#c79be0'], ['#4a1c5e', '#f0dcf8'], ['#2a0f3a', '#d7aef0']],
+  red: [['#3d0d12', '#f3bba6'], ['#4d1117', '#f6cbb9'], ['#2e0a0e', '#eaa38c'], ['#5a151b', '#f9d8ca'], ['#360a10', '#efb39d']],
 };
+const MOOD_COL = { blues: '#6f8fe0', purple: '#b06ad4', red: '#d0492f' };
+function tileClass(moods) { return ['tile', ...moods.map(m => 'tile-' + m), moods.length > 1 ? 'tile-mix' : ''].filter(Boolean).join(' '); }
+function moodVars(moods) { return `--m1:${MOOD_COL[moods[0]]};--m2:${MOOD_COL[moods[moods.length - 1]]}`; }
 function hashStr(str) { let x = 2166136261; for (const c of str) { x ^= c.charCodeAt(0); x = Math.imul(x, 16777619); } return x >>> 0; }
 function spine(p, link, maxW, maxL) {
-  const [bg, fg] = (SHADES[p.mood] || SHADES.purple)[hashStr(p.slug) % 5];
+  const k = hashStr(p.slug) % 5;
+  const [bg, fg] = SHADES[p.moods[0]][k];
+  const bg2 = SHADES[p.moods[p.moods.length - 1]][k][0];
   const hv = Math.sqrt(p.words / maxW).toFixed(3), wv = Math.sqrt(p.lines / maxL).toFixed(3);
   const d = niceDate(p.date);
   return `<div class="slot" data-collections="${p.collections.join(' ').toLowerCase()} ${p.form}" data-title="${esc(p.title.toLowerCase())} ${esc(p.firstLine.toLowerCase())}">
-    <a class="spine" href="${link(p.url)}" style="--h:${hv};--w:${wv};--bg:${bg};--fg:${fg}" data-t="${esc(p.title)}" data-d="${d}" data-f="${p.form}" data-m="${p.mood}" data-y="${p.date.slice(0, 4)}" aria-label="${esc(p.title)}, ${d}">
+    <a class="spine${p.moods.length > 1 ? ' spine-mix' : ''}" href="${link(p.url)}" style="--h:${hv};--w:${wv};--bg:${bg};--bg2:${bg2};--fg:${fg}" data-t="${esc(p.title)}" data-d="${d}" data-f="${p.form}" data-m="${p.mood}" data-y="${p.date.slice(0, 4)}" aria-label="${esc(p.title)}, ${d}">
       <span class="spine-mark">${p.form === 'poem' ? '❦' : p.form === 'story' ? '§' : '¶'}</span>
       <span class="spine-title">${esc(p.title)}</span>
       <span class="spine-mark">${p.date.slice(2, 4)}</span>
@@ -321,6 +329,7 @@ function scratchPage(depth) {
     ${count('story') ? `<button class="chip chip-story" aria-pressed="false" data-filter="story">Stories <span>${count('story')}</span></button>` : ''}
     <button class="chip chip-blues" aria-pressed="false" data-filter="blues"><i></i>Blues <span>${count('blues')}</span></button>
     <button class="chip chip-purple" aria-pressed="false" data-filter="purple"><i></i>Purple <span>${count('purple')}</span></button>
+    ${count('red') ? `<button class="chip chip-red" aria-pressed="false" data-filter="red"><i></i>Red <span>${count('red')}</span></button>` : ''}
   </div>
   <div class="controls-right">
     <label class="search"><span class="sr-only">Search</span><input type="search" id="scratch-search" placeholder="search a word…" data-search></label>
@@ -343,6 +352,7 @@ function scratchPage(depth) {
   <div class="legend">
     <span><i class="dot dot-blues"></i>Blues</span>
     <span><i class="dot dot-purple"></i>Purple</span>
+    <span><i class="dot dot-red"></i>Red</span>
   </div>
 </section>
 </main>
@@ -367,7 +377,7 @@ pieces.forEach((p, i) => {
   const mins = Math.max(1, Math.round(p.words / 200));
   const body = `
 <div class="progress" aria-hidden="true"><span></span></div>
-<main class="piece mood-${p.mood}">
+<main class="piece ${p.moods.map(m => 'mood-' + m).join(' ')}">
   <header class="piece-head">
     ${artTag(p, 'art-hero')}
     <div class="piece-head-inner">

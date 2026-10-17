@@ -1,7 +1,7 @@
 ---
 title: "i want to lose you now"
 date: 2021-11-03
-collections: [Poetry, Purple]
+collections: [Red, Poetry]
 style: italic
 slug: i-want-to-lose-you-now
 ---

@@ -5,7 +5,9 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var data = (function () { var el = $('#pieces-data'); try { return el ? JSON.parse(el.textContent) : []; } catch (e) { return []; } })();
-  var MOOD = { blues: '#6f8fe0', purple: '#b06ad4', ember: '#d0492f' };
+  var MOOD = { blues: '#6f8fe0', purple: '#b06ad4', red: '#d0492f', ember: '#d0492f' };
+  var MOODNAME = { blues: 'Blues', purple: 'Purple', red: 'Red' };
+  function moodsOf(m) { return String(m || 'red').split(' '); }
 
   // top bar background after scrolling
   var bar = $('.topbar');
@@ -94,7 +96,8 @@
   // ---------- cards built from data ----------
   var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   function cardHTML(p) {
-    return '<a class="tile tile-' + p.m + '" href="' + p.u + '"><div class="art art-tile" data-seed="' + p.s + '" data-mood="' + p.m + '" aria-hidden="true"></div>' +
+    var ms = moodsOf(p.m);
+    return '<a class="tile ' + ms.map(function (x) { return 'tile-' + x; }).join(' ') + (ms.length > 1 ? ' tile-mix' : '') + '" style="--m1:' + MOOD[ms[0]] + ';--m2:' + MOOD[ms[ms.length - 1]] + '" href="' + p.u + '"><div class="art art-tile" data-seed="' + p.s + '" data-mood="' + p.m + '" aria-hidden="true"></div>' +
       '<span class="tile-kind"><i></i>' + p.f + '</span><span class="tile-title">' + esc(p.t) + '</span>' +
       '<span class="tile-hover"><span class="tile-line">' + esc(p.l) + '</span><time>' + MON[+p.d.slice(5, 7) - 1] + ' ' + p.d.slice(0, 4) + '</time></span></a>';
   }
@@ -123,10 +126,14 @@
     var y0 = new Date(new Date(t0).getFullYear(), 0, 1).getTime(), y1 = new Date(new Date(t1).getFullYear() + 1, 0, 1).getTime();
     function X(t) { return padX + (t - y0) / (y1 - y0) * (W2 - padX * 2); }
     function h(s) { var x = 0; for (var i = 0; i < s.length; i++) x = (x * 31 + s.charCodeAt(i)) >>> 0; return x; }
-    var bands = { blues: 0.3, ember: 0.5, purple: 0.72 };
+    var bands = { blues: 0.3, red: 0.5, ember: 0.5, purple: 0.72 };
+    function bandOf(m) { var ms = moodsOf(m); return ms.reduce(function (a, x) { return a + bands[x]; }, 0) / ms.length; }
     var svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('viewBox', '0 0 ' + W2 + ' ' + H2); svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-    var html = '<defs><radialGradient id="halo"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>';
+    var mixes = {};
+    data.forEach(function (p) { var ms = moodsOf(p.m); if (ms.length > 1) mixes[ms.join('-')] = ms; });
+    var mixDefs = Object.keys(mixes).map(function (k) { var ms = mixes[k]; return '<linearGradient id="mix-' + k + '" x1="0" y1="0" x2="1" y2="1">' + ms.map(function (x, i) { return '<stop offset="' + (i / (ms.length - 1)) + '" stop-color="' + MOOD[x] + '"/>'; }).join('') + '</linearGradient>'; }).join('');
+    var html = '<defs>' + mixDefs + '<radialGradient id="halo"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>';
     // background dust
     for (var i = 0; i < 140; i++) { var sx = (h('d' + i) % W2), sy = (h('e' + i * 7) % H2); html += '<circle cx="' + sx + '" cy="' + sy + '" r="' + (h('f' + i) % 10 / 10 + .2).toFixed(2) + '" fill="#efe6dc" opacity="' + ((h('g' + i) % 30) / 100 + .05).toFixed(2) + '"/>'; }
     for (var y = new Date(y0).getFullYear(); y <= new Date(y1).getFullYear(); y++) {
@@ -136,13 +143,13 @@
     }
     var pts = data.slice().sort(function (a, b) { return a.d.localeCompare(b.d); }).map(function (p) {
       var jitter = ((h(p.s) % 1000) / 1000 - 0.5) * 0.3;
-      return { p: p, x: X(+new Date(p.d)), y: padY + (bands[p.m] + jitter) * (H2 - padY * 2 - 30), r: 3 + Math.min(6, p.w / 90) };
+      return { p: p, x: X(+new Date(p.d)), y: padY + (bandOf(p.m) + jitter) * (H2 - padY * 2 - 30), r: 3 + Math.min(6, p.w / 90) };
     });
     html += '<path class="thread" d="' + pts.map(function (q, i) { return (i ? 'L' : 'M') + q.x.toFixed(1) + ' ' + q.y.toFixed(1); }).join(' ') + '"/>';
     svg.innerHTML = html;
     pts.forEach(function (q, i) {
       var g = document.createElementNS(NS, 'g');
-      var col = MOOD[q.p.m];
+      var qms = moodsOf(q.p.m), col = qms.length > 1 ? 'url(#mix-' + qms.join('-') + ')' : MOOD[qms[0]];
       g.innerHTML = '<circle class="star-halo" cx="' + q.x + '" cy="' + q.y + '" r="' + (q.r * 2.6) + '" fill="' + col + '" opacity=".18"/>' +
         '<circle class="star" cx="' + q.x + '" cy="' + q.y + '" r="' + q.r + '" fill="' + col + '" tabindex="0" role="link" aria-label="' + esc(q.p.t) + '"><animate attributeName="opacity" values="1;.55;1" dur="' + (2.5 + (h(q.p.s) % 30) / 10) + 's" repeatCount="indefinite"/></circle>';
       g.setAttribute('data-f', (q.p.c.join(' ') + ' ' + q.p.f).toLowerCase());
@@ -203,7 +210,7 @@
         if (pulled) pulled.classList.remove('pulled');
         pulled = sp; sp.classList.add('pulled');
         var m = sp.getAttribute('data-m');
-        book.innerHTML = '<div class="cover" style="--bg:' + sp.style.getPropertyValue('--bg') + ';--fg:' + sp.style.getPropertyValue('--fg') + '"><span>' + (m === 'blues' ? 'Blues' : 'Purple') + '</span><strong>' + esc(sp.getAttribute('data-t')) + '</strong><span>' + sp.getAttribute('data-y') + '</span></div>' +
+        book.innerHTML = '<div class="cover' + (moodsOf(m).length > 1 ? ' cover-mix' : '') + '" style="--bg:' + sp.style.getPropertyValue('--bg') + ';--bg2:' + sp.style.getPropertyValue('--bg2') + ';--fg:' + sp.style.getPropertyValue('--fg') + '"><span>' + moodsOf(m).map(function (x) { return MOODNAME[x]; }).join(' + ') + '</span><strong>' + esc(sp.getAttribute('data-t')) + '</strong><span>' + sp.getAttribute('data-y') + '</span></div>' +
           '<div class="book-info"><h2>' + esc(sp.getAttribute('data-t')) + '</h2><p>' + sp.getAttribute('data-d') + ' · ' + sp.getAttribute('data-f') + '</p><a class="btn btn-solid" href="' + sp.getAttribute('href') + '">read it →</a> <button class="btn" type="button" data-close>put it back</button></div>';
         book.hidden = false;
         var shelf = sp.closest('.shelf'); shelf.parentNode.insertBefore(book, shelf);

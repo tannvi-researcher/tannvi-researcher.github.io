@@ -7,19 +7,22 @@
     purple: ['#10071a', '#26103a', '#4d1d68', '#8a45ad', '#dfbdf0'],
     ember:  ['#120506', '#300a10', '#661320', '#b0312c', '#f1b59c']
   };
+  PALETTES.red = PALETTES.ember;
   function hashStr(s) { var h = 1779033703 ^ s.length; for (var i = 0; i < s.length; i++) { h = Math.imul(h ^ s.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); } return h >>> 0; }
   function rng(seed) { return function () { seed |= 0; seed = (seed + 0x6D2B79F5) | 0; var t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
   var uid = 0;
   function f(n) { return n.toFixed(1); }
 
   function paint(el) {
-    var pal = PALETTES[el.getAttribute('data-mood')] || PALETTES.ember;
+    var pals = (el.getAttribute('data-mood') || '').split(' ').map(function (m) { return PALETTES[m]; }).filter(Boolean);
+    if (!pals.length) pals = [PALETTES.ember];
+    var pal = pals[0], pal2 = pals[pals.length - 1];
     var r = rng(hashStr(el.getAttribute('data-seed') || 'x'));
     var id = 'a' + (uid++), S = 400;
     var vertical = r() < 0.35;
     var fields = 1 + Math.floor(r() * 3);
     var s = '<svg viewBox="0 0 ' + S + ' ' + S + '" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs>' +
-      '<linearGradient id="' + id + 'g" x1="0" y1="0" x2="' + (vertical ? 1 : 0) + '" y2="' + (vertical ? 0 : 1) + '"><stop offset="0" stop-color="' + pal[1] + '"/><stop offset="1" stop-color="' + pal[0] + '"/></linearGradient>' +
+      '<linearGradient id="' + id + 'g" x1="0" y1="0" x2="' + (vertical ? 1 : 0) + '" y2="' + (vertical ? 0 : 1) + '"><stop offset="0" stop-color="' + pal[1] + '"/><stop offset="1" stop-color="' + pal2[0] + '"/></linearGradient>' +
       '<filter id="' + id + 'b" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="' + f(6 + r() * 10) + '"/></filter>' +
       '<filter id="' + id + 'n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="' + Math.floor(r() * 99) + '"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .07 0"/></filter>' +
       '</defs><rect width="100%" height="100%" fill="url(#' + id + 'g)"/>';
@@ -30,7 +33,7 @@
     var pos = margin;
     s += '<g filter="url(#' + id + 'b)">';
     for (var j = 0; j < fields; j++) {
-      var len = span * sizes[j] / total, col = pal[2 + Math.floor(r() * 2)], op = (0.55 + r() * 0.4).toFixed(2);
+      var len = span * sizes[j] / total, col = pals[j % pals.length][2 + Math.floor(r() * 2)], op = (0.55 + r() * 0.4).toFixed(2);
       var side = margin * (0.7 + r() * 0.5);
       if (vertical) s += '<rect x="' + f(pos) + '" y="' + f(side) + '" width="' + f(len) + '" height="' + f(S - side * 2) + '" rx="6" fill="' + col + '" opacity="' + op + '"/>';
       else s += '<rect x="' + f(side) + '" y="' + f(pos) + '" width="' + f(S - side * 2) + '" height="' + f(len) + '" rx="6" fill="' + col + '" opacity="' + op + '"/>';

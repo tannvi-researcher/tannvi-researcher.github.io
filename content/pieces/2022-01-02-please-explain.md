@@ -1,7 +1,7 @@
 ---
 title: "please, explain"
 date: 2022-01-02
-collections: [Blues, Poetry]
+collections: [Red, Poetry]
 style: italic
 slug: please-explain
 ---

@@ -510,3 +510,17 @@ main { display: block; }
 .piece-text > p.part-head span { font-size: 1.5rem; letter-spacing: 0; text-transform: none; font-style: italic; color: var(--bone); }
 .piece-body.prose .piece-text > p.part-head:first-child::first-letter { float: none; font-size: inherit; line-height: inherit; padding: 0; color: inherit; font-style: inherit; }
 .piece-text > hr.part-rule { border: 0; height: 1px; background: var(--bone); opacity: .7; margin: 2.8em 0 0; }
+
+/* ---------- red mood and mixed moods ---------- */
+:root { --red: #d0492f; --red-deep: #4a0f17; }
+.dot-red { background: var(--red); box-shadow: 0 0 8px var(--red); }
+.tag-red { border-color: rgba(208, 73, 47, .55); color: #f1b59c; }
+.tile-red:hover { box-shadow: 0 0 0 1px var(--red) inset, 0 18px 40px -18px rgba(208, 73, 47, .6); }
+.tile-red .tile-kind i { background: var(--red); }
+.tile-mix .tile-kind i { background: linear-gradient(90deg, var(--m1), var(--m2)); }
+.tile-mix:hover { box-shadow: 0 0 0 1px var(--m1) inset, 0 18px 40px -18px var(--m2); }
+.chip-red i { background: var(--red); }
+.chip-red[aria-pressed="true"] { background: var(--red-deep); border-color: var(--red); }
+.chip-red[aria-pressed="true"] span { color: #f1b59c; }
+.spine-mix { background: linear-gradient(90deg, rgba(255,255,255,0) 10%, rgba(255,255,255,.1) 45%, rgba(255,255,255,0) 85%), linear-gradient(90deg, color-mix(in srgb, var(--bg) 85%, white) 0%, color-mix(in srgb, var(--bg) 85%, white) 42%, color-mix(in srgb, var(--bg2) 85%, white) 58%, color-mix(in srgb, var(--bg2) 85%, white) 100%); }
+.cover-mix { background: linear-gradient(160deg, var(--bg) 0%, var(--bg) 35%, var(--bg2) 65%, var(--bg2) 100%); }
