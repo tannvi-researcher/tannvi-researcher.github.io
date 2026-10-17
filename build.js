@@ -74,7 +74,7 @@ const pieces = fs.readdirSync(path.join(ROOT, 'content/pieces'))
     const mood = collections.includes('Blues') ? 'blues' : collections.includes('Purple') ? 'purple' : 'ember';
     return {
       title: data.title, date, slug, collections, mood, html, words, lines,
-      form: collections.includes('Poetry') ? 'poem' : 'prose',
+      form: collections.includes('Poetry') ? 'poem' : collections.includes('Story') ? 'story' : 'prose',
       style: data.style || '', warning: data.warning || '',
       firstLine: firstLine.slice(0, 140),
       url: `${y}/${mo}/${d}/${slug}/`,
@@ -197,7 +197,7 @@ function tile(p, link) {
   const [y, m] = p.date.split('-');
   return `<a class="tile tile-${p.mood}" href="${link(p.url)}" data-collections="${p.collections.join(' ').toLowerCase()} ${p.form}" data-title="${esc(p.title.toLowerCase())} ${esc(p.firstLine.toLowerCase())}">
   ${artTag(p, 'art-tile')}
-  <span class="tile-kind"><i></i>${p.form === 'poem' ? 'poem' : 'prose'}</span>
+  <span class="tile-kind"><i></i>${p.form}</span>
   <span class="tile-title">${esc(p.title)}</span>
   <span class="tile-hover"><span class="tile-line">${esc(p.firstLine)}</span><time datetime="${p.date}">${MONTHS[+m - 1].slice(0, 3)} ${y}</time></span>
 </a>`;
@@ -213,7 +213,7 @@ function spine(p, link, maxW, maxL) {
   const d = niceDate(p.date);
   return `<div class="slot" data-collections="${p.collections.join(' ').toLowerCase()} ${p.form}" data-title="${esc(p.title.toLowerCase())} ${esc(p.firstLine.toLowerCase())}">
     <a class="spine" href="${link(p.url)}" style="--h:${hv};--w:${wv};--bg:${bg};--fg:${fg}" data-t="${esc(p.title)}" data-d="${d}" data-f="${p.form}" data-m="${p.mood}" data-y="${p.date.slice(0, 4)}" aria-label="${esc(p.title)}, ${d}">
-      <span class="spine-mark">${p.form === 'poem' ? '❦' : '¶'}</span>
+      <span class="spine-mark">${p.form === 'poem' ? '❦' : p.form === 'story' ? '§' : '¶'}</span>
       <span class="spine-title">${esc(p.title)}</span>
       <span class="spine-mark">${p.date.slice(2, 4)}</span>
     </a>
@@ -305,7 +305,7 @@ function scratchPage(depth) {
   const count = f => pieces.filter(p => p.form === f || p.collections.map(c => c.toLowerCase()).includes(f)).length;
   return layout({
     title: 'Scratch · tannvi', depth, active: 'Scratch', bodyClass: 'scratch',
-    description: 'A little internet journal: poems and small essays.',
+    description: 'A little internet journal: poems, small essays and stories.',
     body: `
 <main>
 <section class="page-head">
@@ -318,6 +318,7 @@ function scratchPage(depth) {
     <button class="chip" aria-pressed="true" data-filter="all">All <span>${pieces.length}</span></button>
     <button class="chip chip-poem" aria-pressed="false" data-filter="poem">Poetry <span>${count('poem')}</span></button>
     <button class="chip chip-prose" aria-pressed="false" data-filter="prose">Prose <span>${count('prose')}</span></button>
+    ${count('story') ? `<button class="chip chip-story" aria-pressed="false" data-filter="story">Stories <span>${count('story')}</span></button>` : ''}
     <button class="chip chip-blues" aria-pressed="false" data-filter="blues"><i></i>Blues <span>${count('blues')}</span></button>
     <button class="chip chip-purple" aria-pressed="false" data-filter="purple"><i></i>Purple <span>${count('purple')}</span></button>
   </div>
@@ -370,12 +371,12 @@ pieces.forEach((p, i) => {
   <header class="piece-head">
     ${artTag(p, 'art-hero')}
     <div class="piece-head-inner">
-      <p class="piece-meta"><time datetime="${p.date}">${niceDate(p.date)}</time><span>·</span>${p.form === 'poem' ? 'poem' : 'prose'}<span>·</span>${mins} min</p>
+      <p class="piece-meta"><time datetime="${p.date}">${niceDate(p.date)}</time><span>·</span>${p.form}<span>·</span>${mins} min</p>
       <h1>${esc(p.title)}</h1>
       <div class="piece-tags">${tags(p)}</div>
     </div>
   </header>
-  <article class="piece-body ${p.form} ${p.style.split(' ').filter(Boolean).map(s => 'is-' + s).join(' ')}${p.warning ? ' has-warning' : ''}">
+  <article class="piece-body ${p.form === 'story' ? 'prose story' : p.form} ${p.style.split(' ').filter(Boolean).map(s => 'is-' + s).join(' ')}${p.warning ? ' has-warning' : ''}">
     ${p.warning ? `<div class="warning" data-warning><p class="warning-label">Content note</p><p>This piece touches on ${esc(p.warning.toLowerCase())}.</p><button class="btn" type="button" data-reveal>read on</button></div>` : ''}
     <div class="piece-text">${p.html}</div>
     <p class="fin" aria-hidden="true">❦</p>

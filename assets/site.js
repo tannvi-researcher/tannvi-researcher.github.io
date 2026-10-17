@@ -95,7 +95,7 @@
   var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   function cardHTML(p) {
     return '<a class="tile tile-' + p.m + '" href="' + p.u + '"><div class="art art-tile" data-seed="' + p.s + '" data-mood="' + p.m + '" aria-hidden="true"></div>' +
-      '<span class="tile-kind"><i></i>' + (p.f === 'poem' ? 'poem' : 'prose') + '</span><span class="tile-title">' + esc(p.t) + '</span>' +
+      '<span class="tile-kind"><i></i>' + p.f + '</span><span class="tile-title">' + esc(p.t) + '</span>' +
       '<span class="tile-hover"><span class="tile-line">' + esc(p.l) + '</span><time>' + MON[+p.d.slice(5, 7) - 1] + ' ' + p.d.slice(0, 4) + '</time></span></a>';
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
