@@ -1,8 +1,9 @@
 ---
-title: "a moment to forget years"
+title: "the last seconds of life"
 date: 2026-09-26
 collections: [Blues, Purple, Story]
-slug: a-moment-to-forget-years
+slug: the-last-seconds-of-life
+old_url: 2026/09/26/a-moment-to-forget-years/
 ---
 "in the end, what you remember most are the things you didn't do," says ivy. "i don't know when my clock is going to run out. but i can tell you exactly what i will remember in those last 60 seconds."
 
@@ -144,18 +145,24 @@ and then one day, a year later, ivy was really into baguettes, and she was in a 
 
 ivy looked up at him. there he was. she was in shock. she ran out of the shop, and he followed her. "stop, please."
 
-ivy turned around and screamed, "you have no right to pounce into my life whenever you feel like it. who the hell do you think you are? why the hell are you here? what the hell? why are you trying to mess with me? every time, every time i'm trying to move away, and i am, i really am, why are you suddenly in front of me all the fucking time? why the hell are you here? what do you want from me? what more do you want from me? what more can i give you?"
+ivy stood there and took five seconds to turn around. and then, in the middle of the street, she screamed. "you have no right to pounce back into my life whenever you feel like it. i cannot be the convenient option you turn back to whenever you feel bored with your life. you can't just come back to me whenever you feel like it. who the hell do you think you are? and why the hell are you doing this? why are you always trying to mess with me? every time, every fucking time i'm trying to move away, and i really am, i really am this time, you're suddenly in front of me, saying these things. why are you here? why are you fucking here? what do you want from me? what more can you want from me? what more can i give you? what else can you take away from me?"
 
-he said, "no. no, i'm just here to apologise. i just want you back. i am so sorry. you see, i wasn't in the right place, and you know that. and that gives me no right to behave the way i did, but i'm a fucking child, and i did not know how to react to my fucking mother passing away. please, i want you back. we are meant to be. of course we are meant to be. however much we try to pull each other apart and drive each other away, somehow we're fucking back again. i didn't even know you were here. i had just come for an event at fucking tilburg university, and someone mentioned a girl here i might know. and it was you. why don't you understand? you and i are meant to be with each other. the universe wants us together. the world wants us together. however much we don't want it."
+"no," he said. "i'm just here to apologise. i just want you back. i'm sorry. you see, i'm a fucking child. i always am. and i have no right to behave this way, but i don't know how else to. you are my person. you've always been my person. we are meant to be. of course we are meant to be. see, i didn't even come after you. i didn't even know you were here. i just came for a fucking work conference, and then i saw your name on the list of attendees. i had to come. how can you not see this? however much we try to push each other away, somehow the world brings us back in front of each other. how can i not take this as a sign? you and i are meant to be. it's you and me. it's us. it always has been. however much we don't want it. however much you don't accept it. so let's just fucking resolve this. let's just fucking resolve this one last time. this is it. this is how it's supposed to be."
 
-ivy looked at him. there was silence for 10 seconds.
+ivy looked at him. for 10 seconds, it was radio silence. it seemed like the whole world around her had paused. and she really wanted to cave in. it was him. it was the guy she could never fully get over, and never really would be able to.
 
-"say something. anything," he said.
+"say something. anything. please," he said.
 
-there was a gust of wind, and ivy's hair flew onto her face. she raised her left hand to push the strands away, and there it was: a flash of light off the ring she was wearing.
+there was a gust of wind, and ivy's hair flew into her face. she raised her left hand to push the strands away. and there it was. it felt like all the sun's light had bounced off the ring she was wearing.
 
-"so you moved on," he said. "you really did move on this time."
+"so you moved on. you really did this time. you really did," he said.
 
-ivy took a step towards him. she took his left hand and cupped it in both of hers, and she said, "it takes years to forget a moment, and a moment to forget years. i've forgotten you. if the universe wants us together, then the universe should know it doesn't dictate me anymore. i don't want to be loved like this. and hey, i loved you. i loved you in every way my heart could. i loved you even when you did not love me. and i will always love you. but i'm not in love with you anymore."
+ivy took a step towards him. she took his left hand and cupped it in both of hers, and she said, "it takes years to forget a moment, and a moment to forget years. you have no idea how long it has taken me to come here and say this. i want to forget you now. and if the universe wants us to be together, and if i am being blind about it, then i declare that that's how i want it to be. the universe does not dictate it anymore. i'd rather be blind. i don't want to be loved like this. i don't want to live in fear of you giving up again. and hey, what we had was the most beautiful thing ever. and i have loved you. i loved you in every possible way my heart could love you. i loved you even when you did not love me. and i will probably always love you. how can i not love you? but i'm not in love with you anymore. you see, love is never enough. our love, at least, was never enough. this is it. this is all we were meant to be. this is the final goodbye. this needs to stop. this needs to end."
 
-ivy pulled her hands back. and as her hands slipped away from his, those five seconds, those are what will be on loop in her last 60 seconds of life.
+ivy pulled her hands back. as her hands slipped away from his, he tried to pull them back again, and she didn't let him. that exact minute. that exact final brush of hands.
+
+"that will be my last 60 seconds of life," ivy says.
+
+her daughter looks at her and says, "you never told me about him, ma. do you regret not living a life with him? is that why you can't let him go? not even in death?"
+
+"no," ivy says. "i don't regret it. but i never really understood it. i think he is in that fragmented corner of my life that i could never really solve. but no, i don't regret any of it."
