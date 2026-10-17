@@ -5,9 +5,9 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var data = (function () { var el = $('#pieces-data'); try { return el ? JSON.parse(el.textContent) : []; } catch (e) { return []; } })();
-  var MOOD = { blues: '#6f8fe0', purple: '#b06ad4', red: '#d0492f', ember: '#d0492f' };
-  var MOODNAME = { blues: 'Blues', purple: 'Purple', red: 'Red' };
-  function moodsOf(m) { return String(m || 'red').split(' '); }
+  var MOOD = { blues: '#6f8fe0', purple: '#b06ad4', maroon: '#b23a55', ember: '#d0492f' };
+  var MOODNAME = { blues: 'Blues', purple: 'Purple', maroon: 'Maroon' };
+  function moodsOf(m) { return String(m || 'maroon').split(' '); }
 
   // top bar background after scrolling
   var bar = $('.topbar');
@@ -126,7 +126,7 @@
     var y0 = new Date(new Date(t0).getFullYear(), 0, 1).getTime(), y1 = new Date(new Date(t1).getFullYear() + 1, 0, 1).getTime();
     function X(t) { return padX + (t - y0) / (y1 - y0) * (W2 - padX * 2); }
     function h(s) { var x = 0; for (var i = 0; i < s.length; i++) x = (x * 31 + s.charCodeAt(i)) >>> 0; return x; }
-    var bands = { blues: 0.3, red: 0.5, ember: 0.5, purple: 0.72 };
+    var bands = { blues: 0.3, maroon: 0.5, ember: 0.5, purple: 0.72 };
     function bandOf(m) { var ms = moodsOf(m); return ms.reduce(function (a, x) { return a + bands[x]; }, 0) / ms.length; }
     var svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('viewBox', '0 0 ' + W2 + ' ' + H2); svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');

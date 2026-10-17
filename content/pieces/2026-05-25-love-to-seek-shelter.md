@@ -1,7 +1,7 @@
 ---
 title: "love: to seek shelter (v4)"
 date: 2026-05-25
-collections: [Purple, Red]
+collections: [Purple, Maroon]
 slug: love-to-seek-shelter
 ---
 as a child, every book you read, every movie you watch, every song you listen to, describes that we as humans have come to find our other half. your goal. the person you go back to with all of your vulnerability, honesty and love. that one person you love without having any conditions in return. and that love without conditions is the love you're told you'll find in your partner. they tell you that that person will be the only place you'll probably be honest with. the only thing you'll probably be honest with.

@@ -1,7 +1,7 @@
 ---
 title: "the next one"
 date: 2021-07-26
-collections: [Blues, Red]
+collections: [Blues, Maroon]
 slug: the-next-one
 ---
 i know that you want her

@@ -1,7 +1,7 @@
 ---
 title: "people like you"
 date: 2022-02-27
-collections: [Blues, Red, Poetry]
+collections: [Blues, Maroon, Poetry]
 style: italic
 slug: people-like-you
 ---
