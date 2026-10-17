@@ -7,6 +7,7 @@
     purple: ['#10071a', '#26103a', '#4d1d68', '#8a45ad', '#dfbdf0'],
     ember:  ['#120506', '#300a10', '#661320', '#b0312c', '#f1b59c']
   };
+  PALETTES.yellow = ['#140f03', '#3a2b07', '#7a5a10', '#c9962a', '#f7e2a0'];
   PALETTES.maroon = ['#12050a', '#2e0a16', '#5e1428', '#a0304a', '#efb3c2'];
   function hashStr(s) { var h = 1779033703 ^ s.length; for (var i = 0; i < s.length; i++) { h = Math.imul(h ^ s.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); } return h >>> 0; }
   function rng(seed) { return function () { seed |= 0; seed = (seed + 0x6D2B79F5) | 0; var t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }

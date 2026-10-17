@@ -1,7 +1,7 @@
 ---
 title: "sweetest slow poison"
 date: 2023-09-30
-collections: [Poetry, Purple]
+collections: [Yellow, Poetry]
 style: italic
 slug: sweetest-slow-poison
 ---

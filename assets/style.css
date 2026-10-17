@@ -511,6 +511,16 @@ main { display: block; }
 .piece-body.prose .piece-text > p.part-head:first-child::first-letter { float: none; font-size: inherit; line-height: inherit; padding: 0; color: inherit; font-style: inherit; }
 .piece-text > hr.part-rule { border: 0; height: 1px; background: var(--bone); opacity: .7; margin: 2.8em 0 0; }
 
+/* ---------- yellow (joy) ---------- */
+:root { --yellow: #e0b13c; --yellow-deep: #3d2e08; }
+.dot-yellow { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
+.tag-yellow { border-color: rgba(224, 177, 60, .6); color: #f5dc8a; }
+.tile-yellow:hover { box-shadow: 0 0 0 1px var(--yellow) inset, 0 18px 40px -18px rgba(224, 177, 60, .6); }
+.tile-yellow .tile-kind i { background: var(--yellow); }
+.chip-yellow i { background: var(--yellow); }
+.chip-yellow[aria-pressed="true"] { background: var(--yellow-deep); border-color: var(--yellow); }
+.chip-yellow[aria-pressed="true"] span { color: #f5dc8a; }
+
 /* ---------- maroon mood and mixed moods ---------- */
 :root { --maroon: #b23a55; --maroon-deep: #3e0b1c; }
 .dot-maroon { background: var(--maroon); box-shadow: 0 0 8px var(--maroon); }

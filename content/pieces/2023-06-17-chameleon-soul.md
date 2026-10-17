@@ -1,7 +1,7 @@
 ---
 title: "Chameleon Soul"
 date: 2023-06-17
-collections: [Poetry, Purple]
+collections: [Purple, Yellow, Poetry]
 style: italic
 slug: chameleon-soul
 ---

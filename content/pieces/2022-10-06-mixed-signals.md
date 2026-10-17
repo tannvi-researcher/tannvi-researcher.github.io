@@ -1,7 +1,7 @@
 ---
 title: "mixed signals"
 date: 2022-10-06
-collections: [Poetry, Purple]
+collections: [Purple, Yellow, Poetry]
 style: italic
 slug: mixed-signals
 ---

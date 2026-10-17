@@ -1,7 +1,7 @@
 ---
 title: "Live a Little"
 date: 2022-09-30
-collections: [Blues]
+collections: [Yellow]
 slug: just-love-draft
 ---
 I will be turning 21 years old very soon, and I think this is the right time

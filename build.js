@@ -71,7 +71,7 @@ const pieces = fs.readdirSync(path.join(ROOT, 'content/pieces'))
     const lines = body.trim().split('\n').length;
     const firstLine = plain.split('\n').map(s => s.trim())
       .find(s => s.length > 12 && /[a-z]/i.test(s) && !/^[.…\-–—~()]+$/.test(s) && !/^\(.*\)$/.test(s) && !/^(tuning|key|capo|draft)/i.test(s)) || '';
-    const moods = [['Blues', 'blues'], ['Purple', 'purple'], ['Maroon', 'maroon']].filter(([c]) => collections.includes(c)).map(([, m]) => m);
+    const moods = [['Blues', 'blues'], ['Purple', 'purple'], ['Maroon', 'maroon'], ['Yellow', 'yellow']].filter(([c]) => collections.includes(c)).map(([, m]) => m);
     if (!moods.length) moods.push('maroon');
     const mood = moods.join(' ');
     return {
@@ -207,9 +207,10 @@ function tile(p, link) {
 const SHADES = {
   blues: [['#16224a', '#a9bdf0'], ['#1c2c5e', '#c4d2f5'], ['#101a3a', '#8ea6e6'], ['#23346b', '#d8e1f8'], ['#0e1733', '#a9bdf0']],
   purple: [['#2e1240', '#dcb6ef'], ['#3c1752', '#e8cdf5'], ['#24103a', '#c79be0'], ['#4a1c5e', '#f0dcf8'], ['#2a0f3a', '#d7aef0']],
+  yellow: [['#5a3a06', '#f7dc8f'], ['#6b4608', '#f9e4a8'], ['#4a3005', '#f2d27a'], ['#7a520c', '#fbeabb'], ['#523405', '#f4d684']],
   maroon: [['#3a0a18', '#f2b8c6'], ['#4a0e20', '#f6c9d4'], ['#2c0812', '#e9a2b4'], ['#561226', '#f9d6df'], ['#33091a', '#eeafbf']],
 };
-const MOOD_COL = { blues: '#6f8fe0', purple: '#b06ad4', maroon: '#b23a55' };
+const MOOD_COL = { blues: '#6f8fe0', purple: '#b06ad4', maroon: '#b23a55', yellow: '#e0b13c' };
 function tileClass(moods) { return ['tile', ...moods.map(m => 'tile-' + m), moods.length > 1 ? 'tile-mix' : ''].filter(Boolean).join(' '); }
 function moodVars(moods) { return `--m1:${MOOD_COL[moods[0]]};--m2:${MOOD_COL[moods[moods.length - 1]]}`; }
 function hashStr(str) { let x = 2166136261; for (const c of str) { x ^= c.charCodeAt(0); x = Math.imul(x, 16777619); } return x >>> 0; }
@@ -329,6 +330,7 @@ function scratchPage(depth) {
     ${count('story') ? `<button class="chip chip-story" aria-pressed="false" data-filter="story">Stories <span>${count('story')}</span></button>` : ''}
     <button class="chip chip-blues" aria-pressed="false" data-filter="blues"><i></i>Blues <span>${count('blues')}</span></button>
     <button class="chip chip-purple" aria-pressed="false" data-filter="purple"><i></i>Purple <span>${count('purple')}</span></button>
+    ${count('yellow') ? `<button class="chip chip-yellow" aria-pressed="false" data-filter="yellow"><i></i>Yellow <span>${count('yellow')}</span></button>` : ''}
     ${count('maroon') ? `<button class="chip chip-maroon" aria-pressed="false" data-filter="maroon"><i></i>Maroon <span>${count('maroon')}</span></button>` : ''}
   </div>
   <div class="controls-right">
@@ -353,6 +355,7 @@ function scratchPage(depth) {
     <span><i class="dot dot-blues"></i>Blues</span>
     <span><i class="dot dot-purple"></i>Purple</span>
     <span><i class="dot dot-maroon"></i>Maroon</span>
+    <span><i class="dot dot-yellow"></i>Yellow</span>
   </div>
 </section>
 </main>
