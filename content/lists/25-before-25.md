@@ -11,7 +11,7 @@ intro: Crossed-out ones are done.
 6. let's go to mysore one more time, get it out of our system
 7. ~~solo dinner at a fancy restaurant~~
 8. have a photoshoot in 2-3 new outfits
-9. enrol for the CIPP-E certificate
+9. ~~watch a movie by yourself~~
 10. read 5 books, not work/self-improvement related, write reviews for all 5 on your blog
 11. ~~family vacation (be present)~~
 12. ~~take a solo trip, no itinerary, just book and go~~

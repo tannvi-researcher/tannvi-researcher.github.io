@@ -108,7 +108,7 @@ function parseList(file) {
   });
   return { ...data, items };
 }
-const lists = ['content/lists/before-i-die.md', 'content/lists/25-before-25.md'].map(parseList);
+const lists = ['content/lists/25-before-25.md', 'content/lists/before-i-die.md'].map(parseList);
 
 function parseBooks() {
   const books = []; let cur = null;
