@@ -23,4 +23,4 @@ I also volunteer as *Researcher* at [Center for Democratic AI](https://centerfor
 
 ## Outside of that
 
-I write simply because I like to. I am interested in people, places, literature, travel, and the small, often ordinary things that become interesting when you pay enough attention to them. You can find my little internet journal at [Scratch](/scratch/) (a lot of latest posts have been archived – will be up very soon)!
+I write simply because I like to. I am interested in people, places, literature, travel, and the small, often ordinary things that become interesting when you pay enough attention to them. You can find my little internet journal at [Scratch](/scratch/).
