@@ -536,27 +536,20 @@ main { display: block; }
 .cover-mix { background: linear-gradient(160deg, var(--bg) 0%, var(--bg) 35%, var(--bg2) 65%, var(--bg2) 100%); }
 
 /* ============ home refresh · oct 2026 ============
-   bodoni for the big moments, a typewriter for the small marks,
-   one slow page-load (the photo develops, the name rises letter by letter). */
-:root {
-  --display: "Bodoni Moda", "Didot", "EB Garamond", serif;
-  --type: "Courier Prime", "Courier New", monospace;
-}
+   one font (eb garamond) and three sizes: the name, the text, the small labels.
+   one slow page-load: the photo develops, the name rises letter by letter. */
+:root { --t-text: 1.15rem; --t-label: .78rem; }
 
 /* hero */
-.home .hero-name { font-family: var(--display); font-style: italic; font-weight: 400; letter-spacing: -.04em; font-size: clamp(4rem, 10vw, 8.6rem);
-  background: none; color: var(--bone); text-shadow: none; line-height: .95; }
+.home .hero-name { background: none; color: var(--bone); text-shadow: none; }
 .hero-name .ch { display: inline-block; padding: 0 .1em .08em 0; margin-right: -.1em;
-  background: linear-gradient(180deg, var(--bone) 28%, var(--rose) 70%, var(--ember)); -webkit-background-clip: text; background-clip: text; color: transparent;
+  background: linear-gradient(180deg, var(--bone) 30%, var(--rose) 75%, var(--ember)); -webkit-background-clip: text; background-clip: text; color: transparent;
   opacity: 0; transform: translateY(.4em) rotate(5deg); filter: blur(12px);
   animation: rise 1.2s cubic-bezier(.2, .7, .1, 1) forwards; animation-delay: calc(.5s + var(--i) * .09s); }
 @keyframes rise { to { opacity: 1; transform: none; filter: blur(0); } }
-.home .kicker { font-family: var(--type); text-transform: none; letter-spacing: .08em; font-size: .86rem; color: var(--rose);
-  clip-path: inset(0 100% 0 0); animation: typeon 1.4s steps(34) .15s forwards; }
-@keyframes typeon { to { clip-path: inset(0 -2% 0 0); } }
-.home .hero-line { opacity: 0; transform: translateY(10px); animation: lift 1s ease 1.3s forwards; }
+.home .kicker { font-size: var(--t-label); opacity: 0; animation: lift 1s ease .2s forwards; }
+.home .hero-line { font-size: var(--t-text); opacity: 0; transform: translateY(10px); animation: lift 1s ease 1.3s forwards; }
 @keyframes lift { to { opacity: 1; transform: none; } }
-.home .rotator { font-family: var(--display); font-style: italic; letter-spacing: -.01em; }
 .home .hero-photo { animation: develop 2.8s cubic-bezier(.3, .6, .2, 1) both; }
 @keyframes develop { from { filter: blur(16px) saturate(0) brightness(.35); transform: scale(1.08); } to { filter: none; transform: none; } }
 
@@ -570,46 +563,25 @@ main { display: block; }
 @keyframes drift { to { transform: translate(7vw, -5vh) scale(1.2); } }
 @media (max-width: 760px) { .aura i { width: 70vw; top: auto !important; bottom: 0; } .aura i:nth-child(2) { left: 30%; } .aura i:nth-child(4) { left: 50%; bottom: 20%; } }
 
-/* typewritten section marks */
-.home .section-label { font-family: var(--type); text-transform: lowercase; letter-spacing: .06em; font-size: .9rem; color: var(--mute); }
-.home .section-label span::before { content: "/"; width: auto; height: auto; background: none; color: var(--ember); }
-
-/* about */
-.about-lead .hello { display: block; font-family: var(--display); font-style: italic; font-size: 1.55em; line-height: 1.1; color: var(--rose); margin-bottom: .35em; letter-spacing: -.02em; }
-
-/* now: a note taped to the page */
-.home .now-card { max-width: 560px; border: 0; border-radius: 3px; padding: 34px 30px 28px 62px; color: #1d1012; font-family: var(--type); transform: rotate(-1.2deg);
-  background:
-    linear-gradient(90deg, transparent 44px, rgba(208, 73, 47, .45) 44px 45px, transparent 45px),
-    repeating-linear-gradient(transparent 0 29px, rgba(61, 14, 21, .1) 29px 30px),
-    linear-gradient(160deg, #f3ebe1, #e6d8c8);
-  box-shadow: 0 34px 60px -28px rgba(0, 0, 0, .95), 0 1px 0 rgba(255, 255, 255, .4) inset;
-  transition: transform .5s cubic-bezier(.2, .7, .1, 1); }
-.home .now-card:hover { transform: rotate(0) translateY(-4px); }
-.home .now-card::after { content: ""; position: absolute; top: -13px; left: 50%; width: 118px; height: 28px; transform: translateX(-50%) rotate(2.5deg);
-  background: rgba(231, 163, 147, .55); box-shadow: 0 1px 3px rgba(0, 0, 0, .25); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-.home .now-card p { font-size: 1.02rem; line-height: 1.75; }
-.home .now-card a { color: var(--crimson); text-decoration-color: rgba(155, 28, 44, .45); }
-.home .now-card .pulse { left: 18px; top: 40px; background: var(--crimson); }
-
-/* before this */
-.home .numeral { font-family: var(--display); font-size: 1.7rem; line-height: 1; padding-top: 4px; }
-.home .timeline li { grid-template-columns: 76px 1fr; }
+/* one text size for everything below the hero */
+.home .section-label { font-size: var(--t-label); }
+.home .about-lead p, .home .now-card p, .home .timeline li, .home .also-body p, .home .lr-label, .home .lr-note { font-size: var(--t-text); line-height: 1.65; }
+.home .lr-note { color: var(--mute); }
+.home .numeral { font-size: var(--t-text); }
+.home .about-lead p::first-letter { font-size: inherit; }
 
 /* lately: newest three pieces */
 .lately-body { min-width: 0; }
 .lately-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.lately-more { margin: 16px 0 0; font-family: var(--type); font-size: .95rem; }
+.lately-more { margin: 16px 0 0; font-size: var(--t-text); }
 
-/* writing elsewhere */
-.home .lr-label { font-family: var(--display); letter-spacing: -.02em; }
+/* writing elsewhere: a wine wash on hover */
 .home .link-rows a { overflow: hidden; }
 .home .link-rows a::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(155, 28, 44, .32), rgba(155, 28, 44, 0) 80%);
   transform: scaleX(0); transform-origin: left; transition: transform .6s cubic-bezier(.2, .7, .1, 1); }
 .home .link-rows a:hover::after { transform: scaleX(1); }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-name .ch, .home .kicker, .home .hero-line, .home .hero-photo, .aura { animation: none !important; opacity: 1; transform: none; filter: none; clip-path: none; }
+  .hero-name .ch, .home .kicker, .home .hero-line, .home .hero-photo, .aura { animation: none !important; opacity: 1; transform: none; filter: none; }
   .aura i { animation: none !important; }
 }
-@media (max-width: 760px) { .home .hero-name { font-size: clamp(4.6rem, 23vw, 7rem); } .lately-tiles .tile-title { font-size: .95rem; } }

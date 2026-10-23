@@ -151,7 +151,7 @@ function layout({ title, description = about.data.intro, depth, body, bodyClass 
 <link rel="icon" href="${link('assets/favicon.svg')}" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${link('assets/style.css')}">
 </head>
 <body class="${bodyClass}">
@@ -276,7 +276,7 @@ fs.mkdirSync(OUT, { recursive: true });
 
 <section class="about" id="about">
   <div class="section-label"><span>About</span></div>
-  <div class="about-lead reveal">${lead.replace(/<p>([^.!?]{1,40}[.!?])\s*/, '<p><span class="hello">$1</span>')}</div>
+  <div class="about-lead reveal">${lead}</div>
 </section>
 
 <section class="now reveal">
