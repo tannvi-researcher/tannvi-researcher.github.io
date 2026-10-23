@@ -151,7 +151,7 @@ function layout({ title, description = about.data.intro, depth, body, bodyClass 
 <link rel="icon" href="${link('assets/favicon.svg')}" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${link('assets/style.css')}">
 </head>
 <body class="${bodyClass}">
@@ -265,9 +265,10 @@ fs.mkdirSync(OUT, { recursive: true });
 <section class="hero has-photo">
   <div class="hero-photo" style="background-image:url('${link('assets/hero.jpg')}')" role="img" aria-label="Tannvi as a child, in a yellow sweater, on a garden chair"></div>
   <canvas class="ink" aria-hidden="true"></canvas>
+  <div class="aura" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="hero-inner">
     <p class="kicker">law · technology · policy · poetry</p>
-    <h1 class="hero-name">${esc(about.data.name)}</h1>
+    <h1 class="hero-name" aria-label="${esc(about.data.name)}">${[...about.data.name].map((c, i) => `<span class="ch" style="--i:${i}" aria-hidden="true">${esc(c)}</span>`).join('')}</h1>
     <p class="hero-line">researches <span class="rotator" data-words="responsible AI|data governance|technology policy|privacy law|poetry at 2 AM">responsible AI</span></p>
   </div>
   <a class="scroll-cue" href="#about">scroll<span></span></a>
@@ -275,7 +276,7 @@ fs.mkdirSync(OUT, { recursive: true });
 
 <section class="about" id="about">
   <div class="section-label"><span>About</span></div>
-  <div class="about-lead reveal">${lead}</div>
+  <div class="about-lead reveal">${lead.replace(/<p>([^.!?]{1,40}[.!?])\s*/, '<p><span class="hello">$1</span>')}</div>
 </section>
 
 <section class="now reveal">
@@ -293,6 +294,16 @@ fs.mkdirSync(OUT, { recursive: true });
 <section class="also reveal">
   <div class="section-label"><span>Also</span></div>
   <div class="also-body">${sections['Also'] || ''}${sections['Outside of that'] || ''}</div>
+</section>
+
+<section class="lately">
+  <div class="section-label"><span>Lately</span></div>
+  <div class="lately-body">
+    <div class="tiles lately-tiles reveal">
+    ${pieces.slice(0, 3).map(p => tile(p, link)).join('\n    ')}
+    </div>
+    <p class="lately-more"><a class="text-link" href="${link('scratch/')}">everything on scratch →</a></p>
+  </div>
 </section>
 
 <section class="elsewhere">
