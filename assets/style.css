@@ -585,3 +585,29 @@ main { display: block; }
   .hero-name .ch, .home .kicker, .home .hero-line, .home .hero-photo, .aura { animation: none !important; opacity: 1; transform: none; filter: none; }
   .aura i { animation: none !important; }
 }
+
+/* ============ scratch · books lying flat (oct 2026) ============
+   titles read left to right at text size; width still follows length, colour still follows mood. */
+.row { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 8px 28px; padding: 6px 0 0; background: none; }
+.slot { height: auto; padding: 0; display: block; }
+.spine { --h: .5; flex-direction: row; justify-content: flex-start; align-items: center; gap: 12px;
+  height: 46px; width: calc(86% + 14% * var(--h)); padding: 0 14px 0 12px; border-radius: 2px 5px 5px 2px; transform-origin: left center;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 90%, white), var(--bg) 55%, color-mix(in srgb, var(--bg) 80%, black));
+  box-shadow: inset 4px 0 0 rgba(0,0,0,.28), inset -3px 0 0 rgba(239,230,220,.14), 0 2px 4px rgba(0,0,0,.5); }
+.spine-mix { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0) 50%, rgba(0,0,0,.18)), linear-gradient(90deg, var(--bg) 0%, var(--bg) 40%, var(--bg2) 75%, var(--bg2) 100%); }
+.spine::before, .spine::after { top: 7px; bottom: 7px; height: auto; width: 1px; left: auto; right: auto; box-shadow: none; }
+.spine::before { left: 34px; }
+.spine::after { right: 44px; }
+.spine:hover, .spine:focus-visible, .spine.pulled { transform: translateX(10px); filter: brightness(1.18);
+  box-shadow: inset 4px 0 0 rgba(0,0,0,.28), inset -3px 0 0 rgba(239,230,220,.2), 0 10px 22px -10px rgba(0,0,0,.85); }
+.spine-title { writing-mode: horizontal-tb; transform: none; height: auto; flex: 1; min-width: 0; display: block; text-align: left;
+  font-size: 1rem; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 14px; }
+.spine-mark { font-size: .78rem; flex: none; }
+.spine-mark:last-child { width: 30px; text-align: right; }
+.shelf { margin-bottom: 34px; }
+.shelf-year { margin-bottom: 10px; }
+@media (max-width: 560px) {
+  .row { grid-template-columns: minmax(0, 1fr); gap: 7px; padding: 6px 0 0; }
+  .spine { width: calc(84% + 16% * var(--h)); }
+  .spine-title { font-size: 1rem; }
+}
