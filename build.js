@@ -121,6 +121,19 @@ function parseBooks() {
 }
 const books = parseBooks();
 
+// Performances: content/performances.md, one "# venue" block each with date / photo / alt / piece lines
+function parsePerformances() {
+  const f = path.join(ROOT, 'content/performances.md');
+  if (!fs.existsSync(f)) return [];
+  const out = []; let cur = null;
+  for (const line of read('content/performances.md').split('\n')) {
+    const h = line.match(/^#\s+(.*)/); if (h) { cur = { venue: h[1].trim() }; out.push(cur); continue; }
+    const kv = line.match(/^(date|photo|alt|piece):\s*(.+)/); if (kv && cur) cur[kv[1]] = kv[2].trim();
+  }
+  return out.filter(p => p.date).sort((a, b) => b.date.localeCompare(a.date));
+}
+const performances = parsePerformances();
+
 // Opinion articles: one Markdown file per article in content/articles/
 const articlesDir = path.join(ROOT, 'content/articles');
 const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
@@ -538,10 +551,11 @@ articles.forEach(a => {
 // Anthologies
 {
   const depth = 1;
+  const link = makeLinker(depth);
   const body = `
 <main>
 <section class="page-head">
-  <p class="kicker">in print</p>
+  <p class="kicker">in print${performances.length ? ' · on stage' : ''}</p>
   <h1>Anthologies</h1>
   <p class="page-intro">Collections my poems have appeared in.</p>
 </section>
@@ -552,6 +566,15 @@ articles.forEach(a => {
     <p class="book-links">${b.links.map(l => `<a class="text-link" href="${esc(l.href)}">${esc(l.label)}</a>`).join('<span>·</span>')}</p>
   </article>`).join('\n  ')}
 </section>
+${performances.length ? `<section class="stage" id="on-stage">
+  <div class="section-label"><span>On stage</span></div>
+  <div class="stage-list">
+  ${performances.map(p => `<figure class="gig">
+    ${p.photo ? `<img src="${link(p.photo.replace(/^\//, ''))}" alt="${esc(p.alt || 'Tannvi performing at ' + p.venue)}" loading="lazy">` : ''}
+    <figcaption><time datetime="${p.date}">${niceDate(p.date)}</time><strong>${esc(p.venue)}</strong>${p.piece ? `<span>read ${esc(p.piece)}</span>` : ''}</figcaption>
+  </figure>`).join('\n  ')}
+  </div>
+</section>` : ''}
 </main>`;
   write('anthologies/index.html', layout({ title: 'Anthologies · tannvi', depth, body, bodyClass: 'books-page', active: 'Anthologies' }));
 }

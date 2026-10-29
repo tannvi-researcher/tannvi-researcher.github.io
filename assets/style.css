@@ -611,3 +611,18 @@ main { display: block; }
   .spine { width: calc(84% + 16% * var(--h)); }
   .spine-title { font-size: 1rem; }
 }
+
+/* ---------- Anthologies: on stage ---------- */
+.stage { max-width: var(--wide); margin: 0 auto 90px; padding: 0 var(--gut); }
+.stage > .section-label { margin-bottom: 26px; }
+.stage-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 48px 36px; }
+.stage-list:has(> .gig:only-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gig { margin: 0; }
+.gig img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 52%; border-radius: 10px; border: 1px solid var(--line);
+  box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .9); transition: transform .5s cubic-bezier(.2, .7, .1, 1); }
+.gig:hover img { transform: translateY(-4px); }
+.gig figcaption { display: flex; flex-direction: column; gap: 2px; margin-top: 14px; }
+.gig time { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--rose); }
+.gig strong { font-weight: 400; font-style: italic; font-size: 1.9rem; line-height: 1.15; }
+.gig span { color: var(--mute); }
+@media (max-width: 760px) { .stage-list:has(> .gig:only-child) { grid-template-columns: 1fr; } }
