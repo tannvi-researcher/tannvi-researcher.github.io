@@ -626,3 +626,5 @@ main { display: block; }
 .gig strong { font-weight: 400; font-style: italic; font-size: 1.9rem; line-height: 1.15; }
 .gig span { color: var(--mute); }
 @media (max-width: 760px) { .stage-list:has(> .gig:only-child) { grid-template-columns: 1fr; } }
+.in-print { max-width: var(--wide); margin: 0 auto 26px; padding: 0 var(--gut); }
+.in-print .page-intro { margin: 12px 0 0; }

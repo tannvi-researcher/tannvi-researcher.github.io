@@ -150,7 +150,7 @@ const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
 // ---------- layout ----------
 function layout({ title, description = about.data.intro, depth, body, bodyClass = '', active = '' }) {
   const link = makeLinker(depth);
-  const nav = [['About', ''], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Anthologies', 'anthologies/']];
+  const nav = [['About', ''], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Print & Stage', 'anthologies/']];
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -173,7 +173,7 @@ function layout({ title, description = about.data.intro, depth, body, bodyClass 
   <a class="brand" href="${link('')}">tannvi</a>
   <nav aria-label="Main">
     ${nav.map(([label, p, sub]) => {
-      const a = `<a href="${link(p)}"${active === label ? ' aria-current="page"' : ''}>${label}</a>`;
+      const a = `<a href="${link(p)}"${active === label ? ' aria-current="page"' : ''}>${esc(label)}</a>`;
       if (!sub) return a;
       return `<div class="has-menu">${a}<div class="menu">${sub.map(l => `<a href="${link(l.url)}">${esc(l.title)}</a>`).join('')}</div></div>`;
     }).join('\n    ')}
@@ -555,8 +555,11 @@ articles.forEach(a => {
   const body = `
 <main>
 <section class="page-head">
-  <p class="kicker">in print${performances.length ? ' · on stage' : ''}</p>
-  <h1>Anthologies</h1>
+  <p class="kicker">anthologies · performances</p>
+  <h1>Print &amp; Stage</h1>
+</section>
+<section class="in-print">
+  <div class="section-label"><span>In print</span></div>
   <p class="page-intro">Collections my poems have appeared in.</p>
 </section>
 <section class="books">
@@ -576,7 +579,7 @@ ${performances.length ? `<section class="stage" id="on-stage">
   </div>
 </section>` : ''}
 </main>`;
-  write('anthologies/index.html', layout({ title: 'Anthologies · tannvi', depth, body, bodyClass: 'books-page', active: 'Anthologies' }));
+  write('anthologies/index.html', layout({ title: 'Print & Stage · tannvi', depth, body, bodyClass: 'books-page', active: 'Print & Stage' }));
 }
 
 // 404
