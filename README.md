@@ -65,7 +65,7 @@ Delete its file, or move it into a folder called `content/archive/` (anything ou
 - About page: `content/about.md`
 - Links at the bottom and "Writing elsewhere": `content/links.md`
 - Lists: `content/lists/before-i-die.md` and `content/lists/25-before-25.md`. Wrap an item in `~~` when it's done and the ring updates by itself.
-- Anthologies: `content/anthologies.md`
+- Print & Stage: `content/anthologies.md` (books) and `content/performances.md` (stage)
 
 ## Colours and fonts
 
@@ -73,4 +73,4 @@ All in the first few lines of `assets/style.css`. Change `--ember` or `--maroon`
 
 ## Old WordPress links
 
-Pieces live at the same addresses they had on WordPress (for example `/2023/11/02/we-are-grey/`), and `/category/scratch/...`, `/before-i-die/`, `/25-before-25/` and `/anthologies/` all exist too. So if tannvi.home.blog is set to redirect here, old links land on the right page.
+Pieces live at the same addresses they had on WordPress (for example `/2023/11/02/we-are-grey/`), and `/category/scratch/...`, `/before-i-die/`, `/25-before-25/` and `/anthologies/` (now forwarding to `/print-and-stage/`) all exist too. So if tannvi.home.blog is set to redirect here, old links land on the right page.

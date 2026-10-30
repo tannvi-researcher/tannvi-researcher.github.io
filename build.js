@@ -150,7 +150,7 @@ const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
 // ---------- layout ----------
 function layout({ title, description = about.data.intro, depth, body, bodyClass = '', active = '' }) {
   const link = makeLinker(depth);
-  const nav = [['About', ''], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Print & Stage', 'anthologies/']];
+  const nav = [['About', ''], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Print & Stage', 'print-and-stage/']];
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -579,7 +579,10 @@ ${performances.length ? `<section class="stage" id="on-stage">
   </div>
 </section>` : ''}
 </main>`;
-  write('anthologies/index.html', layout({ title: 'Print & Stage · tannvi', depth, body, bodyClass: 'books-page', active: 'Print & Stage' }));
+  write('print-and-stage/index.html', layout({ title: 'Print & Stage · tannvi', depth, body, bodyClass: 'books-page', active: 'Print & Stage' }));
+  // old address forwards to the new one
+  const target = `${SITE_URL}/print-and-stage/`;
+  write('anthologies/index.html', `<!doctype html><meta charset="utf-8"><title>Print & Stage</title><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${target}"><a href="${target}">Print & Stage</a>`);
 }
 
 // 404
@@ -591,6 +594,6 @@ ${performances.length ? `<section class="stage" id="on-stage">
 // Static assets
 fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), { recursive: true });
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
-fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'opinions/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'anthologies/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
+fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'opinions/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'print-and-stage/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
 
 console.log(`Built ${pieces.length} pieces, ${lists.length} lists, ${books.length} books into _site/${PREVIEW ? ' (preview links)' : ''}`);
