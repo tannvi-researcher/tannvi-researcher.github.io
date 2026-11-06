@@ -111,6 +111,8 @@ but obviously, ivy did give in. she met him for lunch the next day. they started
 
 he asked her if she could take him around the city while his friend was at work. "monday to friday, 9 a.m. to 6 p.m., i'm all yours. take me around the way i took you around my city."
 
+back when they were seeing each other, he had taken her around the city he loved the most, very close to where they were living. he showed her his favourite restaurants and cafes. it was the best three days she had ever had. it was her birthday, and the only person she really wanted to be around was him. it was lovely to see his city through his eyes. she remembered.
+
 ivy caved.
 
 ten days later, they were standing in front of the london eye. he said, "so this is it."
