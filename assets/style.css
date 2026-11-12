@@ -777,3 +777,7 @@ body { background-image: radial-gradient(1100px 700px at 90% -10%, rgba(178, 58,
 .hero-map-delhi { left: -8%; top: 4%; }
 .hero-map-blr { right: -10%; top: 26%; }
 @media (max-width: 760px) { .hero-map-delhi { left: -14%; } .hero-map-blr { right: -16%; } }
+.hero-kid { height: 74%; bottom: 4%; -webkit-mask-image: none; mask-image: none; }
+@media (max-width: 760px) { .hero-kid { height: 82%; bottom: 2%; } }
+.hero-kid { height: 68%; bottom: 6%; }
+@media (max-width: 760px) { .hero-kid { height: 76%; bottom: 4%; } }
