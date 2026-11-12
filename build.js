@@ -98,6 +98,29 @@ function parseLinks() {
 }
 const links = parseLinks();
 
+// Desk: content/desk.md, "# heading" then "- item" lines (markdown allowed). Empty headings are skipped.
+function parseDesk() {
+  const f = path.join(ROOT, 'content/desk.md');
+  if (!fs.existsSync(f)) return [];
+  const out = []; let cur = null;
+  for (const line of read('content/desk.md').split('\n')) {
+    const h = line.match(/^#\s+(.*)/); if (h) { cur = { title: h[1].trim(), items: [] }; out.push(cur); continue; }
+    const li = line.match(/^-\s+(.*)/); if (li && cur) cur.items.push(marked.parseInline(li[1].trim()));
+  }
+  return out.filter(d => d.items.length);
+}
+const desk = parseDesk();
+
+const CITIES = {
+  delhi: { file: 'assets/maps/delhi.svg', name: 'new delhi', coords: '28.61° n · 77.21° e' },
+  bangalore: { file: 'assets/maps/bangalore.svg', name: 'bengaluru', coords: '12.97° n · 77.59° e' },
+};
+function cityFig(key, cls, link) {
+  const c = CITIES[key];
+  return `<figure class="city ${cls}" aria-hidden="true"><img src="${link(c.file)}" alt="" loading="lazy" decoding="async"></figure>`;
+}
+function cityLabel(key) { const c = CITIES[key]; return `<p class="city-label"><span>${c.name}</span>${c.coords}</p>`; }
+
 function parseList(file) {
   const { data, body } = frontMatter(read(file));
   const items = body.split('\n').map(l => l.match(/^(\d+)\.\s+(.*)$/)).filter(Boolean).map(([, n, text]) => {
@@ -150,7 +173,7 @@ const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
 // ---------- layout ----------
 function layout({ title, description = about.data.intro, depth, body, bodyClass = '', active = '' }) {
   const link = makeLinker(depth);
-  const nav = [['About', ''], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Print & Stage', 'print-and-stage/']];
+  const nav = [['About', ''], ['Career', 'career/'], ['Research', 'research/'], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Print & Stage', 'print-and-stage/']];
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -160,7 +183,7 @@ function layout({ title, description = about.data.intro, depth, body, bodyClass 
 <meta name="description" content="${esc(description)}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
-<meta name="theme-color" content="#0b0607">
+<meta name="theme-color" content="#f3ece1">
 <link rel="icon" href="${link('assets/favicon.svg')}" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -287,6 +310,9 @@ fs.mkdirSync(OUT, { recursive: true });
   <a class="scroll-cue" href="#about">scroll<span></span></a>
 </section>
 
+<div class="cities">
+${cityFig('delhi', 'city-delhi', link)}
+${cityFig('bangalore', 'city-blr', link)}
 <section class="about" id="about">
   <div class="section-label"><span>About</span></div>
   <div class="about-lead reveal">${lead}</div>
@@ -296,6 +322,13 @@ fs.mkdirSync(OUT, { recursive: true });
   <div class="section-label"><span>Now</span></div>
   <div class="now-card"><span class="pulse" aria-hidden="true"></span>${sections['Now'] || ''}</div>
 </section>
+${desk.length ? `
+<section class="desk reveal">
+  <div class="section-label"><span>On my desk</span></div>
+  <div class="desk-body">
+  ${desk.map(d => `<div class="desk-col"><h3>${esc(d.title)}</h3><ul>${d.items.map(i => `<li>${i}</li>`).join('')}</ul></div>`).join('\n  ')}
+  </div>
+</section>` : ''}
 
 <section class="timeline-wrap">
   <div class="section-label"><span>Before this</span></div>
@@ -326,6 +359,7 @@ fs.mkdirSync(OUT, { recursive: true });
   </ul>
 </section>
 
+</div>
 </main>
 <script type="application/json" id="pieces-data">${piecesData(link)}</script>`;
   write('index.html', layout({ title: `${about.data.name}`, depth: 0, body: html, bodyClass: 'home', active: 'About' }));
@@ -548,6 +582,32 @@ articles.forEach(a => {
   write(a.url + 'index.html', layout({ title: `${a.title} · tannvi`, description: a.subtitle, depth, body, bodyClass: 'piece-page', active: 'Op-Ed' }));
 });
 
+// Career and Research: content/<name>.md, front matter + "## " sections
+for (const name of ['career', 'research']) {
+  const f = 'content/' + name + '.md';
+  if (!fs.existsSync(path.join(ROOT, f))) continue;
+  const depth = 1;
+  const link = makeLinker(depth);
+  const { data, body } = frontMatter(read(f));
+  const parts = fixRootLinks(marked.parse(body), link).split(/<h2>(.*?)<\/h2>/);
+  const secs = [];
+  for (let i = 1; i < parts.length; i += 2) secs.push([parts[i], parts[i + 1]]);
+  const html = `
+<main class="profile cities">
+${data.city ? cityFig(data.city, 'city-head', link) : ''}
+<section class="page-head">
+  <p class="kicker">${esc(data.kicker || '')}</p>
+  <h1>${esc(data.title)}</h1>
+  ${data.city ? cityLabel(data.city) : ''}
+</section>
+${secs.map(([h, b]) => `<section class="profile-sec reveal">
+  <div class="section-label"><span>${h}</span></div>
+  <div class="profile-body">${b}</div>
+</section>`).join('\n')}
+</main>`;
+  write(name + '/index.html', layout({ title: `${data.title} · tannvi`, depth, body: html, bodyClass: 'profile-page', active: data.title }));
+}
+
 // Anthologies
 {
   const depth = 1;
@@ -594,6 +654,6 @@ ${performances.length ? `<section class="stage" id="on-stage">
 // Static assets
 fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), { recursive: true });
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
-fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'opinions/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'print-and-stage/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
+fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'opinions/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'print-and-stage/', 'career/', 'research/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
 
 console.log(`Built ${pieces.length} pieces, ${lists.length} lists, ${books.length} books into _site/${PREVIEW ? ' (preview links)' : ''}`);

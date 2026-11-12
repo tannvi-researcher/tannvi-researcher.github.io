@@ -66,6 +66,10 @@ Delete its file, or move it into a folder called `content/archive/` (anything ou
 - Links at the bottom and "Writing elsewhere": `content/links.md`
 - Lists: `content/lists/before-i-die.md` and `content/lists/25-before-25.md`. Wrap an item in `~~` when it's done and the ring updates by itself.
 - Print & Stage: `content/anthologies.md` (books) and `content/performances.md` (stage)
+- Career and Research pages: `content/career.md` and `content/research.md`. Each `## heading` becomes a section. `city: delhi` or `city: bangalore` in the front matter picks the faint map behind the page title.
+- On my desk (homepage): `content/desk.md`. A `# heading` followed by `- item` lines. Headings with no items are hidden, so `# Reading right now` stays invisible until you add a book under it.
+- City maps: `assets/maps/delhi.svg` and `assets/maps/bangalore.svg`, drawn from ward boundaries (datameet Municipal Spatial Data).
+
 
 ## Colours and fonts
 
