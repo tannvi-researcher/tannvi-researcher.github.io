@@ -173,7 +173,7 @@ const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
 // ---------- layout ----------
 function layout({ title, description = about.data.intro, depth, body, bodyClass = '', active = '' }) {
   const link = makeLinker(depth);
-  const nav = [['About', ''], ['Career', 'career/'], ['Research', 'research/'], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Print & Stage', 'print-and-stage/']];
+  const nav = [['About', ''], ['CV', 'cv/'], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Print & Stage', 'print-and-stage/']];
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -583,7 +583,7 @@ articles.forEach(a => {
 });
 
 // Career and Research: content/<name>.md, front matter + "## " sections
-for (const name of ['career', 'research']) {
+for (const name of ['cv']) {
   const f = 'content/' + name + '.md';
   if (!fs.existsSync(path.join(ROOT, f))) continue;
   const depth = 1;
@@ -605,7 +605,12 @@ ${secs.map(([h, b]) => `<section class="profile-sec reveal">
   <div class="profile-body">${b}</div>
 </section>`).join('\n')}
 </main>`;
-  write(name + '/index.html', layout({ title: `${data.title} · tannvi`, depth, body: html, bodyClass: 'profile-page', active: data.title }));
+  write(name + '/index.html', layout({ title: `${data.title} · tannvi`, depth, body: html, bodyClass: 'profile-page cv-page', active: data.title }));
+}
+// old addresses forward to the CV
+for (const old of ['career', 'research']) {
+  const target = `${SITE_URL}/cv/`;
+  write(old + '/index.html', `<!doctype html><meta charset="utf-8"><title>CV</title><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${target}"><a href="${target}">CV</a>`);
 }
 
 // Anthologies
@@ -654,6 +659,6 @@ ${performances.length ? `<section class="stage" id="on-stage">
 // Static assets
 fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), { recursive: true });
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
-fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'opinions/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'print-and-stage/', 'career/', 'research/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
+fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'opinions/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'print-and-stage/', 'cv/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
 
 console.log(`Built ${pieces.length} pieces, ${lists.length} lists, ${books.length} books into _site/${PREVIEW ? ' (preview links)' : ''}`);

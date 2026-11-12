@@ -712,23 +712,18 @@ body { background-image: radial-gradient(1100px 700px at 90% -10%, rgba(178, 58,
 .city-head { width: min(820px, 90vw); right: -10vw; top: 20px; opacity: .2; }
 @media (max-width: 760px) { .city-head { width: 140vw; right: -60vw; top: 40px; } }
 
-/* paper hero: the photo sits in an arch, like a print in a journal */
-.hero-photo { inset: auto; top: clamp(96px, 12vw, 130px); right: max(var(--gut), calc((100vw - var(--wide)) / 2 + var(--gut))); width: min(420px, 34vw); aspect-ratio: 4 / 5;
-  border-radius: 999px 999px 14px 14px; background-position: 66% 40%; background-size: cover; overflow: hidden;
-  box-shadow: 0 30px 60px -30px rgba(31, 21, 23, .55), 0 0 0 1px rgba(31, 21, 23, .08); -webkit-mask-image: none; mask-image: none; }
+/* paper hero: the photo fills the right side as before, and melts into the paper on the left and bottom */
+.hero-photo { background-position: 72% 42%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 18%, rgba(0,0,0,.6) 40%, #000 58%), linear-gradient(to bottom, transparent 0%, #000 17%, #000 72%, transparent 100%);
+  -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 18%, rgba(0,0,0,.6) 40%, #000 58%), linear-gradient(to bottom, transparent 0%, #000 17%, #000 72%, transparent 100%); mask-composite: intersect; }
 .hero-photo::after { display: none; }
-.hero.has-photo { height: auto; min-height: clamp(560px, 80svh, 760px); }
 .hero.has-photo .ink { display: none; }
 @media (max-width: 760px) {
-  .hero.has-photo { min-height: 0; display: flex; flex-direction: column; align-items: center; padding-top: 96px; }
-  .hero-photo { position: relative; top: auto; right: auto; width: min(64vw, 280px); }
-  .hero.has-photo .hero-inner { padding: 28px var(--gut) 40px; }
+  .hero-photo { background-position: 64% 30%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 4%, #000 26%, #000 52%, transparent 72%); mask-image: linear-gradient(to bottom, transparent 4%, #000 26%, #000 52%, transparent 72%); }
 }
 .aura i { opacity: .05; }
-.city { opacity: .24; }
-.city-head { opacity: .26; }
 .aura { display: none; }
-.hero-photo { background-size: auto 135%; background-position: 70% 68%; }
 @media (max-width: 760px) {
   .topbar nav { flex-wrap: wrap; overflow: visible; justify-content: flex-start; gap: 4px 16px; }
   .topbar nav a { font-size: .7rem; letter-spacing: .12em; }
@@ -737,3 +732,18 @@ body { background-image: radial-gradient(1100px 700px at 90% -10%, rgba(178, 58,
 .chip[aria-pressed="true"] span { opacity: .85; }
 .book-fallback strong { color: #efe6dc; }
 .book-links a { color: var(--rose); }
+
+/* the two cities: bigger and easier to see on the homepage */
+.home .city { opacity: .36; }
+.home .city img { -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 100%); mask-image: radial-gradient(closest-side, #000 62%, transparent 100%); }
+.home .city-delhi { width: min(1300px, 110vw); right: -26vw; top: -120px; }
+.home .city-blr { width: min(1250px, 105vw); left: -30vw; bottom: 60px; }
+@media (max-width: 760px) { .home .city-delhi { width: 190vw; right: -80vw; } .home .city-blr { width: 190vw; left: -90vw; } .home .city { opacity: .32; } }
+
+/* CV entries */
+.cv-page .profile-body h3 { margin: 0; font-weight: 500; font-size: 1.15rem; line-height: 1.4; }
+.cv-page .profile-body h3 + p { margin: 2px 0 8px; color: var(--mute); font-size: 1rem; }
+.cv-page .profile-body h3 + p em { font-style: italic; }
+.cv-page .profile-body h3:not(:first-child) { margin-top: 26px; }
+.cv-page .profile-body ul + h3 { margin-top: 26px; }
+.cv-page .profile-body > ul { margin-top: 0; }
