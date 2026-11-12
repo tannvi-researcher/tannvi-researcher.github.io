@@ -299,7 +299,12 @@ fs.mkdirSync(OUT, { recursive: true });
   const html = `
 <main id="top">
 <section class="hero has-photo">
-  <div class="hero-photo" style="background-image:url('${link('assets/hero.jpg')}')" role="img" aria-label="Tannvi as a child, in a yellow sweater, on a garden chair"></div>
+  <div class="hero-art">
+    <div class="hero-wash" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <img class="hero-map hero-map-delhi" src="${link('assets/maps/delhi.svg')}" alt="" aria-hidden="true">
+    <img class="hero-map hero-map-blr" src="${link('assets/maps/bangalore.svg')}" alt="" aria-hidden="true">
+    <img class="hero-kid" src="${link('assets/hero-cutout.webp')}" alt="Tannvi as a child, in a yellow sweater, on a garden chair">
+  </div>
   <canvas class="ink" aria-hidden="true"></canvas>
   <div class="aura" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <div class="hero-inner">

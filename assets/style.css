@@ -747,3 +747,33 @@ body { background-image: radial-gradient(1100px 700px at 90% -10%, rgba(178, 58,
 .cv-page .profile-body h3:not(:first-child) { margin-top: 26px; }
 .cv-page .profile-body ul + h3 { margin-top: 26px; }
 .cv-page .profile-body > ul { margin-top: 0; }
+
+/* ============ hero: scratch's mood colours + delhi and bengaluru behind the photo ============ */
+.hero-art { position: absolute; z-index: 1; top: 70px; bottom: 0; right: max(0px, calc((100vw - var(--wide)) / 2)); width: min(720px, 54vw); pointer-events: none; }
+.hero-wash { position: absolute; inset: 4% 0 0 0; }
+.hero-wash i { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .22; }
+.hero-wash i:nth-child(1) { background: var(--blues); width: 46%; aspect-ratio: 1; left: 6%; top: 18%; }
+.hero-wash i:nth-child(2) { background: var(--purple); width: 42%; aspect-ratio: 1; left: 38%; top: 6%; }
+.hero-wash i:nth-child(3) { background: #b23a55; width: 40%; aspect-ratio: 1; left: 52%; top: 44%; opacity: .18; }
+.hero-wash i:nth-child(4) { background: #e0b13c; width: 38%; aspect-ratio: 1; left: 18%; top: 52%; opacity: .2; }
+.hero-map { position: absolute; width: 62%; height: auto; opacity: .34;
+  -webkit-mask-image: radial-gradient(closest-side, #000 60%, transparent 100%); mask-image: radial-gradient(closest-side, #000 60%, transparent 100%); }
+.hero-map-delhi { left: -4%; top: 8%; }
+.hero-map-blr { right: -4%; top: 22%; }
+.hero-kid { position: absolute; left: 50%; bottom: 0; height: 88%; width: auto; transform: translateX(-46%);
+  filter: drop-shadow(0 18px 30px rgba(31, 21, 23, .18)); animation: develop 2.4s cubic-bezier(.3, .6, .2, 1) both; }
+.hero-photo { display: none; }
+@media (max-width: 760px) {
+  .hero.has-photo { display: flex; flex-direction: column; align-items: center; min-height: 0; height: auto; padding-top: 110px; }
+  .hero-art { position: relative; top: auto; right: auto; width: 100%; max-width: 440px; height: 380px; }
+  .hero-kid { height: 94%; }
+  .hero-map { width: 70%; }
+  .hero.has-photo .hero-inner { padding: 18px var(--gut) 44px; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-kid { animation: none; } }
+.hero-kid { left: 0; right: 0; margin: 0 auto; transform: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); }
+.hero-map { opacity: .4; }
+.hero-map-delhi { left: -8%; top: 4%; }
+.hero-map-blr { right: -10%; top: 26%; }
+@media (max-width: 760px) { .hero-map-delhi { left: -14%; } .hero-map-blr { right: -16%; } }

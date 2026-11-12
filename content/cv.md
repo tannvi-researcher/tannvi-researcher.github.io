@@ -72,7 +72,8 @@ city: delhi
 - [Is Persuasion a Dark Pattern, or Just Marketing?](/opinions/is-persuasion-a-dark-pattern-or-just-marketing/), on this site, August 2026.
 - The Delhi High Court ruling is unlikely to be the last word on intellectual property used for AI training, [Mint](https://www.livemint.com/authors/tannvi-r.), July 2026.
 - Indiamart vs OpenAI case: India's IT intermediary framework must adapt to the age of AI, [Mint](https://www.livemint.com/authors/tannvi-r.), June 2026.
-- Co-written pieces in CNBC-TV18, NDTV Profit and the Cyril Amarchand Mangaldas blog, on AI and IP, intermediary liability, the DPDP Act and UPI.
+- [UPI Goes Global: The Regulatory Reckoning Ahead](https://corporate.cyrilamarchandblogs.com/2026/05/upi-goes-global-the-regulatory-reckoning-ahead/), co-authored, Cyril Amarchand Mangaldas blog, May 2026.
+- Co-written pieces in CNBC-TV18 and NDTV Profit, on AI and IP, intermediary liability and the DPDP Act.
 - Editor and writer, [The Cyber Blog India](https://cyberblogindia.in/author/tannvi/), September 2021 to February 2023.
 
 ## Academic writing
@@ -81,7 +82,7 @@ city: delhi
 - Research assistant, *Artificial Intelligence and Law: Challenges Demystified* by Rodney D. Ryder and Nikhil Naren, Law & Justice Publishing, 2022.
 - Data Advantage and Abuse of Dominance: Why does the CCI need to intervene in the WhatsApp Privacy Policy case?, co-authored, *Taxmann*, [2021] 124 (Article) 475.
 - Government's demand for traceability vis-à-vis WhatsApp's encryption: could they co-exist?, *Metacept*, May 2021.
-- Integrating plight of sufferers with global standards of compensation for medical inaccuracies, *Indian Journal of Law and Legal Research*, Vol. 3, Issue 1, November 2021.
+- [Integrating plight of sufferers with global standards of compensation for medical inaccuracies](https://www.ijllr.com/post/integrating-plight-of-sufferers-with-global-standards-of-compensation-for-medical-inaccuracies), *Indian Journal of Law and Legal Research*, Vol. 3, Issue 1, November 2021.
 - Paper presented: Gender justice through literary imagination and judicial reasoning, International Conference on Literature Epitomising Society and Justice (with Lomonosov Moscow State University's Law Faculty).
 
 ## Education
