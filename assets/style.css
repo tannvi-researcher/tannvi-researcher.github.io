@@ -781,3 +781,18 @@ body { background-image: radial-gradient(1100px 700px at 90% -10%, rgba(178, 58,
 @media (max-width: 760px) { .hero-kid { height: 82%; bottom: 2%; } }
 .hero-kid { height: 68%; bottom: 6%; }
 @media (max-width: 760px) { .hero-kid { height: 76%; bottom: 4%; } }
+
+/* delhi (top) and bengaluru (lower down), drawn very lightly behind block pages and the CV */
+.page-maps { position: relative; isolation: isolate; }
+.page-maps-layer { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.pm { position: absolute; height: auto; opacity: .2;
+  -webkit-mask-image: radial-gradient(closest-side, #000 60%, transparent 100%); mask-image: radial-gradient(closest-side, #000 60%, transparent 100%); }
+.pm-delhi { width: min(1100px, 95vw); right: -22vw; top: -60px; }
+.pm-blr { width: min(1050px, 92vw); left: -24vw; top: 52%; }
+.cv-page .pm { opacity: .13; }
+.cv-page .pm-blr { top: auto; bottom: 40px; }
+@media (max-width: 760px) { .pm-delhi { width: 170vw; right: -70vw; } .pm-blr { width: 170vw; left: -80vw; } }
+
+/* homepage: keep the maps behind the text very faint so it stays readable */
+.home .city { opacity: .1; }
+@media (max-width: 760px) { .home .city { opacity: .08; } }

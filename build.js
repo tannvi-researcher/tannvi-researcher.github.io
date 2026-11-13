@@ -171,8 +171,12 @@ const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
   .sort((a, b) => b.date.localeCompare(a.date));
 
 // ---------- layout ----------
-function layout({ title, description = about.data.intro, depth, body, bodyClass = '', active = '' }) {
+function layout({ title, description = about.data.intro, depth, body, bodyClass = '', active = '', maps = false }) {
   const link = makeLinker(depth);
+  if (maps) body = `<div class="page-maps">
+<div class="page-maps-layer" aria-hidden="true"><img class="pm pm-delhi" src="${link('assets/maps/delhi.svg')}" alt="" loading="lazy"><img class="pm pm-blr" src="${link('assets/maps/bangalore.svg')}" alt="" loading="lazy"></div>
+${body}
+</div>`;
   const nav = [['About', ''], ['CV', 'cv/'], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Print & Stage', 'print-and-stage/']];
   return `<!doctype html>
 <html lang="en">
@@ -376,7 +380,7 @@ function scratchPage(depth) {
   const years = [...new Set(pieces.map(p => p.date.slice(0, 4)))];
   const count = f => pieces.filter(p => p.form === f || p.collections.map(c => c.toLowerCase()).includes(f)).length;
   return layout({
-    title: 'Scratch · tannvi', depth, active: 'Scratch', bodyClass: 'scratch',
+    title: 'Scratch · tannvi', depth, active: 'Scratch', bodyClass: 'scratch', maps: true,
     description: 'A little internet journal: poems, small essays and stories.',
     body: `
 <main>
@@ -537,7 +541,7 @@ lists.forEach((l, idx) => {
   }).join('\n  ')}
 </section>
 </main>`;
-  write('lists/index.html', layout({ title: 'Bucket lists · tannvi', depth, body, bodyClass: 'lists-page', active: 'Lists' }));
+  write('lists/index.html', layout({ title: 'Bucket lists · tannvi', depth, body, bodyClass: 'lists-page', active: 'Lists', maps: true }));
 }
 
 // Opinions: list page and one page per article
@@ -562,7 +566,7 @@ lists.forEach((l, idx) => {
 ${list}
 </section>
 </main>`;
-  write('opinions/index.html', layout({ title: 'Opinions · tannvi', depth, body, bodyClass: 'opinions-page', active: 'Op-Ed' }));
+  write('opinions/index.html', layout({ title: 'Opinions · tannvi', depth, body, bodyClass: 'opinions-page', active: 'Op-Ed', maps: true }));
 }
 articles.forEach(a => {
   const depth = 2;
@@ -610,7 +614,7 @@ ${secs.map(([h, b]) => `<section class="profile-sec reveal">
   <div class="profile-body">${b}</div>
 </section>`).join('\n')}
 </main>`;
-  write(name + '/index.html', layout({ title: `${data.title} · tannvi`, depth, body: html, bodyClass: 'profile-page cv-page', active: data.title }));
+  write(name + '/index.html', layout({ title: `${data.title} · tannvi`, depth, body: html, bodyClass: 'profile-page cv-page', active: data.title, maps: true }));
 }
 // old addresses forward to the CV
 for (const old of ['career', 'research']) {
@@ -649,7 +653,7 @@ ${performances.length ? `<section class="stage" id="on-stage">
   </div>
 </section>` : ''}
 </main>`;
-  write('print-and-stage/index.html', layout({ title: 'Print & Stage · tannvi', depth, body, bodyClass: 'books-page', active: 'Print & Stage' }));
+  write('print-and-stage/index.html', layout({ title: 'Print & Stage · tannvi', depth, body, bodyClass: 'books-page', active: 'Print & Stage', maps: true }));
   // old address forwards to the new one
   const target = `${SITE_URL}/print-and-stage/`;
   write('anthologies/index.html', `<!doctype html><meta charset="utf-8"><title>Print & Stage</title><meta http-equiv="refresh" content="0; url=${target}"><link rel="canonical" href="${target}"><a href="${target}">Print & Stage</a>`);

@@ -1,14 +1,13 @@
 ---
 title: CV
 kicker: work · research · writing
-city: delhi
 ---
 ## Work
 
 ### Policy Analyst · [Centre for Responsible AI (CeRAI), IIT Madras](https://cerai.iitm.ac.in/)
 *August 2026 to present*
 
-- Conducting responsible AI policy research at the Wadhwani School of Data Science and AI.
+- Conducting responsible AI policy research at the [Wadhwani School of Data Science and AI](https://dsai.iitm.ac.in/).
 - Developing research on bystander privacy, and on practical DPDP compliance frameworks for AI companies, including algorithmic due diligence obligations.
 - Contributing to CeRAI's policy engagement with government and industry on accountable, explainable and responsible AI.
 
@@ -22,17 +21,17 @@ city: delhi
 
 ## Internships
 
-### TMT Team · Trilegal, Bangalore
+### TMT Team · [Trilegal](https://trilegal.com/), Bangalore
 *January to February 2023*
 
 - Dossier on non-personal data regulation in other jurisdictions; reports on trademarks as Google Ads keywords, and on encryption and personalisation in e-commerce.
 
-### General Corporate Team · Shardul Amarchand Mangaldas, Bangalore
+### General Corporate Team · [Shardul Amarchand Mangaldas](https://www.amsshardul.com/), Bangalore
 *November 2022*
 
 - Due diligence checklist across company, competition, labour, insolvency, foreign exchange, securities and banking law; report on bringing new-generation tech start-ups to the Indian securities market.
 
-### TMT Team · Khaitan & Co., Delhi
+### TMT Team · [Khaitan & Co.](https://www.khaitanco.com/), Delhi
 *June 2022*
 
 - Briefs on Aadhaar data storage and protection, dark patterns regulation in the EU, US and India, and data scraping of openly available personal data.
@@ -106,7 +105,7 @@ city: delhi
 
 ## Positions of responsibility
 
-- Editor, Christ University Law Journal, 2021 to 2022.
+- Editor, [Christ University Law Journal](https://journals.christuniversity.in/index.php/culj/index), 2021 to 2022.
 - Founder & Convenor, Law & Technology Committee, Christ University, 2022 to 2023.
 - Editor, The Cyber Blog India, 2021 to 2023.
 
