@@ -75,6 +75,28 @@ kicker: work · research · writing
 - [Your GCC may comply with India's new data law, but does your headquarters?](https://www.cnbctv18.com/legal/dpdpa-personal-data-protection-india-new-law-compliance-gccs-multinational-companies-views-19914155.htm), co-authored, CNBC-TV18.
 - [Admission enquiry to everyday classroom data: impact of the new data protection law on the education sector](https://www.ndtvprofit.com/india/admission-enquiry-to-everyday-classroom-data-impact-of-indias-new-data-protection-law-on-the-education-sector-11135692), co-authored, NDTV Profit.
 - Editor and writer, [The Cyber Blog India](https://cyberblogindia.in/author/tannvi/), September 2021 to February 2023.
+  - Articles:
+    - [Android Power and Abuse of Dominance: Google and Self-preferencing](https://cyberblogindia.in/android-power-and-abuse-of-dominance-google-and-self-preferencing/)
+    - [Search, Advertise, Control: Google's Overwhelmingly Dominating Position](https://cyberblogindia.in/search-advertise-control-google-dominating-position/)
+    - [Censorship and Conservatives: Texas' Social Media Deplatforming Law](https://cyberblogindia.in/censorship-and-conservatives-texas-social-media-deplatforming-law/)
+    - [A Beginner's Guide to Cyber Squatting in India](https://cyberblogindia.in/a-beginners-guide-to-cyber-squatting-in-india/)
+    - [Residential CCTV and Neighbours' Privacy Invasion](https://cyberblogindia.in/residential-cctv-and-neighbours-privacy-invasion/)
+    - [How to check if a digital loan app is genuine?](https://cyberblogindia.in/how-to-check-if-a-digital-loan-app-is-genuine/)
+    - [Is this it? Understanding the Digital Personal Data Protection Bill, 2022](https://cyberblogindia.in/the-digital-personal-data-protection-bill-2022/)
+    - [Why did CCI impose a fine of ₹1338 crores against Google?](https://cyberblogindia.in/why-did-cci-impose-a-fine-of-%e2%82%b91338-crores-against-google/)
+  - Case notes:
+    - *[Punuri Ram Prakash v. State of Andhra Pradesh](https://cyberblogindia.in/punuri-ram-prakash-v-state-of-andhra-pradesh/)*
+    - *[Suman Jindal & Ors. v. Adarsh Developers](https://cyberblogindia.in/suman-jindal-ors-v-adarsh-developers/)*
+    - *[Sujeet Kumar v. State of Bihar](https://cyberblogindia.in/sujeet-kumar-v-state-of-bihar-2/)*
+    - *[Sarvesh Kumar Patel v. State of M.P.](https://cyberblogindia.in/sarvesh-kumar-patel-v-state-of-m-p/)*
+    - *[Pawan Kumar Sharma v. State of M.P.](https://cyberblogindia.in/pawan-kumar-sharma-v-state-of-m-p/)*
+    - *[Karmanya Singh Sareen v. Union of India](https://cyberblogindia.in/karmanya-singh-sareen-v-union-of-india/)*
+    - *[Maharashtra Housing Development Authority v. Shapoorji Pallonji & Co. Pvt. Ltd.](https://cyberblogindia.in/maharashtra-housing-development-authority-v-shapoorji-pallonji-co-pvt-ltd/)*
+    - *[M.D. Overseas Ltd. v. Union of India](https://cyberblogindia.in/m-d-overseas-ltd-v-union-of-india/)*
+    - *[NCS Sugars Limited v. P.E.C. Limited](https://cyberblogindia.in/ncs-sugars-limited-v-p-e-c-limited/)*
+    - *[Shapoorji Pallonji & Co. Pvt. Ltd. v. State of Maharashtra](https://cyberblogindia.in/shapoorji-pallonji-co-pvt-ltd-v-state-of-maharashtra/)*
+    - *[Ram Babu Gurjar v. Central Bureau of Investigation](https://cyberblogindia.in/ram-babu-gurjar-v-central-bureau-of-investigation/)*
+    - *[Mink Tradecom Pvt. Ltd. v. Union of India](https://cyberblogindia.in/mink-tradecom-pvt-ltd-v-union-of-india/)*
 
 ## Academic writing
 
