@@ -796,3 +796,6 @@ body { background-image: radial-gradient(1100px 700px at 90% -10%, rgba(178, 58,
 /* homepage: keep the maps behind the text very faint so it stays readable */
 .home .city { opacity: .1; }
 @media (max-width: 760px) { .home .city { opacity: .08; } }
+.desk-sub { list-style: none; margin: 4px 0 2px; padding: 0; display: grid; gap: 2px; }
+.desk-col .desk-sub li { padding-left: 16px; }
+.desk-col .desk-sub li::before { content: "·"; color: var(--rose); }

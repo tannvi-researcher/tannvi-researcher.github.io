@@ -105,7 +105,9 @@ function parseDesk() {
   const out = []; let cur = null;
   for (const line of read('content/desk.md').split('\n')) {
     const h = line.match(/^#\s+(.*)/); if (h) { cur = { title: h[1].trim(), items: [] }; out.push(cur); continue; }
-    const li = line.match(/^-\s+(.*)/); if (li && cur) cur.items.push(marked.parseInline(li[1].trim()));
+    const sub = line.match(/^\s+-\s+(.*)/);
+    if (sub && cur && cur.items.length) { const last = cur.items[cur.items.length - 1]; (last.subs = last.subs || []).push(marked.parseInline(sub[1].trim())); continue; }
+    const li = line.match(/^-\s+(.*)/); if (li && cur) cur.items.push({ html: marked.parseInline(li[1].trim()) });
   }
   return out.filter(d => d.items.length);
 }
@@ -335,7 +337,7 @@ ${desk.length ? `
 <section class="desk reveal">
   <div class="section-label"><span>On my desk</span></div>
   <div class="desk-body">
-  ${desk.map(d => `<div class="desk-col"><h3>${esc(d.title)}</h3><ul>${d.items.map(i => `<li>${i}</li>`).join('')}</ul></div>`).join('\n  ')}
+  ${desk.map(d => `<div class="desk-col"><h3>${esc(d.title)}</h3><ul>${d.items.map(i => `<li>${i.html}${i.subs ? `<ul class="desk-sub">${i.subs.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ul></div>`).join('\n  ')}
   </div>
 </section>` : ''}
 

@@ -59,7 +59,7 @@ kicker: work · research · writing
 ### Arbitrator · [Willem C. Vis International Commercial Arbitration Moot](https://www.vismoot.org/)
 *July 2025 to present*
 
-### Creative Director · The Silent Sexism Project
+### Creative Director · [The Silent Sexism Project](https://thesilentsexismproject.wordpress.com/)
 *January 2021 to present*
 
 ### Teaching aid · Umeed Asha Kiran, Bangalore
