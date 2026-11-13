@@ -802,3 +802,30 @@ body { background-image: radial-gradient(1100px 700px at 90% -10%, rgba(178, 58,
 .cv-page .profile-body li > ul { margin-top: 6px; gap: 4px; }
 .cv-page .profile-body li > ul li { font-size: 1.02rem; }
 .cv-page .profile-body li > ul li > ul li { font-size: .98rem; }
+
+/* ============ warm dark brown for the blocks that sit on the paper ============ */
+:root { --cocoa: #2e2019; --cocoa-2: #3d2a20; --cocoa-3: #4d3427; }
+
+/* scratch timeline: a brown night instead of black and maroon */
+.sky { border-color: rgba(61, 42, 32, .35);
+  background: radial-gradient(ellipse at 50% 125%, rgba(196, 140, 92, .22), transparent 60%), linear-gradient(180deg, var(--cocoa), var(--cocoa-2)); }
+.sky .yr { fill: #b9a08e; }
+.sky .yr-line { stroke: rgba(239, 224, 205, .1); }
+.sky .thread { stroke: rgba(239, 200, 160, .22); }
+/* the label that pops up on a dot: paper card, ink text */
+.sky-tip { background: #fbf6ee; color: #1f1517; border: 1px solid rgba(61, 42, 32, .25); box-shadow: 0 14px 34px -14px rgba(46, 32, 25, .55); }
+.sky-tip strong { color: #1f1517; }
+.sky-tip span { color: #6b5853; }
+
+/* op-ed tiles: tint the grey artwork warm brown */
+.op-tile { background: var(--cocoa); }
+.op-tile img { filter: sepia(.75) saturate(1.25) hue-rotate(-12deg) brightness(.92); }
+.op-tile::after { background: linear-gradient(to top, rgba(38, 25, 18, .9), rgba(38, 25, 18, 0) 58%); }
+.op-tile-blank { background: linear-gradient(160deg, var(--cocoa-3), var(--cocoa)); }
+.op-tile:hover { box-shadow: 0 0 0 1px #c48c5c inset, 0 18px 40px -18px rgba(46, 32, 25, .6); }
+
+/* bucket list cards: dark brown with light text */
+.list-card, .list-card-1 { background: linear-gradient(145deg, var(--cocoa-3), var(--cocoa)); border-color: transparent; color: #efe6dc;
+  --bone: #efe6dc; --mute: #c9b4a4; --faint: #9a8272; --rose: #f0b49c; --ember: #e07a55; --line: rgba(239, 230, 220, .14); }
+.list-card-1 { background: linear-gradient(145deg, #4a3326, #2a1c15); }
+.list-card:hover { border-color: rgba(240, 180, 156, .5); box-shadow: 0 24px 50px -26px rgba(46, 32, 25, .7); }
