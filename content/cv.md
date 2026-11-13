@@ -62,7 +62,7 @@ kicker: work · research · writing
 ### Creative Director · [The Silent Sexism Project](https://thesilentsexismproject.wordpress.com/)
 *January 2021 to present*
 
-### Teaching aid · Umeed Asha Kiran, Bangalore
+### Teaching aid · [Umeed Asha Kiran](https://www.umeedkiran.in/), Bangalore
 *October to November 2019* · a school for children with special needs from underprivileged families.
 
 ## Opinion writing
@@ -107,7 +107,7 @@ kicker: work · research · writing
 ## Positions of responsibility
 
 - Editor, [Christ University Law Journal](https://journals.christuniversity.in/index.php/culj/index), 2021 to 2022.
-- Founder & Convenor, Law & Technology Committee, Christ University, 2022 to 2023.
+- Founder & Convenor, [Law & Technology Committee](https://ltcslcu.com/), Christ University, 2022 to 2023.
 - Editor, The Cyber Blog India, 2021 to 2023.
 
 ## Profiles
