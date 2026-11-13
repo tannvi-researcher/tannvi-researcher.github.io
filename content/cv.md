@@ -69,19 +69,20 @@ kicker: work · research · writing
 
 - [Everyone Is a Bystander Now](/opinions/everyone-is-a-bystander-now/), on this site, August 2026.
 - [Is Persuasion a Dark Pattern, or Just Marketing?](/opinions/is-persuasion-a-dark-pattern-or-just-marketing/), on this site, August 2026.
-- The Delhi High Court ruling is unlikely to be the last word on intellectual property used for AI training, [Mint](https://www.livemint.com/authors/tannvi-r.), July 2026.
-- Indiamart vs OpenAI case: India's IT intermediary framework must adapt to the age of AI, [Mint](https://www.livemint.com/authors/tannvi-r.), June 2026.
+- [The Delhi High Court ruling is unlikely to be the last word on intellectual property used for AI training](https://www.livemint.com/opinion/online-views/ani-vs-openai-delhi-high-court-ruling-intellectual-property-ai-training-copyright-11785477510864.html), Mint, July 2026.
+- [Indiamart vs OpenAI case: India's IT intermediary framework must adapt to the age of AI](https://www.livemint.com/opinion/online-views/indiamart-vs-openai-case-india-it-intermediary-framework-ai-artificial-intelligence-legal-liability-11782278472970.html), Mint, June 2026.
 - [UPI Goes Global: The Regulatory Reckoning Ahead](https://corporate.cyrilamarchandblogs.com/2026/05/upi-goes-global-the-regulatory-reckoning-ahead/), co-authored, Cyril Amarchand Mangaldas blog, May 2026.
-- Co-written pieces in CNBC-TV18 and NDTV Profit, on AI and IP, intermediary liability and the DPDP Act.
+- [Your GCC may comply with India's new data law, but does your headquarters?](https://www.cnbctv18.com/legal/dpdpa-personal-data-protection-india-new-law-compliance-gccs-multinational-companies-views-19914155.htm), co-authored, CNBC-TV18.
+- [Admission enquiry to everyday classroom data: impact of the new data protection law on the education sector](https://www.ndtvprofit.com/india/admission-enquiry-to-everyday-classroom-data-impact-of-indias-new-data-protection-law-on-the-education-sector-11135692), co-authored, NDTV Profit.
 - Editor and writer, [The Cyber Blog India](https://cyberblogindia.in/author/tannvi/), September 2021 to February 2023.
 
 ## Academic writing
 
-- [The challenge of gender stereotyping in Indian courts](https://doi.org/10.1080/23311886.2022.2116815), co-authored, *Cogent Social Sciences*, Vol. 8, Issue 1 (Taylor & Francis), 2022.
-- Research assistant, *Artificial Intelligence and Law: Challenges Demystified* by Rodney D. Ryder and Nikhil Naren, Law & Justice Publishing, 2022.
+- [The challenge of gender stereotyping in Indian courts](https://www.tandfonline.com/doi/full/10.1080/23311886.2022.2116815), co-authored, *Cogent Social Sciences*, Vol. 8, Issue 1 (Taylor & Francis), 2022.
+- Research assistant, [*Artificial Intelligence and Law: Challenges Demystified*](https://www.amazon.in/Artificial-Intelligence-Law-Challenges-Demystified/dp/9393850097) by Rodney D. Ryder and Nikhil Naren, Law & Justice Publishing, 2022.
 - Data Advantage and Abuse of Dominance: Why does the CCI need to intervene in the WhatsApp Privacy Policy case?, co-authored, *Taxmann*, [2021] 124 (Article) 475.
 - Government's demand for traceability vis-à-vis WhatsApp's encryption: could they co-exist?, *Metacept*, May 2021.
-- [Integrating plight of sufferers with global standards of compensation for medical inaccuracies](https://www.ijllr.com/post/integrating-plight-of-sufferers-with-global-standards-of-compensation-for-medical-inaccuracies), *Indian Journal of Law and Legal Research*, Vol. 3, Issue 1, November 2021.
+- [Integrating plight of sufferers with global standards of compensation for medical inaccuracies](https://works.hcommons.org/records/s3wck-0fn04), *Indian Journal of Law and Legal Research*, Vol. 3, Issue 1, November 2021.
 - Paper presented: Gender justice through literary imagination and judicial reasoning, International Conference on Literature Epitomising Society and Justice (with Lomonosov Moscow State University's Law Faculty).
 
 ## Education
