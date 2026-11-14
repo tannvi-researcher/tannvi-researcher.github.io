@@ -853,4 +853,4 @@ body { background-image: radial-gradient(1100px 700px at 90% -10%, rgba(178, 58,
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-visible { outline: 2px solid #8a1f31; outline-offset: 3px; border-radius: 4px; }
 .sky .star:focus-visible { outline: none; stroke: #fbf6ee; stroke-width: 2; }
 /* done items on list pages: still crossed out, but easier to read */
-.wish-item.done .wish-text, .wish-item.is-done .wish-text { color: #5e4c47; }
+.wish-item.done .wish-t { color: #5e4c47; }
