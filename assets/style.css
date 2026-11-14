@@ -829,3 +829,28 @@ body { background-image: radial-gradient(1100px 700px at 90% -10%, rgba(178, 58,
   --bone: #efe6dc; --mute: #c9b4a4; --faint: #9a8272; --rose: #f0b49c; --ember: #e07a55; --line: rgba(239, 230, 220, .14); }
 .list-card-1 { background: linear-gradient(145deg, #4a3326, #2a1c15); }
 .list-card:hover { border-color: rgba(240, 180, 156, .5); box-shadow: 0 24px 50px -26px rgba(46, 32, 25, .7); }
+
+/* ============ readability pass · nov 2026 ============ */
+/* the menu bar always sits on paper, so it stays readable over the coloured art headers */
+.topbar, .topbar.scrolled { background: rgba(243, 236, 225, .86); backdrop-filter: blur(12px) saturate(1.1); -webkit-backdrop-filter: blur(12px) saturate(1.1); border-bottom: 1px solid var(--line); }
+.topbar nav a { color: #5e4c47; }
+.topbar nav a:hover, .topbar nav a[aria-current] { color: var(--bone); }
+.home .topbar:not(.scrolled) { background: rgba(243, 236, 225, .6); border-bottom-color: transparent; }
+
+/* piece and op-ed headers: softer art, so the date and title read clearly */
+.art-hero canvas, .art-hero img { opacity: .62; }
+.art-hero::after { background: linear-gradient(to bottom, rgba(243, 236, 225, .25), rgba(243, 236, 225, .55) 55%, var(--ink)); }
+.piece-meta { color: #6e1a2a; font-weight: 500; }
+.piece-tags .tag { background: rgba(243, 236, 225, .72); }
+
+/* no drop cap when a piece starts with a quotation mark */
+.piece-body.prose .piece-text.no-drop > p:first-child::first-letter { float: none; font-size: inherit; line-height: inherit; padding: 0; color: inherit; font-style: inherit; }
+
+/* timeline legend and year labels a touch darker */
+.sky-wrap .legend, .sky-wrap .legend span { color: #5e4c47; }
+
+/* keyboard focus is always visible */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-visible { outline: 2px solid #8a1f31; outline-offset: 3px; border-radius: 4px; }
+.sky .star:focus-visible { outline: none; stroke: #fbf6ee; stroke-width: 2; }
+/* done items on list pages: still crossed out, but easier to read */
+.wish-item.done .wish-text, .wish-item.is-done .wish-text { color: #5e4c47; }

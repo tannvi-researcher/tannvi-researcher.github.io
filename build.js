@@ -15,7 +15,43 @@ marked.setOptions({ breaks: true, gfm: true });
 
 // ---------- helpers ----------
 function read(p) { return fs.readFileSync(path.join(ROOT, p), 'utf8'); }
+
+// ---------- curly quotes everywhere a reader sees text ----------
+function smartText(str, prev = ' ') {
+  let out = '';
+  for (let i = 0; i < str.length; i++) {
+    const c = str[i], before = i ? str[i - 1] : prev, after = str[i + 1] || ' ';
+    if (c === '"') out += /[\s(\[{—–\-‘“>]/.test(before) || before === '' ? '“' : '”';
+    else if (c === "'") {
+      if (/[\p{L}\p{N}]/u.test(before)) out += '’';                       // don't, tannvi's, 90's
+      else if (/\d/.test(after) && /\s/.test(before)) out += '’';         // '90s
+      else out += /[\s(\[{—–\-“]/.test(before) ? '‘' : '’';
+    } else out += c;
+  }
+  return out;
+}
+const SMART_ATTRS = /\b(alt|title|aria-label|data-t|content)="([^"]*)"/g;
+function decodeQ(t) { return t.replace(/&quot;|&#34;/g, '"').replace(/&#39;|&#x27;|&apos;/g, "'"); }
+function smartHtml(html) {
+  let prev = ' ', skip = null;
+  return html.split(/(<[^>]+>)/).map(part => {
+    if (part.startsWith('<')) {
+      const tag = (part.match(/^<\/?([a-z0-9]+)/i) || [])[1];
+      const lower = tag ? tag.toLowerCase() : '';
+      if (part[1] !== '/' && ['script', 'style', 'pre', 'code', 'textarea'].includes(lower)) skip = lower;
+      else if (part[1] === '/' && lower === skip) skip = null;
+      if (/^<(p|li|h[1-6]|div|section|br|td|th|blockquote|figcaption)\b/i.test(part)) prev = ' ';
+      return part.replace(SMART_ATTRS, (m, a, v) => (a === 'content' && !/[\s]/.test(v)) ? m : `${a}="${smartText(decodeQ(v)).replace(/"/g, '&quot;')}"`);
+    }
+    if (skip || !part) return part;
+    const t = smartText(decodeQ(part), prev);
+    prev = part.slice(-1);
+    return t;
+  }).join('');
+}
+
 function write(rel, html) {
+  if (rel.endsWith('.html')) html = smartHtml(html);
   const file = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, html);
@@ -284,7 +320,7 @@ function shelves(link) {
   }).join('\n');
 }
 function piecesData(link) {
-  return JSON.stringify(pieces.map(p => ({ t: p.title, d: p.date, s: p.slug, c: p.collections, m: p.mood, f: p.form, l: p.firstLine, w: p.words, u: link(p.url) }))).replace(/</g, '\\u003c');
+  return JSON.stringify(pieces.map(p => ({ t: smartText(p.title), d: p.date, s: p.slug, c: p.collections, m: p.mood, f: p.form, l: smartText(p.firstLine), w: p.words, u: link(p.url) }))).replace(/</g, '\\u003c');
 }
 
 // ---------- pages ----------
@@ -460,7 +496,7 @@ pieces.forEach((p, i) => {
   </header>
   <article class="piece-body ${p.form === 'story' ? 'prose story' : p.form} ${p.style.split(' ').filter(Boolean).map(s => 'is-' + s).join(' ')}${p.warning ? ' has-warning' : ''}">
     ${p.warning ? `<div class="warning" data-warning><p class="warning-label">Content note</p><p>This piece touches on ${esc(p.warning.toLowerCase())}.</p><button class="btn" type="button" data-reveal>read on</button></div>` : ''}
-    <div class="piece-text">${p.html}</div>
+    <div class="piece-text${/^<p>\s*(["'\u2018\u201c]|&quot;|&#39;)/.test(p.html) ? ' no-drop' : ''}">${p.html}</div>
     <p class="fin" aria-hidden="true">❦</p>
   </article>
   <nav class="piece-nav" aria-label="More pieces">

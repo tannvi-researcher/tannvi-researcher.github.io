@@ -50,7 +50,7 @@ intro: Crossed-out ones are done.
 45. ~~Wake up to see the sunrise every day for a week.~~
 46. Conquer a lifelong fear.
 47. ~~Go on an international trip.~~
-48. Get fit – to my best bodily, emotional and mental health!
+48. Get fit: to my best bodily, emotional and mental health!
 49. Getting certification for Kathak.
 50. Buy a 3 BHK with a balcony with a beautiful city view- so it must be on the top of a skyscraper.
 51. Get a small house in Mysore!

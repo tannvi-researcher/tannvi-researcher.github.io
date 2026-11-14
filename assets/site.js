@@ -145,12 +145,27 @@
       var jitter = ((h(p.s) % 1000) / 1000 - 0.5) * 0.3;
       return { p: p, x: X(+new Date(p.d)), y: padY + (bandOf(p.m) + jitter) * (H2 - padY * 2 - 30), r: 3 + Math.min(6, p.w / 90) };
     });
+    // nudge dots apart so none sit on top of each other
+    var yMin = padY, yMax = H2 - 44;
+    for (var it = 0; it < 120; it++) {
+      var moved = false;
+      for (var a = 0; a < pts.length; a++) for (var b = a + 1; b < pts.length; b++) {
+        var A = pts[a], B = pts[b], dx = B.x - A.x, dy = B.y - A.y, d = Math.sqrt(dx * dx + dy * dy) || 0.01, need = A.r + B.r + 7;
+        if (d < need) {
+          var push = (need - d) / 2, ux = dx / d, uy = dy / d;
+          if (Math.abs(uy) < 0.35) { uy = (h(A.p.s) % 2 ? 1 : -1) * 0.8; ux *= 0.6; }
+          A.x -= ux * push * 0.4; B.x += ux * push * 0.4; A.y -= uy * push; B.y += uy * push; moved = true;
+        }
+      }
+      pts.forEach(function (q) { q.y = Math.max(yMin, Math.min(yMax, q.y)); });
+      if (!moved) break;
+    }
     html += '<path class="thread" d="' + pts.map(function (q, i) { return (i ? 'L' : 'M') + q.x.toFixed(1) + ' ' + q.y.toFixed(1); }).join(' ') + '"/>';
     svg.innerHTML = html;
     pts.forEach(function (q, i) {
       var g = document.createElementNS(NS, 'g');
       var qms = moodsOf(q.p.m), col = qms.length > 1 ? 'url(#mix-' + qms.join('-') + ')' : MOOD[qms[0]];
-      g.innerHTML = '<circle class="star-halo" cx="' + q.x + '" cy="' + q.y + '" r="' + (q.r * 2.6) + '" fill="' + col + '" opacity=".18"/>' +
+      g.innerHTML = '<circle class="star-halo" cx="' + q.x + '" cy="' + q.y + '" r="' + (q.r * 1.9) + '" fill="' + col + '" opacity=".14"/>' +
         '<circle class="star" cx="' + q.x + '" cy="' + q.y + '" r="' + q.r + '" fill="' + col + '" tabindex="0" role="link" aria-label="' + esc(q.p.t) + '"><animate attributeName="opacity" values="1;.55;1" dur="' + (2.5 + (h(q.p.s) % 30) / 10) + 's" repeatCount="indefinite"/></circle>';
       g.setAttribute('data-f', (q.p.c.join(' ') + ' ' + q.p.f).toLowerCase());
       g.setAttribute('data-q', (q.p.t + ' ' + q.p.l).toLowerCase());
