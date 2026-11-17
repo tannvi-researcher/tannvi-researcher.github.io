@@ -1,7 +1,12 @@
 ---
 title: CV
 kicker: work · research · writing
+photo: assets/cv-headshot.webp
 ---
+## Profiles
+
+[LinkedIn](https://www.linkedin.com/in/tannvi/) · [Google Scholar](https://scholar.google.com/citations?user=iYwaORYAAAAJ&hl=en) · [SSRN](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=13906448) · [OSF](https://osf.io/yzx9h/) · [GitHub](https://github.com/tannvi-researcher)
+
 ## Work
 
 ### Policy Analyst · [Centre for Responsible AI (CeRAI), IIT Madras](https://cerai.iitm.ac.in/)
@@ -112,6 +117,8 @@ kicker: work · research · writing
 ### [School of Law, CHRIST University](https://christuniversity.in/departments/main-campus/school-of-law/school-of-law), Bengaluru
 *2019 to 2024*
 
+- [Dissertation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7691703), on SSRN.
+
 ### Advanced Diploma, [Cyber Security & Data Protection Laws](https://nalsarpro.softpal.in/Study-Here/One-Year-Advanced-Diploma-Programme-on-offer/Cyber-Security-Data-Protection-Laws/About-the-Programme) · NALSAR University of Law
 *2022 to 2023*
 
@@ -131,7 +138,3 @@ kicker: work · research · writing
 - Editor, [Christ University Law Journal](https://journals.christuniversity.in/index.php/culj/index), 2021 to 2022.
 - Founder & Convenor, [Law & Technology Committee](https://ltcslcu.com/), Christ University, 2022 to 2023.
 - Editor, The Cyber Blog India, 2021 to 2023.
-
-## Profiles
-
-[LinkedIn](https://www.linkedin.com/in/tannvi/) · [Google Scholar](https://scholar.google.com/citations?user=iYwaORYAAAAJ&hl=en) · [ORCID](https://orcid.org/0000-0002-6412-0867) · [OSF](https://osf.io/yzx9h/) · [GitHub](https://github.com/tannvi-researcher)
