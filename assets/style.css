@@ -854,3 +854,16 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .sky .star:focus-visible { outline: none; stroke: #fbf6ee; stroke-width: 2; }
 /* done items on list pages: still crossed out, but easier to read */
 .wish-item.done .wish-t { color: #5e4c47; }
+
+/* CV: the same photo treatment as the homepage, beside the title */
+.page-head.has-art { position: relative; min-height: clamp(300px, 34vw, 440px); }
+.cv-art { top: 40px; bottom: auto; height: clamp(320px, 34vw, 460px); right: var(--gut); width: min(520px, 42vw); z-index: 0; }
+.cv-art .hero-kid { height: 92%; bottom: 0; }
+.page-head.has-art .kicker, .page-head.has-art h1 { position: relative; z-index: 1; }
+@media (max-width: 760px) {
+  .page-head.has-art { min-height: 0; display: flex; flex-direction: column; }
+  .cv-art { position: relative; top: auto; right: auto; width: 100%; max-width: 420px; height: 340px; margin: 0 auto 8px; order: -1; }
+}
+.cv-art { height: clamp(280px, 28vw, 380px); top: 60px; }
+.cv-art .hero-wash i { opacity: .28; }
+@media (max-width: 760px) { .cv-art { height: 300px; } }

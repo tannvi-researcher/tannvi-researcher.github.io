@@ -1,6 +1,7 @@
 ---
 title: CV
 kicker: work · research · writing
+photo: assets/cv-cutout.webp
 ---
 ## Work
 

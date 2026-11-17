@@ -642,7 +642,13 @@ for (const name of ['cv']) {
   const html = `
 <main class="profile cities">
 ${data.city ? cityFig(data.city, 'city-head', link) : ''}
-<section class="page-head">
+<section class="page-head${data.photo ? ' has-art' : ''}">
+  ${data.photo ? `<div class="hero-art cv-art">
+    <div class="hero-wash" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <img class="hero-map hero-map-delhi" src="${link('assets/maps/delhi.svg')}" alt="" aria-hidden="true">
+    <img class="hero-map hero-map-blr" src="${link('assets/maps/bangalore.svg')}" alt="" aria-hidden="true">
+    <img class="hero-kid" src="${link(data.photo)}" alt="Tannvi, smiling, outdoors under trees">
+  </div>` : ''}
   <p class="kicker">${esc(data.kicker || '')}</p>
   <h1>${esc(data.title)}</h1>
   ${data.city ? cityLabel(data.city) : ''}
