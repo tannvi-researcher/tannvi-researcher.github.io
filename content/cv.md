@@ -128,10 +128,10 @@ photo: assets/cv-headshot.webp
 ## Moots & awards
 
 - Octo-Finalist, White & Case International Rounds, 65th [Philip C. Jessup International Law Moot Court Competition](https://www.ilsa.org/jessup/), 2024.
-- Rank 89 of 372, 30th Willem C. Vis International Commercial Arbitration Moot, Vienna, 2023; runners-up (oralist in finals), Asia Pacific Vis Pre-Moot, 2023.
+- Rank 89 of 372, 30th [Willem C. Vis International Commercial Arbitration Moot](https://www.vismoot.org/), Vienna, 2023; runners-up (oralist in finals), Asia Pacific Vis Pre-Moot, 2023.
 - Runners-up, Dr M.V.V.S. Murthi 3rd National Virtual Moot Court Competition, 2022.
-- Winning team, NLUO Centre of Public Health National PHFI Moot, 2022.
-- All India Rank 13, Permanent Ambassador, Indian Mediation Week (3rd edition), Ministry of Law and Justice campaign, 2019.
+- Winning team, [2nd NLUO-PHFI Public Health Law National Moot Court Competition](https://nluo.ac.in/news/2nd-nluo-phfi-public-health-law-national-moot-court-competition-2022/), 2022.
+- All India Rank 13, Permanent Ambassador, [Indian Mediation Week](https://www.indianmediationweek.com/) (3rd edition), Ministry of Law and Justice campaign, 2019.
 
 ## Positions of responsibility
 
