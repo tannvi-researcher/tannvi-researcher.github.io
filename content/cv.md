@@ -117,7 +117,7 @@ photo: assets/cv-headshot.webp
 ### [School of Law, CHRIST University](https://christuniversity.in/departments/main-campus/school-of-law/school-of-law), Bengaluru
 *2019 to 2024*
 
-- [Dissertation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7691703), on SSRN.
+- Dissertation: [A Critical Analysis of the Legal Framework for Personalisation of Data of Internet Consumers](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7691703), April 2024.
 
 ### Advanced Diploma, [Cyber Security & Data Protection Laws](https://nalsarpro.softpal.in/Study-Here/One-Year-Advanced-Diploma-Programme-on-offer/Cyber-Security-Data-Protection-Laws/About-the-Programme) · NALSAR University of Law
 *2022 to 2023*
