@@ -79,7 +79,7 @@ photo: assets/cv-headshot.webp
 - [UPI Goes Global: The Regulatory Reckoning Ahead](https://corporate.cyrilamarchandblogs.com/2026/05/upi-goes-global-the-regulatory-reckoning-ahead/), co-authored, Cyril Amarchand Mangaldas blog, May 2026.
 - [Your GCC may comply with India's new data law, but does your headquarters?](https://www.cnbctv18.com/legal/dpdpa-personal-data-protection-india-new-law-compliance-gccs-multinational-companies-views-19914155.htm), co-authored, CNBC-TV18.
 - [Admission enquiry to everyday classroom data: impact of the new data protection law on the education sector](https://www.ndtvprofit.com/india/admission-enquiry-to-everyday-classroom-data-impact-of-indias-new-data-protection-law-on-the-education-sector-11135692), co-authored, NDTV Profit.
-- Editor and writer, [The Cyber Blog India](https://cyberblogindia.in/author/tannvi/), September 2021 to February 2023.
+- Editor and writer, [The Cyber Blog India](https://cyberblogindia.in/), September 2021 to February 2023.
   - Articles:
     - [Android Power and Abuse of Dominance: Google and Self-preferencing](https://cyberblogindia.in/android-power-and-abuse-of-dominance-google-and-self-preferencing/)
     - [Search, Advertise, Control: Google's Overwhelmingly Dominating Position](https://cyberblogindia.in/search-advertise-control-google-dominating-position/)
@@ -137,4 +137,4 @@ photo: assets/cv-headshot.webp
 
 - Editor, [Christ University Law Journal](https://journals.christuniversity.in/index.php/culj/index), 2021 to 2022.
 - Founder & Convenor, [Law & Technology Committee](https://ltcslcu.com/), Christ University, 2022 to 2023.
-- Editor, The Cyber Blog India, 2021 to 2023.
+- Editor, [The Cyber Blog India](https://cyberblogindia.in/), 2021 to 2023.
