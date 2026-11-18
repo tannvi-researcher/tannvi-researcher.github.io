@@ -15,6 +15,7 @@ photo: assets/cv-headshot.webp
 - Conducting responsible AI policy research at the [Wadhwani School of Data Science and AI](https://dsai.iitm.ac.in/).
 - Developing research on bystander privacy, and on practical DPDP compliance frameworks for AI companies, including algorithmic due diligence obligations.
 - Contributing to CeRAI's policy engagement with government and industry on accountable, explainable and responsible AI.
+- Hosted the [Industry Conclave on AI Governance 2026](https://cerai.iitm.ac.in/events/industry-conclave-ai-governance-2026/) at IIT Madras on the theme of AI measurement and governance, October 2026.
 
 ### Associate, TMT and Digital+ · [Cyril Amarchand Mangaldas](https://www.cyrilshroff.com/), Bangalore
 *August 2024 to July 2026*
