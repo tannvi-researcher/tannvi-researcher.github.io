@@ -17,6 +17,7 @@ marked.setOptions({ breaks: true, gfm: true });
 function read(p) { return fs.readFileSync(path.join(ROOT, p), 'utf8'); }
 
 // ---------- curly quotes everywhere a reader sees text ----------
+function slugify(t) { return String(t).toLowerCase().replace(/&amp;/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 function smartText(str, prev = ' ') {
   let out = '';
   for (let i = 0; i < str.length; i++) {
@@ -652,12 +653,21 @@ ${data.city ? cityFig(data.city, 'city-head', link) : ''}
   </div>` : ''}
   <p class="kicker">${esc(data.kicker || '')}</p>
   <h1>${esc(data.title)}</h1>
+  ${data.updated ? `<p class="cv-updated">Updated ${esc(data.updated)}</p>` : ''}
   ${data.city ? cityLabel(data.city) : ''}
+  <a class="cv-scroll" href="#${slugify(secs[0] ? secs[0][0].replace(/<[^>]+>/g, '') : '')}">scroll down <span aria-hidden="true">↓</span></a>
 </section>
-${secs.map(([h, b]) => `<section class="profile-sec reveal">
-  <div class="section-label"><span>${h}</span></div>
-  <div class="profile-body">${b}</div>
-</section>`).join('\n')}
+<div class="cv-layout">
+  <nav class="cv-index" aria-label="On this page">
+    <ol>${secs.map(([h], i) => `<li><a href="#${slugify(h.replace(/<[^>]+>/g, ''))}"><span class="n">${String(i + 1).padStart(2, '0')}</span>${h}</a></li>`).join('')}</ol>
+  </nav>
+  <div class="cv-sections">
+${secs.map(([h, b], i) => `  <section class="cv-sec" id="${slugify(h.replace(/<[^>]+>/g, ''))}">
+    <h2><span class="n">${String(i + 1).padStart(2, '0')}</span>${h}</h2>
+    <div class="profile-body">${b}</div>
+  </section>`).join('\n')}
+  </div>
+</div>
 </main>`;
   write(name + '/index.html', layout({ title: `${data.title} · tannvi`, depth, body: html, bodyClass: 'profile-page cv-page', active: data.title, maps: true }));
 }

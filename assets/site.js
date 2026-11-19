@@ -304,3 +304,13 @@
     b.addEventListener('pointerleave', function () { b.style.transform = ''; });
   });
 })();
+
+// CV: highlight the section you are reading in the side contents
+(function () {
+  var links = document.querySelectorAll('.cv-index a'); if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {}; links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { links.forEach(function (a) { a.classList.remove('on'); }); var a = map[e.target.id]; if (a) a.classList.add('on'); } });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('.cv-sec').forEach(function (s) { io.observe(s); });
+})();

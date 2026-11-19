@@ -1,6 +1,7 @@
 ---
 title: CV
 kicker: work · research · writing
+updated: November 2026
 photo: assets/cv-headshot.webp
 ---
 ## Profiles
