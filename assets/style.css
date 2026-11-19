@@ -916,3 +916,5 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .home main .home-sections > section.home-sec { display: block !important; max-width: none !important; margin: 0 0 48px !important; padding: 0 0 48px !important; }
 .home main .home-sections > section.home-sec:last-child { margin-bottom: 0 !important; }
 @media (max-width: 760px) { .cv-sec { scroll-margin-top: 130px; } }
+/* phones: no contents list, just the numbered sections */
+@media (max-width: 900px) { .cv-index { display: none; } .cv-layout { padding-top: 8px; } }
