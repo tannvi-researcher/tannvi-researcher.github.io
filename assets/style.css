@@ -902,3 +902,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 @media (prefers-reduced-motion: reduce) { .cv-scroll span { animation: none; } }
 .cv-layout { padding-top: 64px; }
 @media (max-width: 900px) { .cv-scroll { display: none; } .cv-layout { padding-top: 24px; } }
+
+/* ============ homepage: numbered contents beside the sections ============ */
+.home .home-layout { padding-top: 40px; }
+.home .home-sections > section { display: block; max-width: none; margin: 0 0 48px; padding: 0 0 48px; border-bottom: 1px solid var(--line); grid-template-columns: none; }
+.home .home-sections > section:last-child { border-bottom: 0; }
+.home .home-h { display: flex; align-items: baseline; gap: 16px; margin: 0 0 22px; font-weight: 400; font-style: italic; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.1; letter-spacing: -.01em; }
+.home .home-h .n { font-style: normal; font-size: .8rem; letter-spacing: .14em; color: var(--rose); }
+.home .home-sections .about-lead, .home .home-sections .also-body, .home .home-sections .timeline { max-width: 68ch; }
+.home .home-sections .now-card { max-width: 640px; }
+.home .home-sections .lately-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .home .home-sections .lately-tiles { grid-template-columns: minmax(0, 1fr); } }
+.home main .home-sections > section.home-sec { display: block !important; max-width: none !important; margin: 0 0 48px !important; padding: 0 0 48px !important; }
+.home main .home-sections > section.home-sec:last-child { margin-bottom: 0 !important; }
+@media (max-width: 760px) { .cv-sec { scroll-margin-top: 130px; } }

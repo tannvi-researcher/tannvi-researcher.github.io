@@ -410,7 +410,15 @@ ${desk.length ? `
 </div>
 </main>
 <script type="application/json" id="pieces-data">${piecesData(link)}</script>`;
-  write('index.html', layout({ title: `${about.data.name}`, depth: 0, body: html, bodyClass: 'home', active: 'About' }));
+  // numbered contents beside the sections, like the CV
+  let n = 0; const idx = [];
+  const sectioned = html.replace(/<section class="([^"]*)"( id="[^"]*")?>\s*<div class="section-label"><span>([^<]+)<\/span><\/div>/g, (m, cls, idAttr, label) => {
+    n++; const id = slugify(label); idx.push([id, label, n]);
+    return `<section class="${cls} cv-sec home-sec" id="${id}">\n  <h2 class="home-h"><span class="n">${String(n).padStart(2, '0')}</span>${label}</h2>`;
+  });
+  const nav = `<nav class="cv-index home-index" aria-label="On this page"><ol>${idx.map(([id, label, k]) => `<li><a href="#${id}"><span class="n">${String(k).padStart(2, '0')}</span>${label}</a></li>`).join('')}</ol></nav>`;
+  const withNav = sectioned.replace(/(<div class="cities">[\s\S]*?<\/figure>\s*<figure[\s\S]*?<\/figure>)/, `$1\n<div class="cv-layout home-layout">\n${nav}\n<div class="cv-sections home-sections">`).replace(/\n<\/div>\n<\/main>/, '\n</div>\n</div>\n</div>\n</main>');
+  write('index.html', layout({ title: `${about.data.name}`, depth: 0, body: withNav, bodyClass: 'home', active: 'About' }));
 }
 
 // Scratch index
