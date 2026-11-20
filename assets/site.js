@@ -314,3 +314,47 @@
   }, { rootMargin: '-30% 0px -60% 0px' });
   document.querySelectorAll('.cv-sec').forEach(function (s) { io.observe(s); });
 })();
+
+// listen: read a Soapbox piece aloud with the reader's own device voice
+(function () {
+  var box = document.querySelector('.listen'), synth = window.speechSynthesis;
+  if (!box || !synth || !window.SpeechSynthesisUtterance) return;
+  box.hidden = false;
+  var play = box.querySelector('.listen-play'), stop = box.querySelector('.listen-stop'), label = box.querySelector('.listen-label'), bar = box.querySelector('.listen-bar i');
+  var title = document.querySelector('.op-head h1');
+  var paras = [].slice.call(document.querySelectorAll('.piece-text p, .piece-text li, .piece-text h2, .piece-text h3, .piece-text blockquote'));
+  var chunks = [{ el: title, text: title ? title.textContent : '' }].concat(paras.map(function (p) { return { el: p, text: p.textContent.replace(/\s+/g, ' ').trim() }; })).filter(function (c) { return c.text; });
+  var i = 0, state = 'idle', voice = null;
+  function pickVoice() {
+    var vs = synth.getVoices(); if (!vs.length) return;
+    var pref = ['en-IN', 'en-GB', 'en-US'];
+    for (var k = 0; k < pref.length && !voice; k++) {
+      var m = vs.filter(function (v) { return v.lang === pref[k] || v.lang.replace('_', '-') === pref[k]; });
+      voice = m.filter(function (v) { return /natural|neural|premium|enhanced|google/i.test(v.name); })[0] || m[0] || null;
+    }
+    if (!voice) voice = vs.filter(function (v) { return /^en/.test(v.lang); })[0] || null;
+  }
+  pickVoice(); if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = pickVoice;
+  function mark() {
+    chunks.forEach(function (c, k) { if (c.el) c.el.classList.toggle('is-reading', k === i && state === 'playing'); });
+    bar.style.width = Math.round((i / chunks.length) * 100) + '%';
+  }
+  function speak() {
+    if (i >= chunks.length) { reset(); bar.style.width = '100%'; return; }
+    var u = new SpeechSynthesisUtterance(chunks[i].text);
+    if (voice) u.voice = voice; u.lang = voice ? voice.lang : 'en-IN'; u.rate = 0.98;
+    u.onend = function () { if (state === 'playing') { i++; speak(); } };
+    mark(); synth.speak(u);
+    if (chunks[i].el && chunks[i].el.getBoundingClientRect().top > innerHeight * .8) chunks[i].el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function setUI() { box.classList.toggle('is-playing', state === 'playing'); label.textContent = state === 'playing' ? 'Pause' : state === 'paused' ? 'Resume' : 'Listen to this piece'; stop.hidden = state === 'idle'; }
+  function reset() { state = 'idle'; synth.cancel(); i = 0; mark(); setUI(); }
+  play.addEventListener('click', function () {
+    if (state === 'idle') { state = 'playing'; synth.cancel(); speak(); }
+    else if (state === 'playing') { state = 'paused'; synth.pause(); }
+    else { state = 'playing'; synth.resume(); if (!synth.speaking) speak(); }
+    setUI(); mark();
+  });
+  stop.addEventListener('click', reset);
+  window.addEventListener('pagehide', function () { synth.cancel(); });
+})();

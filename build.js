@@ -638,6 +638,12 @@ articles.forEach(a => {
     <h1>${esc(a.title)}</h1>
     ${a.subtitle ? `<p class="op-head-sub">${esc(a.subtitle)}</p>` : ''}
     ${a.published ? `<p class="op-pub">First published in ${a.link ? `<a class="text-link" href="${esc(a.link)}">${esc(a.published)}</a>` : esc(a.published)}</p>` : ''}
+    <div class="listen" hidden>
+      <button class="listen-play" type="button" aria-label="Listen to this piece"><span class="listen-icon" aria-hidden="true"></span><span class="listen-label">Listen to this piece</span></button>
+      <button class="listen-stop" type="button" aria-label="Stop" hidden>stop</button>
+      <span class="listen-bar" aria-hidden="true"><i></i></span>
+      <span class="listen-time">${mins} min</span>
+    </div>
   </header>
   <article class="piece-body prose">
     <div class="piece-text">${fixRootLinks(a.html, link)}</div>
