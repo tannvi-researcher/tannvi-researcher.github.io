@@ -276,6 +276,49 @@ function card(p, link) {
   </div>
 </a>`;
 }
+
+// Work grid on the homepage: everything she has made, filterable by topic
+const ARTICLE_TOPICS = {
+  'blame-the-woman-save-the-ceo': ['technology', 'policy'],
+  'everyone-is-a-bystander-now': ['law', 'technology', 'policy'],
+  'is-persuasion-a-dark-pattern-or-just-marketing': ['law', 'technology'],
+};
+const ELSEWHERE = [
+  { kind: 'mint', title: 'The Delhi High Court ruling is unlikely to be the last word on IP used for AI training', date: '2026-07', href: 'https://www.livemint.com/opinion/online-views/ani-vs-openai-delhi-high-court-ruling-intellectual-property-ai-training-copyright-11785477510864.html', topics: ['law', 'technology'] },
+  { kind: 'mint', title: 'Indiamart vs OpenAI: India’s IT intermediary framework must adapt to the age of AI', date: '2026-06', href: 'https://www.livemint.com/opinion/online-views/indiamart-vs-openai-case-india-it-intermediary-framework-ai-artificial-intelligence-legal-liability-11782278472970.html', topics: ['law', 'technology', 'policy'] },
+  { kind: 'cam blog', title: 'UPI Goes Global: The Regulatory Reckoning Ahead', date: '2026-05', href: 'https://corporate.cyrilamarchandblogs.com/2026/05/upi-goes-global-the-regulatory-reckoning-ahead/', topics: ['law', 'policy'] },
+  { kind: 'cnbc-tv18', title: 'Your GCC may comply with India’s new data law, but does your headquarters?', date: '2026-01', href: 'https://www.cnbctv18.com/legal/dpdpa-personal-data-protection-india-new-law-compliance-gccs-multinational-companies-views-19914155.htm', topics: ['law', 'policy'] },
+  { kind: 'ndtv profit', title: 'Admission enquiry to everyday classroom data: the new data law and education', date: '2025-12', href: 'https://www.ndtvprofit.com/india/admission-enquiry-to-everyday-classroom-data-impact-of-indias-new-data-protection-law-on-the-education-sector-11135692', topics: ['law', 'policy'] },
+  { kind: 'dissertation · ssrn', title: 'A Critical Analysis of the Legal Framework for Personalisation of Data of Internet Consumers', date: '2024-04', href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7691703', topics: ['law', 'technology'] },
+  { kind: 'the cyber blog india', title: '8 articles and 12 case notes on tech law, 2021 to 2023', date: '2023-02', href: 'https://cyberblogindia.in/', topics: ['law', 'technology'] },
+];
+function workGrid(link) {
+  const items = [];
+  articles.forEach(a => items.push({ date: a.date, topics: ARTICLE_TOPICS[a.slug] || ['law', 'technology', 'policy'], html: `<a class="w-tile w-img" href="${link(a.url)}">
+      ${a.image ? `<img src="${link(a.image)}" alt="" loading="lazy">` : ''}<span class="w-kind">soapbox</span><span class="w-title">${esc(a.title)}</span></a>` }));
+  ELSEWHERE.forEach(e => items.push({ date: e.date, topics: e.topics, html: `<a class="w-tile w-type" href="${esc(e.href)}" target="_blank" rel="noopener">
+      <span class="w-kind">${esc(e.kind)} ↗</span><span class="w-title">${esc(e.title)}</span></a>` }));
+  pieces.slice(0, 6).forEach(p => items.push({ date: p.date, topics: ['poetry'], html: `<a class="w-tile w-mood ${tileClass(p.moods)}" style="${moodVars(p.moods)}" href="${link(p.url)}">
+      ${artTag(p, 'art-tile')}<span class="w-kind">scratch · ${p.form}</span><span class="w-title">${esc(p.title)}</span></a>` }));
+  books.forEach(b => items.push({ date: '2022', topics: ['poetry'], html: `<a class="w-tile w-img w-book" href="${link('print-and-stage/')}">
+      ${b.cover ? `<img src="${b.cover.startsWith('/') ? link(b.cover.slice(1)) : esc(b.cover)}" alt="" loading="lazy">` : ''}<span class="w-kind">anthology</span><span class="w-title">${esc(b.title)}</span></a>` }));
+  performances.forEach(pf => items.push({ date: pf.date, topics: ['poetry'], html: `<a class="w-tile w-img" href="${link('print-and-stage/')}">
+      ${pf.photo ? `<img src="${link(pf.photo.replace(/^\//, ''))}" alt="" loading="lazy">` : ''}<span class="w-kind">on stage</span><span class="w-title">${esc(pf.venue)}</span></a>` }));
+  items.sort((x, y) => String(y.date).localeCompare(String(x.date)));
+  const topics = [['law', 'Law'], ['technology', 'Technology'], ['policy', 'Policy'], ['poetry', 'Poetry']];
+  return `<section class="work" aria-label="Work">
+  <div class="work-head">
+    <p class="work-count"><span>${items.length}</span> things I’ve made</p>
+    <div class="work-filters" role="group" aria-label="Filter by topic">
+      <button aria-pressed="true" data-topic="all">All</button>
+      ${topics.map(([k, l]) => `<button aria-pressed="false" data-topic="${k}">${l} <sup>${items.filter(i => i.topics.includes(k)).length}</sup></button>`).join('\n      ')}
+    </div>
+  </div>
+  <div class="work-grid">
+    ${items.map(i => i.html.replace('class="w-tile', `data-topics="${i.topics.join(' ')}" class="w-tile`)).join('\n    ')}
+  </div>
+</section>`;
+}
 function tile(p, link) {
   const [y, m] = p.date.split('-');
   return `<a class="${tileClass(p.moods)}" style="${moodVars(p.moods)}" href="${link(p.url)}" data-collections="${p.collections.join(' ').toLowerCase()} ${p.form}" data-title="${esc(p.title.toLowerCase())} ${esc(p.firstLine.toLowerCase())}">
@@ -359,6 +402,8 @@ fs.mkdirSync(OUT, { recursive: true });
   </div>
   <a class="scroll-cue" href="#about">scroll<span></span></a>
 </section>
+
+${workGrid(link)}
 
 <div class="cities">
 ${cityFig('delhi', 'city-delhi', link)}

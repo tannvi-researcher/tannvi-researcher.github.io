@@ -314,3 +314,17 @@
   }, { rootMargin: '-30% 0px -60% 0px' });
   document.querySelectorAll('.cv-sec').forEach(function (s) { io.observe(s); });
 })();
+
+// work grid filters
+(function () {
+  var wrap = document.querySelector('.work'); if (!wrap) return;
+  var btns = wrap.querySelectorAll('.work-filters button'), tiles = wrap.querySelectorAll('.w-tile'), count = wrap.querySelector('.work-count span');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.dataset.topic, n = 0;
+      btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      tiles.forEach(function (el) { var on = t === 'all' || (' ' + el.dataset.topics + ' ').indexOf(' ' + t + ' ') > -1; el.classList.toggle('is-out', !on); if (on) n++; });
+      if (count) count.textContent = n;
+    });
+  });
+})();
