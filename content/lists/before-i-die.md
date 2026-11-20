@@ -85,3 +85,4 @@ intro: Crossed-out ones are done.
 80. Get a MASTERS.
 81. Get a PhD.
 82. Watch a meteor shower somewhere with no light pollution.
+83. Do an Ironman 70.3.
