@@ -33,4 +33,4 @@ The board was meant to watch the CEO for the shareholders. The CEO ran a relatio
 
 I don't know if seduction makes a better headline than oversight, or if saying one of the richest men in the world has been honey-trapped is easier and more convenient than saying he was careless and cheating. This is himpathy: a comeback story for a man who has already written his own story, while a woman is written out of hers. And that's what a monopoly does to an ecosystem. A man is too big to fail, and a woman is small enough to be blamed. She *reportedly* did something.
 
-So, until the lions have their own historians, the history of the hunt will always glorify the hunter. Jensen Huang is the hunter.
+So, as [Chinua Achebe](https://www.npr.org/sections/thetwo-way/2013/03/22/175046327/chinua-achebe-and-the-bravery-of-lions), borrowing an African proverb, said: until the lions have their own historians, the history of the hunt will always glorify the hunter. Jensen Huang is the hunter.
