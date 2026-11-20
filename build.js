@@ -284,41 +284,44 @@ const ARTICLE_TOPICS = {
   'is-persuasion-a-dark-pattern-or-just-marketing': ['law', 'technology'],
 };
 const ELSEWHERE = [
-  { kind: 'mint', title: 'The Delhi High Court ruling is unlikely to be the last word on IP used for AI training', date: '2026-07', href: 'https://www.livemint.com/opinion/online-views/ani-vs-openai-delhi-high-court-ruling-intellectual-property-ai-training-copyright-11785477510864.html', topics: ['law', 'technology'] },
-  { kind: 'mint', title: 'Indiamart vs OpenAI: India’s IT intermediary framework must adapt to the age of AI', date: '2026-06', href: 'https://www.livemint.com/opinion/online-views/indiamart-vs-openai-case-india-it-intermediary-framework-ai-artificial-intelligence-legal-liability-11782278472970.html', topics: ['law', 'technology', 'policy'] },
-  { kind: 'cam blog', title: 'UPI Goes Global: The Regulatory Reckoning Ahead', date: '2026-05', href: 'https://corporate.cyrilamarchandblogs.com/2026/05/upi-goes-global-the-regulatory-reckoning-ahead/', topics: ['law', 'policy'] },
-  { kind: 'cnbc-tv18', title: 'Your GCC may comply with India’s new data law, but does your headquarters?', date: '2026-01', href: 'https://www.cnbctv18.com/legal/dpdpa-personal-data-protection-india-new-law-compliance-gccs-multinational-companies-views-19914155.htm', topics: ['law', 'policy'] },
-  { kind: 'ndtv profit', title: 'Admission enquiry to everyday classroom data: the new data law and education', date: '2025-12', href: 'https://www.ndtvprofit.com/india/admission-enquiry-to-everyday-classroom-data-impact-of-indias-new-data-protection-law-on-the-education-sector-11135692', topics: ['law', 'policy'] },
-  { kind: 'dissertation · ssrn', title: 'A Critical Analysis of the Legal Framework for Personalisation of Data of Internet Consumers', date: '2024-04', href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7691703', topics: ['law', 'technology'] },
-  { kind: 'the cyber blog india', title: '8 articles and 12 case notes on tech law, 2021 to 2023', date: '2023-02', href: 'https://cyberblogindia.in/', topics: ['law', 'technology'] },
+  { kind: 'mint', desc: 'Op-ed in Mint', title: 'The Delhi High Court ruling is unlikely to be the last word on IP used for AI training', date: '2026-07', href: 'https://www.livemint.com/opinion/online-views/ani-vs-openai-delhi-high-court-ruling-intellectual-property-ai-training-copyright-11785477510864.html', topics: ['law', 'technology'] },
+  { kind: 'mint', desc: 'Op-ed in Mint', title: 'Indiamart vs OpenAI: India’s IT intermediary framework must adapt to the age of AI', date: '2026-06', href: 'https://www.livemint.com/opinion/online-views/indiamart-vs-openai-case-india-it-intermediary-framework-ai-artificial-intelligence-legal-liability-11782278472970.html', topics: ['law', 'technology', 'policy'] },
+  { kind: 'cam blog', desc: 'Co-authored, Cyril Amarchand Mangaldas blog', title: 'UPI Goes Global: The Regulatory Reckoning Ahead', date: '2026-05', href: 'https://corporate.cyrilamarchandblogs.com/2026/05/upi-goes-global-the-regulatory-reckoning-ahead/', topics: ['law', 'policy'] },
+  { kind: 'cnbc-tv18', desc: 'Co-authored, CNBC-TV18', title: 'Your GCC may comply with India’s new data law, but does your headquarters?', date: '2026-01', href: 'https://www.cnbctv18.com/legal/dpdpa-personal-data-protection-india-new-law-compliance-gccs-multinational-companies-views-19914155.htm', topics: ['law', 'policy'] },
+  { kind: 'ndtv profit', desc: 'Co-authored, NDTV Profit', title: 'Admission enquiry to everyday classroom data: the new data law and education', date: '2025-12', href: 'https://www.ndtvprofit.com/india/admission-enquiry-to-everyday-classroom-data-impact-of-indias-new-data-protection-law-on-the-education-sector-11135692', topics: ['law', 'policy'] },
+  { kind: 'ssrn', desc: 'Dissertation, on SSRN', title: 'A Critical Analysis of the Legal Framework for Personalisation of Data of Internet Consumers', date: '2024-04', href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7691703', topics: ['law', 'technology'] },
+  { kind: 'the cyber blog india', desc: 'Editor and writer', title: '8 articles and 12 case notes on tech law, 2021 to 2023', date: '2023-02', href: 'https://cyberblogindia.in/', topics: ['law', 'technology'] },
 ];
 function workGrid(link) {
   const items = [];
-  articles.forEach(a => items.push({ date: a.date, topics: ARTICLE_TOPICS[a.slug] || ['law', 'technology', 'policy'], html: `<a class="w-tile w-img" href="${link(a.url)}">
-      ${a.image ? `<img src="${link(a.image)}" alt="" loading="lazy">` : ''}<span class="w-kind">soapbox</span><span class="w-title">${esc(a.title)}</span></a>` }));
-  ELSEWHERE.forEach(e => items.push({ date: e.date, topics: e.topics, html: `<a class="w-tile w-type" href="${esc(e.href)}" target="_blank" rel="noopener">
-      <span class="w-kind">${esc(e.kind)} ↗</span><span class="w-title">${esc(e.title)}</span></a>` }));
-  pieces.slice(0, 6).forEach(p => items.push({ date: p.date, topics: ['poetry'], html: `<a class="w-tile w-mood ${tileClass(p.moods)}" style="${moodVars(p.moods)}" href="${link(p.url)}">
-      ${artTag(p, 'art-tile')}<span class="w-kind">scratch · ${p.form}</span><span class="w-title">${esc(p.title)}</span></a>` }));
-  books.forEach(b => items.push({ date: '2022', topics: ['poetry'], html: `<a class="w-tile w-img w-book" href="${link('print-and-stage/')}">
-      ${b.cover ? `<img src="${b.cover.startsWith('/') ? link(b.cover.slice(1)) : esc(b.cover)}" alt="" loading="lazy">` : ''}<span class="w-kind">anthology</span><span class="w-title">${esc(b.title)}</span></a>` }));
-  performances.forEach(pf => items.push({ date: pf.date, topics: ['poetry'], html: `<a class="w-tile w-img" href="${link('print-and-stage/')}">
-      ${pf.photo ? `<img src="${link(pf.photo.replace(/^\//, ''))}" alt="" loading="lazy">` : ''}<span class="w-kind">on stage</span><span class="w-title">${esc(pf.venue)}</span></a>` }));
+  const fig = (href, ext, media, title, desc, extra = '') => `<a class="w-item${extra}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ''}><span class="w-media">${media}</span><span class="w-cap"><span class="w-title">${esc(title)}</span><span class="w-desc">${desc}</span></span></a>`;
+  const mins = a => Math.max(1, Math.round(a.words / 200));
+  articles.forEach(a => items.push({ date: a.date, topics: ARTICLE_TOPICS[a.slug] || ['law', 'technology', 'policy'],
+    html: fig(link(a.url), false, a.image ? `<img src="${link(a.image)}" alt="" loading="lazy">` : '', a.title, `Soapbox · ${mins(a)} min read`, a.image ? ' w-photo' : '') }));
+  ELSEWHERE.forEach(e => items.push({ date: e.date, topics: e.topics,
+    html: fig(esc(e.href), true, `<span class="w-word">${esc(e.kind)}</span>`, e.title, `${esc(e.desc)} ↗`, ' w-typo') }));
+  pieces.slice(0, 6).forEach(p => items.push({ date: p.date, topics: ['poetry'],
+    html: fig(link(p.url), false, `<span class="${tileClass(p.moods)} w-art" style="${moodVars(p.moods)}">${artTag(p, 'art-tile')}</span>`, p.title, `Scratch · ${p.form}`) }));
+  books.forEach(b => items.push({ date: '2022', topics: ['poetry'],
+    html: fig(link('print-and-stage/'), false, b.cover ? `<img src="${b.cover.startsWith('/') ? link(b.cover.slice(1)) : esc(b.cover)}" alt="" loading="lazy">` : '', b.title, 'Anthology · my poems in print', ' w-book') }));
+  performances.forEach(pf => items.push({ date: pf.date, topics: ['poetry'],
+    html: fig(link('print-and-stage/'), false, pf.photo ? `<img src="${link(pf.photo.replace(/^\//, ''))}" alt="" loading="lazy">` : '', pf.venue, `Read live · ${esc(niceDate(pf.date))}`, pf.photo ? ' w-photo' : '') }));
   items.sort((x, y) => String(y.date).localeCompare(String(x.date)));
-  const topics = [['law', 'Law'], ['technology', 'Technology'], ['policy', 'Policy'], ['poetry', 'Poetry']];
+  const topics = [['everything', 'all'], ['law', 'law'], ['technology', 'technology'], ['policy', 'policy'], ['poetry', 'poetry']];
   return `<section class="work" aria-label="Work">
-  <div class="work-head">
-    <p class="work-count"><span>${items.length}</span> things I’ve made</p>
-    <div class="work-filters" role="group" aria-label="Filter by topic">
-      <button aria-pressed="true" data-topic="all">All</button>
-      ${topics.map(([k, l]) => `<button aria-pressed="false" data-topic="${k}">${l} <sup>${items.filter(i => i.topics.includes(k)).length}</sup></button>`).join('\n      ')}
-    </div>
-  </div>
   <div class="work-grid">
-    ${items.map(i => i.html.replace('class="w-tile', `data-topics="${i.topics.join(' ')}" class="w-tile`)).join('\n    ')}
+    ${items.map(i => i.html.replace('class="w-item', `data-topics="${i.topics.join(' ')}" class="w-item`)).join('\n    ')}
+  </div>
+  <div class="work-pill" role="group" aria-label="Filter by topic">
+    <span>Tannvi writes about</span>
+    <span class="pill-pick">
+      <button class="pill-current" aria-haspopup="true" aria-expanded="false">everything</button>
+      <span class="pill-menu">${topics.map(([l, k]) => `<button data-topic="${k}"${k === 'all' ? ' aria-pressed="true"' : ''}>${l} <sup>${k === 'all' ? items.length : items.filter(i => i.topics.includes(k)).length}</sup></button>`).join('')}</span>
+    </span>
   </div>
 </section>`;
 }
+
 function tile(p, link) {
   const [y, m] = p.date.split('-');
   return `<a class="${tileClass(p.moods)}" style="${moodVars(p.moods)}" href="${link(p.url)}" data-collections="${p.collections.join(' ').toLowerCase()} ${p.form}" data-title="${esc(p.title.toLowerCase())} ${esc(p.firstLine.toLowerCase())}">

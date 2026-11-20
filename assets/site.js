@@ -315,16 +315,29 @@
   document.querySelectorAll('.cv-sec').forEach(function (s) { io.observe(s); });
 })();
 
-// work grid filters
+// work grid: Pentagram rhythm (one wide, two halves, then a row of four) and the sentence filter
 (function () {
   var wrap = document.querySelector('.work'); if (!wrap) return;
-  var btns = wrap.querySelectorAll('.work-filters button'), tiles = wrap.querySelectorAll('.w-tile'), count = wrap.querySelector('.work-count span');
-  btns.forEach(function (b) {
+  var items = [].slice.call(wrap.querySelectorAll('.w-item')), pick = wrap.querySelector('.pill-pick'), cur = wrap.querySelector('.pill-current');
+  function rhythm() {
+    var vis = items.filter(function (el) { return !el.classList.contains('is-out'); });
+    var n = 0; // pictures take the big slots in turn: wide, half, half, then small for a while
+    vis.forEach(function (el) {
+      var photo = el.classList.contains('w-photo'), k = photo ? n++ % 4 : -1;
+      el.classList.toggle('w-feature', k === 0); el.classList.toggle('w-half', k === 1 || k === 2);
+    });
+  }
+  rhythm();
+  cur.addEventListener('click', function () { var o = pick.classList.toggle('open'); cur.setAttribute('aria-expanded', o); });
+  document.addEventListener('click', function (e) { if (!pick.contains(e.target)) { pick.classList.remove('open'); cur.setAttribute('aria-expanded', 'false'); } });
+  wrap.querySelectorAll('.pill-menu button').forEach(function (b) {
     b.addEventListener('click', function () {
-      var t = b.dataset.topic, n = 0;
-      btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      tiles.forEach(function (el) { var on = t === 'all' || (' ' + el.dataset.topics + ' ').indexOf(' ' + t + ' ') > -1; el.classList.toggle('is-out', !on); if (on) n++; });
-      if (count) count.textContent = n;
+      var t = b.dataset.topic;
+      wrap.querySelectorAll('.pill-menu button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cur.textContent = t === 'all' ? 'everything' : t;
+      items.forEach(function (el) { el.classList.toggle('is-out', !(t === 'all' || (' ' + el.dataset.topics + ' ').indexOf(' ' + t + ' ') > -1)); });
+      rhythm(); pick.classList.remove('open');
+      var top = wrap.getBoundingClientRect().top + scrollY - 90; if (scrollY > top) scrollTo({ top: top, behavior: 'smooth' });
     });
   });
 })();
