@@ -252,6 +252,7 @@ ${body}
     <p class="footer-links">${(links['Find me'] || []).map(l => `<a href="${esc(l.href)}" rel="me">${esc(l.label)}</a>`).join('<span>·</span>')}</p>
     <nav class="footer-nav" aria-label="Footer">${nav.map(([label, p]) => `<a href="${link(p)}">${esc(label)}</a>`).join('')}</nav>
     <a class="to-top" href="#top">back to top ↑</a>
+    <p class="footer-small">[ written by a human, built and looked after with <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> ]</p>
   </div>
 </footer>
 <script src="${link('assets/art.js')}"></script>
@@ -606,7 +607,7 @@ lists.forEach((l, idx) => {
   <h1>Soapbox</h1>
 </section>
 <section class="op-wrap">
-<div class="op-note"><p>Where I climb up and say what I think about law, tech, power and the people caught in between.</p><p><strong>Disclaimer:</strong> I write these pieces independently, in my own time, as an academic exercise. All views, errors and omissions are my own. They do not represent the views of any current or past employer, or of any organisation I am or have been associated with. (The illustrations are made with Claude.)</p></div>
+<div class="op-note"><p>Where I climb up and say what I think about law, tech, power and the people caught in between.</p><p><strong>Disclaimer:</strong> I write these pieces independently, in my own time, as an academic exercise. All views, errors and omissions are my own. They do not represent the views of any current or past employer, or of any organisation I am or have been associated with.</p><p>The illustrations are made with Claude.</p></div>
 ${list}
 </section>
 </main>`;

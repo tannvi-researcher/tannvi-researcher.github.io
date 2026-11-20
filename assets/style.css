@@ -958,3 +958,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 }
 .keep-reading + .piece-nav { margin-top: 28px; }
 @media (max-width: 520px) { .keep-reading .op-tile-date { font-size: .55rem; letter-spacing: .14em; } }
+.footer-small { margin-top: 14px; }
+.footer-small a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.footer-small a:hover { color: var(--rose); }
