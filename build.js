@@ -233,7 +233,7 @@ ${body}
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${link('assets/style.css')}">
 </head>
-<body class="${bodyClass}">
+<body class="${bodyClass}" id="top">
 <div class="grain" aria-hidden="true"></div>
 <header class="topbar">
   <a class="brand" href="${link('')}">tannvi</a>
@@ -250,6 +250,8 @@ ${body}
   <div class="footer-inner">
     <p class="footer-name"><em>tannvi</em></p>
     <p class="footer-links">${(links['Find me'] || []).map(l => `<a href="${esc(l.href)}" rel="me">${esc(l.label)}</a>`).join('<span>·</span>')}</p>
+    <nav class="footer-nav" aria-label="Footer">${nav.map(([label, p]) => `<a href="${link(p)}">${esc(label)}</a>`).join('')}</nav>
+    <a class="to-top" href="#top">back to top ↑</a>
   </div>
 </footer>
 <script src="${link('assets/art.js')}"></script>
@@ -593,7 +595,7 @@ lists.forEach((l, idx) => {
     ? `<div class="op-tiles">
   ${articles.map(a => `<a class="op-tile" href="${link(a.url)}">
     ${a.image ? `<img src="${link(a.image)}" alt="" loading="lazy">` : '<span class="op-tile-blank"></span>'}
-    <span class="op-tile-date">${esc(niceDate(a.date))}</span>
+    <span class="op-tile-date">${esc(niceDate(a.date))} · ${Math.max(1, Math.round(a.words / 200))} min</span>
     <span class="op-tile-title">${esc(a.title)}</span>
   </a>`).join('\n  ')}
 </div>`
@@ -632,6 +634,14 @@ articles.forEach(a => {
   <article class="piece-body prose">
     <div class="piece-text">${fixRootLinks(a.html, link)}</div>
   </article>
+  ${(() => { const more = articles.filter(b => b.slug !== a.slug).slice(0, 2); return more.length ? `<section class="keep-reading" aria-label="Keep reading">
+    <p class="kicker">keep reading</p>
+    <div class="op-tiles">${more.map(b => `<a class="op-tile" href="${link(b.url)}">
+      ${b.image ? `<img src="${link(b.image)}" alt="" loading="lazy">` : '<span class="op-tile-blank"></span>'}
+      <span class="op-tile-date">${esc(niceDate(b.date))} · ${Math.max(1, Math.round(b.words / 200))} min</span>
+      <span class="op-tile-title">${esc(b.title)}</span>
+    </a>`).join('')}</div>
+  </section>` : ''; })()}
   <nav class="piece-nav" aria-label="More">
     <span></span><a class="pn pn-all" href="${link('soapbox/')}">all of soapbox</a><span></span>
   </nav>

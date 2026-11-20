@@ -925,3 +925,36 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .op-note p + p { margin-top: 12px; }
 .note-wrap .op-note { max-width: none; margin: 0 0 8px; }
 .note-wrap { max-width: 900px; margin: 0 auto 30px; padding: 0 var(--gut); }
+
+/* ---------- UX pass (Nov 2026) ---------- */
+/* smooth fade between pages in browsers that support it */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .35s; }
+
+/* page titles rise in, word by word feel without extra markup */
+.page-head h1, .op-head h1, .piece-head h1 { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+.page-head .kicker, .op-note, .note-wrap { animation: rise .9s .15s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: none; clip-path: inset(0 0 -20% 0); } }
+
+/* softer links inside long reads: thin underline that thickens on hover */
+.piece-text a { text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(138,31,49,.45); transition: text-decoration-color .2s, text-decoration-thickness .2s; }
+.piece-text a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
+
+/* keep reading tiles at the end of a soapbox piece */
+.keep-reading { max-width: var(--read); margin: 60px auto 0; padding: 0 var(--gut); }
+.keep-reading .kicker { margin: 0 0 14px; }
+.keep-reading .op-tiles { grid-template-columns: repeat(2, 1fr); }
+
+/* footer: site map and back to top */
+.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 14px; font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; }
+.footer-nav a { color: var(--mute); text-decoration: none; }
+.footer-nav a:hover { color: var(--rose); }
+.to-top { justify-self: start; margin-top: 10px; color: var(--faint); font-style: italic; text-decoration: none; font-size: .95rem; }
+.to-top:hover { color: var(--rose); }
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .page-head h1, .op-head h1, .piece-head h1, .page-head .kicker, .op-note, .note-wrap { animation: none; }
+}
+.keep-reading + .piece-nav { margin-top: 28px; }
+@media (max-width: 520px) { .keep-reading .op-tile-date { font-size: .55rem; letter-spacing: .14em; } }
