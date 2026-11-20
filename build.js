@@ -608,9 +608,9 @@ lists.forEach((l, idx) => {
 <main>
 <section class="page-head">
   <h1>Opinions</h1>
-  <p class="op-note">I write these pieces independently, in my own time, as an academic exercise. All views, errors and omissions are my own. They do not represent the views of any current or past employer, or of any organisation I am or have been associated with.</p>
 </section>
 <section class="op-wrap">
+<p class="op-note">I write these pieces independently, in my own time, as an academic exercise. All views, errors and omissions are my own. They do not represent the views of any current or past employer, or of any organisation I am or have been associated with.</p>
 ${list}
 </section>
 </main>`;

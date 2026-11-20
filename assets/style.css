@@ -918,3 +918,4 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 @media (max-width: 760px) { .cv-sec { scroll-margin-top: 130px; } }
 /* phones: no contents list, just the numbered sections */
 @media (max-width: 900px) { .cv-index { display: none; } .cv-layout { padding-top: 8px; } }
+.op-wrap .op-note { max-width: none; margin: 0 0 26px; }
