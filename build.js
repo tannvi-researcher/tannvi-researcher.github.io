@@ -397,9 +397,15 @@ ${desk.length ? `
   <div class="section-label"><span>Lately</span></div>
   <div class="lately-body">
     <div class="tiles lately-tiles reveal">
-    ${pieces.slice(0, 3).map(p => tile(p, link)).join('\n    ')}
+    ${[...pieces.map(p => ({ date: p.date, html: tile(p, link) })),
+       ...articles.map(a => ({ date: a.date, html: `<a class="op-tile" href="${link(a.url)}">
+      ${a.image ? `<img src="${link(a.image)}" alt="" loading="lazy">` : '<span class="op-tile-blank"></span>'}
+      <span class="op-tile-date">soapbox</span>
+      <span class="op-tile-title">${esc(a.title)}</span>
+    </a>` }))]
+      .sort((x, y) => String(y.date).localeCompare(String(x.date))).slice(0, 3).map(x => x.html).join('\n    ')}
     </div>
-    <p class="lately-more"><a class="text-link" href="${link('scratch/')}">everything on scratch →</a></p>
+    <p class="lately-more"><a class="text-link" href="${link('scratch/')}">all of scratch →</a> <a class="text-link" href="${link('soapbox/')}">all of soapbox →</a></p>
   </div>
 </section>
 

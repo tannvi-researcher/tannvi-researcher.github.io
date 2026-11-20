@@ -912,7 +912,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .home .home-sections .about-lead, .home .home-sections .also-body, .home .home-sections .timeline { max-width: 68ch; }
 .home .home-sections .now-card { max-width: 640px; }
 .home .home-sections .lately-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-@media (max-width: 900px) { .home .home-sections .lately-tiles { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 900px) {
+  .home .home-sections .lately-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .lately-tiles .tile-kind, .lately-tiles .op-tile-date { font-size: .5rem; letter-spacing: .14em; }
+  .lately-tiles .tile-title, .lately-tiles .op-tile-title { font-size: .85rem; line-height: 1.1; -webkit-line-clamp: 3; }
+  .lately-tiles .tile-hover { display: none; }
+}
+.lately-more { display: flex; flex-wrap: wrap; gap: 6px 24px; }
 .home main .home-sections > section.home-sec { display: block !important; max-width: none !important; margin: 0 0 48px !important; padding: 0 0 48px !important; }
 .home main .home-sections > section.home-sec:last-child { margin-bottom: 0 !important; }
 @media (max-width: 760px) { .cv-sec { scroll-margin-top: 130px; } }
@@ -961,3 +967,4 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .footer-small { margin-top: 14px; }
 .footer-small a { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 .footer-small a:hover { color: var(--rose); }
+@media (max-width: 900px) { .home .home-layout { padding-bottom: 24px; } .home .lately { padding-bottom: 8px; } }
