@@ -434,6 +434,7 @@ function scratchPage(depth) {
 <section class="page-head">
   <p class="kicker">a little internet journal</p>
   <h1>Scratch</h1>
+  <p class="page-intro">poems, small stories and feelings i couldn't keep to myself, colour coded by mood.</p>
 </section>
 
 <section class="controls" aria-label="Filter pieces">
@@ -608,9 +609,10 @@ lists.forEach((l, idx) => {
 <main>
 <section class="page-head">
   <h1>Soapbox</h1>
+  <p class="page-intro">Where I climb up and say what I think about law, tech, power and the people caught in between.</p>
 </section>
 <section class="op-wrap">
-<p class="op-note">I write these pieces independently, in my own time, as an academic exercise. All views, errors and omissions are my own. They do not represent the views of any current or past employer, or of any organisation I am or have been associated with.</p>
+<p class="op-note"><strong>Disclaimer:</strong> I write these pieces independently, in my own time, as an academic exercise. All views, errors and omissions are my own. They do not represent the views of any current or past employer, or of any organisation I am or have been associated with.</p>
 ${list}
 </section>
 </main>`;
