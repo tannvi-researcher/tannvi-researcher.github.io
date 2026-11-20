@@ -583,6 +583,7 @@ lists.forEach((l, idx) => {
     </div>
     <div class="list-card-body">
       <h2>${esc(l.title)}</h2>
+      <p class="lc-count">${done} of ${l.items.length} crossed off</p>
       <p class="lc-intro">${esc(l.intro || '')}</p>
       <ul class="lc-next">${next.map(x => `<li>${x.html}</li>`).join('')}</ul>
       <span class="lc-open">open the list →</span>

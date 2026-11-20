@@ -983,3 +983,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
   .stage-list, .stage-list:has(> .gig:only-child) { grid-template-columns: 1fr; gap: 26px; }
   .gig img { aspect-ratio: 4 / 3; object-fit: cover; }
 }
+
+/* lists on phones: one compact row per list, just the name and how many are done */
+.lc-count { display: none; }
+@media (max-width: 640px) {
+  .list-cards { gap: 12px; }
+  .list-card { display: flex !important; flex-direction: row; align-items: center; gap: 16px; padding: 16px 18px !important; border-radius: 16px; }
+  .list-card .ring-sm { width: 64px; height: 64px; flex: none; margin: 0; }
+  .list-card .ring-label strong { font-size: 1.15rem; }
+  .list-card .ring-label span { display: none; }
+  .list-card-body { min-width: 0; flex: 1; }
+  .list-card h2 { font-size: 1.35rem; margin: 0 0 2px; }
+  .lc-count { display: block; margin: 0; font-size: .9rem; color: rgba(243, 236, 225, .7); font-style: italic; }
+  .lc-intro, .lc-next { display: none; }
+  .lc-open { display: none; }
+  .list-card::after { content: "→"; color: var(--rose, #c96a4a); font-size: 1.2rem; flex: none; }
+}
