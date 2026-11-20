@@ -10,6 +10,7 @@ const ROOT = __dirname;
 const OUT = path.join(ROOT, '_site');
 const PREVIEW = process.env.PREVIEW === '1'; // makes links end in index.html for offline previews
 const SITE_URL = 'https://tannvi-researcher.github.io'; // change this if the address changes
+const BUTTONDOWN_USER = 'tannvi'; // your Buttondown username, for the subscribe box in the footer
 
 marked.setOptions({ breaks: true, gfm: true });
 
@@ -228,6 +229,7 @@ ${body}
 <meta property="og:description" content="${esc(description)}">
 <meta name="theme-color" content="#f3ece1">
 <link rel="icon" href="${link('assets/favicon.svg')}" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="tannvi: Scratch and Soapbox" href="${SITE_URL}/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -249,6 +251,10 @@ ${body}
 <footer class="footer">
   <div class="footer-inner">
     <p class="footer-name"><em>tannvi</em></p>
+    <form class="subscribe" action="https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_USER}" method="post" target="_blank">
+      <label for="sub-email">new pieces from Scratch and Soapbox, in your inbox</label>
+      <div class="subscribe-row"><input id="sub-email" type="email" name="email" placeholder="your email address" required autocomplete="email"><input type="hidden" name="embed" value="1"><button type="submit">subscribe</button></div>
+    </form>
     <p class="footer-links">${(links['Find me'] || []).map(l => `<a href="${esc(l.href)}" rel="me">${esc(l.label)}</a>`).join('<span>·</span>')}</p>
     <nav class="footer-nav" aria-label="Footer">${nav.map(([label, p]) => `<a href="${link(p)}">${esc(label)}</a>`).join('')}</nav>
     <a class="to-top" href="#top">back to top ↑</a>
@@ -609,7 +615,7 @@ lists.forEach((l, idx) => {
     ? `<div class="op-tiles">
   ${articles.map(a => `<a class="op-tile" href="${link(a.url)}">
     ${a.image ? `<img src="${link(a.image)}" alt="" loading="lazy">` : '<span class="op-tile-blank"></span>'}
-    <span class="op-tile-date">${esc(niceDate(a.date))} · ${Math.max(1, Math.round(a.words / 200))} min</span>
+    <span class="op-tile-date">${esc(niceDate(a.date))}<span class="op-min"> · ${Math.max(1, Math.round(a.words / 200))} min</span></span>
     <span class="op-tile-title">${esc(a.title)}</span>
   </a>`).join('\n  ')}
 </div>`
@@ -658,7 +664,7 @@ articles.forEach(a => {
     <p class="kicker">keep reading</p>
     <div class="op-tiles">${more.map(b => `<a class="op-tile" href="${link(b.url)}">
       ${b.image ? `<img src="${link(b.image)}" alt="" loading="lazy">` : '<span class="op-tile-blank"></span>'}
-      <span class="op-tile-date">${esc(niceDate(b.date))} · ${Math.max(1, Math.round(b.words / 200))} min</span>
+      <span class="op-tile-date">${esc(niceDate(b.date))}<span class="op-min"> · ${Math.max(1, Math.round(b.words / 200))} min</span></span>
       <span class="op-tile-title">${esc(b.title)}</span>
     </a>`).join('')}</div>
   </section>` : ''; })()}
@@ -764,3 +770,34 @@ fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
 fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'soapbox/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'print-and-stage/', 'cv/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
 
 console.log(`Built ${pieces.length} pieces, ${lists.length} lists, ${books.length} books into _site/${PREVIEW ? ' (preview links)' : ''}`);
+
+// RSS feed of new Scratch and Soapbox pieces (Buttondown reads this to email subscribers)
+{
+  const xmlEsc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const abs = h => String(h).replace(/(href|src)="\/(?!\/)/g, `$1="${SITE_URL}/`);
+  const items = [
+    ...articles.map(a => ({ title: a.title, url: `${SITE_URL}/${a.url}`, date: a.date, section: 'Soapbox', html: a.html, desc: a.subtitle || '' })),
+    ...pieces.map(p => ({ title: p.title, url: `${SITE_URL}/${p.url}`, date: p.date, section: 'Scratch', html: p.html, desc: p.firstLine || '' })),
+  ].sort((x, y) => String(y.date).localeCompare(String(x.date))).slice(0, 20);
+  const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>tannvi</title>
+  <link>${SITE_URL}/</link>
+  <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>New pieces from Scratch and Soapbox.</description>
+  <language>en-in</language>
+${items.map(i => `  <item>
+    <title>${xmlEsc(smartText(i.title))}</title>
+    <link>${i.url}</link>
+    <guid isPermaLink="true">${i.url}</guid>
+    <pubDate>${new Date(String(i.date).slice(0, 10) + 'T09:00:00+05:30').toUTCString()}</pubDate>
+    <category>${i.section}</category>
+    <description>${xmlEsc(smartText(i.desc))}</description>
+    <content:encoded><![CDATA[${abs(i.html).replace(/]]>/g, ']]&gt;')}]]></content:encoded>
+  </item>`).join('\n')}
+</channel>
+</rss>
+`;
+  fs.writeFileSync(path.join(OUT, 'feed.xml'), rss);
+}

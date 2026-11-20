@@ -1020,3 +1020,20 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .listen-dark .listen-bar { background: rgba(243, 236, 225, .2); }
 .listen-dark .listen-time, .listen-dark .listen-stop { color: rgba(243, 236, 225, .65); }
 .piece-head .listen { margin-left: auto; margin-right: auto; }
+
+/* footer subscribe box (Buttondown) */
+.subscribe { margin: 6px 0 18px; max-width: 520px; }
+.subscribe label { display: block; font-style: italic; color: var(--mute); margin-bottom: 10px; }
+.subscribe-row { display: flex; gap: 8px; padding: 6px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255, 255, 255, .45); transition: border-color .2s, box-shadow .2s; }
+.subscribe-row:focus-within { border-color: var(--rose); box-shadow: 0 0 0 3px rgba(138, 31, 49, .12); }
+.subscribe input[type="email"] { flex: 1; min-width: 0; font: inherit; font-size: 1rem; border: 0; background: none; padding: 8px 14px; color: var(--bone); outline: none; }
+.subscribe input::placeholder { color: var(--faint); font-style: italic; }
+.subscribe button { font: inherit; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; border: 0; border-radius: 999px; padding: 10px 20px; background: var(--rose); color: #f6eee4; cursor: pointer; transition: background .2s; }
+.subscribe button:hover { background: #6e1626; }
+.subscribe, .subscribe-row { box-sizing: border-box; width: 100%; }
+.subscribe button { flex: none; }
+@media (max-width: 520px) {
+  .subscribe button { padding: 10px 14px; letter-spacing: .12em; }
+  .op-tile-date { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; right: 8px; font-size: .5rem; letter-spacing: .12em; }
+}
+@media (max-width: 520px) { .op-min { display: none; } .op-tile-date { text-overflow: clip; } }
