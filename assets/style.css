@@ -992,4 +992,4 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .pill-menu button sup { color: var(--faint); font-size: .62rem; }
 .pill-menu button:hover, .pill-menu button[aria-pressed="true"] { background: rgba(138, 31, 49, .08); color: var(--rose); }
 @media (max-width: 1000px) { .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .w-item.w-half { grid-column: span 1; } .w-item.w-half .w-media { aspect-ratio: 4 / 3; } }
-@media (max-width: 560px) { .work-grid { grid-template-columns: 1fr; gap: 34px; } .w-item.w-feature .w-media { aspect-ratio: 4 / 3; } .work-pill { font-size: .95rem; } }
+@media (max-width: 560px) { .work-grid { gap: 26px 10px; } .w-item.w-feature .w-media { aspect-ratio: 4 / 3; } .w-media { aspect-ratio: 1; } .w-title { font-size: .95rem; } .w-desc { font-size: .8rem; } .w-word { font-size: 1.7rem; } .work-pill { font-size: .95rem; } }
