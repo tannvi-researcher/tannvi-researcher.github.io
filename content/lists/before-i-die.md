@@ -72,7 +72,7 @@ intro: Crossed-out ones are done.
 67. ~~Attend a Dosanjh Concert.~~
 68. ~~Participate in a well-choreographed Garba Night.~~
 69. ~~Visit a rage room to let off some steam.~~
-70. ~~Run a 5K marathon.~~
+70. ~~Run a 5K.~~
 71. ~~Visit my bestie in London.~~
 72. Buy myself a diamond ring (*at least half a carat*).
 73. Publish my poetry with the New Yorker.
@@ -81,8 +81,12 @@ intro: Crossed-out ones are done.
 76. Go on a trekking which lasts 2-3 nights camping in forests and mountain peaks.
 77. Trek to Base Camp, Mount Everest.
 78. Run a half marathon.
-79. Run a marathon.
+79. Run a full marathon.
 80. Get a MASTERS.
 81. Get a PhD.
 82. Watch a meteor shower somewhere with no light pollution.
 83. Do an Ironman 70.3.
+84. Run a 10K.
+85. Cycle across two cities.
+86. Hike on a cycle.
+87. Swim in fresh water.
