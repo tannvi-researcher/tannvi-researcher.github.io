@@ -919,3 +919,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 /* phones: no contents list, just the numbered sections */
 @media (max-width: 900px) { .cv-index { display: none; } .cv-layout { padding-top: 8px; } }
 .op-wrap .op-note { max-width: none; margin: 0 0 26px; }
+
+/* intro + disclaimer share one quoted block */
+.op-note p { margin: 0; }
+.op-note p + p { margin-top: 12px; }
+.note-wrap .op-note { max-width: none; margin: 0 0 8px; }
+.note-wrap { max-width: 900px; margin: 0 auto 30px; padding: 0 var(--gut); }
