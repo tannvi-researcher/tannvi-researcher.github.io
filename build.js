@@ -204,7 +204,7 @@ const articles = (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])
     const { data, body } = frontMatter(read('content/articles/' + f));
     const slug = data.slug || f.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
     const words = body.split(/\s+/).filter(w => /\w/.test(w)).length;
-    return { title: data.title, date: String(data.date), subtitle: data.subtitle || '', published: data.published || '', link: data.link || '', image: data.image || '', draft: data.draft === 'true', slug, words, html: marked.parse(body), url: `opinions/${slug}/` };
+    return { title: data.title, date: String(data.date), subtitle: data.subtitle || '', published: data.published || '', link: data.link || '', image: data.image || '', draft: data.draft === 'true', slug, words, html: marked.parse(body), url: `soapbox/${slug}/` };
   })
   .filter(a => a.title && a.date && (!a.draft || process.env.DRAFTS === '1'))
   .sort((a, b) => b.date.localeCompare(a.date));
@@ -216,7 +216,7 @@ function layout({ title, description = about.data.intro, depth, body, bodyClass 
 <div class="page-maps-layer" aria-hidden="true"><img class="pm pm-delhi" src="${link('assets/maps/delhi.svg')}" alt="" loading="lazy"><img class="pm pm-blr" src="${link('assets/maps/bangalore.svg')}" alt="" loading="lazy"></div>
 ${body}
 </div>`;
-  const nav = [['About', ''], ['CV', 'cv/'], ['Scratch', 'scratch/'], ['Op-Ed', 'opinions/'], ['Lists', 'lists/', lists], ['Print & Stage', 'print-and-stage/']];
+  const nav = [['About', ''], ['CV', 'cv/'], ['Scratch', 'scratch/'], ['Soapbox', 'soapbox/'], ['Lists', 'lists/', lists], ['Print & Stage', 'print-and-stage/']];
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -607,14 +607,20 @@ lists.forEach((l, idx) => {
   const body = `
 <main>
 <section class="page-head">
-  <h1>Opinions</h1>
+  <h1>Soapbox</h1>
 </section>
 <section class="op-wrap">
 <p class="op-note">I write these pieces independently, in my own time, as an academic exercise. All views, errors and omissions are my own. They do not represent the views of any current or past employer, or of any organisation I am or have been associated with.</p>
 ${list}
 </section>
 </main>`;
-  write('opinions/index.html', layout({ title: 'Opinions · tannvi', depth, body, bodyClass: 'opinions-page', active: 'Op-Ed', maps: true }));
+  write('soapbox/index.html', layout({ title: 'Soapbox · tannvi', depth, body, bodyClass: 'opinions-page', active: 'Soapbox', maps: true }));
+}
+// old opinions addresses forward to soapbox
+{
+  const fwd = (from, to) => write(from + 'index.html', `<!doctype html><meta charset="utf-8"><title>Soapbox</title><meta http-equiv="refresh" content="0; url=${SITE_URL}/${to}"><link rel="canonical" href="${SITE_URL}/${to}"><a href="${SITE_URL}/${to}">Soapbox</a>`);
+  fwd('opinions/', 'soapbox/');
+  articles.forEach(a => fwd('opinions/' + a.slug + '/', a.url));
 }
 articles.forEach(a => {
   const depth = 2;
@@ -633,10 +639,10 @@ articles.forEach(a => {
     <div class="piece-text">${fixRootLinks(a.html, link)}</div>
   </article>
   <nav class="piece-nav" aria-label="More">
-    <span></span><a class="pn pn-all" href="${link('opinions/')}">all opinions</a><span></span>
+    <span></span><a class="pn pn-all" href="${link('soapbox/')}">all of soapbox</a><span></span>
   </nav>
 </main>`;
-  write(a.url + 'index.html', layout({ title: `${a.title} · tannvi`, description: a.subtitle, depth, body, bodyClass: 'piece-page', active: 'Op-Ed' }));
+  write(a.url + 'index.html', layout({ title: `${a.title} · tannvi`, description: a.subtitle, depth, body, bodyClass: 'piece-page', active: 'Soapbox' }));
 });
 
 // Career and Research: content/<name>.md, front matter + "## " sections
@@ -731,6 +737,6 @@ ${performances.length ? `<section class="stage" id="on-stage">
 // Static assets
 fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), { recursive: true });
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
-fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'opinions/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'print-and-stage/', 'cv/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
+fs.writeFileSync(path.join(OUT, 'sitemap.txt'), ['', 'scratch/', 'soapbox/', ...articles.map(a => a.url), 'before-i-die/', '25-before-25/', 'print-and-stage/', 'cv/', ...pieces.map(p => p.url)].map(u => `${SITE_URL}/${u}`).join('\n') + '\n');
 
 console.log(`Built ${pieces.length} pieces, ${lists.length} lists, ${books.length} books into _site/${PREVIEW ? ' (preview links)' : ''}`);

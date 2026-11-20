@@ -74,8 +74,8 @@ photo: assets/cv-headshot.webp
 
 ## Opinion writing
 
-- [Everyone Is a Bystander Now](/opinions/everyone-is-a-bystander-now/), on this site, August 2026.
-- [Is Persuasion a Dark Pattern, or Just Marketing?](/opinions/is-persuasion-a-dark-pattern-or-just-marketing/), on this site, August 2026.
+- [Everyone Is a Bystander Now](/soapbox/everyone-is-a-bystander-now/), on this site, August 2026.
+- [Is Persuasion a Dark Pattern, or Just Marketing?](/soapbox/is-persuasion-a-dark-pattern-or-just-marketing/), on this site, August 2026.
 - [The Delhi High Court ruling is unlikely to be the last word on intellectual property used for AI training](https://www.livemint.com/opinion/online-views/ani-vs-openai-delhi-high-court-ruling-intellectual-property-ai-training-copyright-11785477510864.html), Mint, July 2026.
 - [Indiamart vs OpenAI case: India's IT intermediary framework must adapt to the age of AI](https://www.livemint.com/opinion/online-views/indiamart-vs-openai-case-india-it-intermediary-framework-ai-artificial-intelligence-legal-liability-11782278472970.html), Mint, June 2026.
 - [UPI Goes Global: The Regulatory Reckoning Ahead](https://corporate.cyrilamarchandblogs.com/2026/05/upi-goes-global-the-regulatory-reckoning-ahead/), co-authored, Cyril Amarchand Mangaldas blog, May 2026.
