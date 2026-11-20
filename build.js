@@ -504,6 +504,12 @@ pieces.forEach((p, i) => {
       <p class="piece-meta"><time datetime="${p.date}">${niceDate(p.date)}</time><span>·</span>${p.form}<span>·</span>${mins} min</p>
       <h1>${esc(p.title)}</h1>
       <div class="piece-tags">${tags(p)}</div>
+      <div class="listen" hidden>
+        <button class="listen-play" type="button" aria-label="Listen to this piece"><span class="listen-icon" aria-hidden="true"></span><span class="listen-label" data-idle="listen to this piece">listen to this piece</span></button>
+        <button class="listen-stop" type="button" aria-label="Stop" hidden>stop</button>
+        <span class="listen-bar" aria-hidden="true"><i></i></span>
+        <span class="listen-time">${mins} min</span>
+      </div>
     </div>
   </header>
   <article class="piece-body ${p.form === 'story' ? 'prose story' : p.form} ${p.style.split(' ').filter(Boolean).map(s => 'is-' + s).join(' ')}${p.warning ? ' has-warning' : ''}">

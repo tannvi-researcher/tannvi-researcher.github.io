@@ -1015,3 +1015,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .listen-stop:hover { color: var(--rose); }
 .piece-text .is-reading { background: linear-gradient(transparent 60%, rgba(138, 31, 49, .12) 60%); border-radius: 2px; }
 @media (max-width: 520px) { .listen-label { font-size: .92rem; } .listen { gap: 10px; } }
+.listen-dark { background: rgba(10, 6, 8, .35); border-color: rgba(243, 236, 225, .22); backdrop-filter: blur(6px); }
+.listen-dark .listen-play { color: #f3ece1; }
+.listen-dark .listen-bar { background: rgba(243, 236, 225, .2); }
+.listen-dark .listen-time, .listen-dark .listen-stop { color: rgba(243, 236, 225, .65); }
+.piece-head .listen { margin-left: auto; margin-right: auto; }
