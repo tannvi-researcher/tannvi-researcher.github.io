@@ -327,12 +327,21 @@
   var i = 0, state = 'idle', voice = null;
   function pickVoice() {
     var vs = synth.getVoices(); if (!vs.length) return;
-    var pref = ['en-IN', 'en-GB', 'en-US'];
-    for (var k = 0; k < pref.length && !voice; k++) {
-      var m = vs.filter(function (v) { return v.lang === pref[k] || v.lang.replace('_', '-') === pref[k]; });
-      voice = m.filter(function (v) { return /natural|neural|premium|enhanced|google/i.test(v.name); })[0] || m[0] || null;
+    // a British or American woman's voice; devices don't label gender, so go by the voice's name
+    var female = /female|sonia|libby|hazel|serena|kate|stephanie|martha|fiona|victoria|samantha|allison|ava|susan|zira|jenny|aria|michelle|ana|emma|nicky|joanna|salli|kendra|kimberly|ivy|amy|google us english$/i;
+    var male = /male\b(?!.*female)|daniel|rishi|alex|fred|arthur|oliver|george|guy|ryan|david|mark|thomas|tom|aaron|eric|christopher|brian|ravi/i;
+    var en = function (v, re) { return re.test(v.lang.replace('_', '-')); };
+    var good = function (v) { return /natural|neural|premium|enhanced|google|online/i.test(v.name); };
+    var pools = [/^en-GB/i, /^en-US/i];
+    voice = null;
+    for (var k = 0; k < pools.length && !voice; k++) {
+      var w = vs.filter(function (v) { return en(v, pools[k]) && female.test(v.name) && !(male.test(v.name) && !/female/i.test(v.name)); });
+      voice = w.filter(good)[0] || w[0] || null;
     }
-    if (!voice) voice = vs.filter(function (v) { return /^en/.test(v.lang); })[0] || null;
+    if (!voice) {
+      var rest = vs.filter(function (v) { return (en(v, /^en-GB/i) || en(v, /^en-US/i)) && !male.test(v.name); });
+      voice = rest.filter(good)[0] || rest[0] || vs.filter(function (v) { return /^en-(GB|US)/i.test(v.lang.replace('_', '-')); })[0] || null;
+    }
   }
   pickVoice(); if (synth.onvoiceschanged !== undefined) synth.onvoiceschanged = pickVoice;
   function mark() {
@@ -342,7 +351,7 @@
   function speak() {
     if (i >= chunks.length) { reset(); bar.style.width = '100%'; return; }
     var u = new SpeechSynthesisUtterance(chunks[i].text);
-    if (voice) u.voice = voice; u.lang = voice ? voice.lang : 'en-IN'; u.rate = 0.98;
+    if (voice) u.voice = voice; u.lang = voice ? voice.lang : 'en-GB'; u.rate = 0.98;
     u.onend = function () { if (state === 'playing') { i++; speak(); } };
     mark(); synth.speak(u);
     if (chunks[i].el && chunks[i].el.getBoundingClientRect().top > innerHeight * .8) chunks[i].el.scrollIntoView({ behavior: 'smooth', block: 'center' });
