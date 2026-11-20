@@ -88,5 +88,5 @@ intro: Crossed-out ones are done.
 83. Do an Ironman 70.3.
 84. Run a 10K.
 85. Cycle across two cities.
-86. Hike on a cycle.
+86. Go on a cycling trip up a mountain.
 87. Swim in fresh water.
