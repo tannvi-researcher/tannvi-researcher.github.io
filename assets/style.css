@@ -1021,3 +1021,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .listen-dark .listen-time, .listen-dark .listen-stop { color: rgba(243, 236, 225, .65); }
 .piece-head .listen { margin-left: auto; margin-right: auto; }
 @media (max-width: 520px) { .op-min { display: none; } .op-tile-date { white-space: nowrap; overflow: hidden; right: 8px; font-size: .5rem; letter-spacing: .12em; } }
+/* long reads: book titles in italics, section headings in the site's quiet italic */
+.piece-body.prose .piece-text em { font-style: italic; }
+.piece-text h2 { font-weight: 400; font-style: italic; font-size: clamp(1.5rem, 2.6vw, 1.9rem); line-height: 1.2; color: var(--rose); margin: 2.2em 0 .8em; }
+.piece-text h2 em { font-style: normal; }
+.piece-text hr { border: 0; border-top: 1px solid var(--line); margin: 3em 0; }
