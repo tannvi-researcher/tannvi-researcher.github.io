@@ -609,7 +609,7 @@ lists.forEach((l, idx) => {
     ? `<div class="op-tiles">
   ${articles.map(a => `<a class="op-tile" href="${link(a.url)}">
     ${a.image ? `<img src="${link(a.image)}" alt="" loading="lazy">` : '<span class="op-tile-blank"></span>'}
-    <span class="op-tile-date">${esc(niceDate(a.date))} · ${Math.max(1, Math.round(a.words / 200))} min</span>
+    <span class="op-tile-date">${esc(niceDate(a.date))}<span class="op-min"> · ${Math.max(1, Math.round(a.words / 200))} min</span></span>
     <span class="op-tile-title">${esc(a.title)}</span>
   </a>`).join('\n  ')}
 </div>`
@@ -658,7 +658,7 @@ articles.forEach(a => {
     <p class="kicker">keep reading</p>
     <div class="op-tiles">${more.map(b => `<a class="op-tile" href="${link(b.url)}">
       ${b.image ? `<img src="${link(b.image)}" alt="" loading="lazy">` : '<span class="op-tile-blank"></span>'}
-      <span class="op-tile-date">${esc(niceDate(b.date))} · ${Math.max(1, Math.round(b.words / 200))} min</span>
+      <span class="op-tile-date">${esc(niceDate(b.date))}<span class="op-min"> · ${Math.max(1, Math.round(b.words / 200))} min</span></span>
       <span class="op-tile-title">${esc(b.title)}</span>
     </a>`).join('')}</div>
   </section>` : ''; })()}
