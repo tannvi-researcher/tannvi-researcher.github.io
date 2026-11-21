@@ -12,7 +12,7 @@ intro: Crossed-out ones are done.
 7. ~~solo dinner at a fancy restaurant~~
 8. have a photoshoot in 2-3 new outfits
 9. ~~watch a movie by yourself~~
-10. read 5 books, not work/self-improvement related, write reviews for all 5 on your blog
+10. ~~read 5 books, not work/self-improvement related, write reviews for all 5 on your blog~~
 11. ~~family vacation (be present)~~
 12. ~~take a solo trip, no itinerary, just book and go~~
 13. ~~attend one legal/tech/privacy event~~
