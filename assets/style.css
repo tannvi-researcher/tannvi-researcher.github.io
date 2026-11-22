@@ -1026,3 +1026,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .piece-text h2 { font-weight: 400; font-style: italic; font-size: clamp(1.5rem, 2.6vw, 1.9rem); line-height: 1.2; color: var(--rose); margin: 2.2em 0 .8em; }
 .piece-text h2 em { font-style: normal; }
 .piece-text hr { border: 0; border-top: 1px solid var(--line); margin: 3em 0; }
+/* tiles stay dark in the paper theme, so their hover text must stay light */
+.tile-hover, .tile-hover p, .tile-hover em { color: #f3ece1; }
+.tile-hover time { color: rgba(243, 236, 225, .65); }
