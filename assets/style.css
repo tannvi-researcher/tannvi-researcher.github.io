@@ -1055,3 +1055,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .shelf-note { font-style: italic; color: var(--mute); margin: 0 0 18px; }
 .sb-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; z-index: 1; }
 .shelf-book::after { z-index: 2; }
+
+/* bookshelf: each shelf scrolls sideways on every screen */
+.shelf-books { display: flex !important; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 6px 2px 18px; scrollbar-width: thin; scrollbar-color: rgba(138, 31, 49, .35) transparent; -webkit-overflow-scrolling: touch; }
+.shelf-books::-webkit-scrollbar { height: 6px; }
+.shelf-books::-webkit-scrollbar-thumb { background: rgba(138, 31, 49, .3); border-radius: 6px; }
+.shelf-book { flex: 0 0 132px; scroll-snap-align: start; }
+.shelf-row { position: relative; }
+.shelf-nav { position: absolute; top: 0; right: 0; display: flex; gap: 6px; }
+.shelf-nav button { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); background: rgba(255, 255, 255, .5); color: var(--rose); cursor: pointer; font: inherit; line-height: 1; }
+.shelf-nav button:hover { background: var(--rose); color: #f6eee4; }
+@media (max-width: 640px) { .shelf-book { flex-basis: 104px; } .shelf-nav { display: none; } }

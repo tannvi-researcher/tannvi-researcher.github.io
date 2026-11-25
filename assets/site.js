@@ -380,3 +380,18 @@
     if (img.complete) { if (!img.naturalWidth) fallback(); else if (img.naturalWidth < 20) fallback(); }
   });
 })();
+
+// bookshelf arrows: scroll each shelf by about one screen of covers
+(function () {
+  document.querySelectorAll('.shelf-row').forEach(function (row) {
+    var track = row.querySelector('.shelf-books'); if (!track) return;
+    var nav = document.createElement('div'); nav.className = 'shelf-nav';
+    nav.innerHTML = '<button type="button" aria-label="Scroll left">‹</button><button type="button" aria-label="Scroll right">›</button>';
+    row.appendChild(nav);
+    function fit() { nav.style.display = track.scrollWidth > track.clientWidth + 4 ? '' : 'none'; }
+    fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+    var b = nav.querySelectorAll('button');
+    b[0].addEventListener('click', function () { track.scrollBy({ left: -track.clientWidth * 0.8, behavior: 'smooth' }); });
+    b[1].addEventListener('click', function () { track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' }); });
+  });
+})();
