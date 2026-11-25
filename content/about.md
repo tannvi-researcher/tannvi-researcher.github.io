@@ -5,8 +5,6 @@ intro: My interests sit at the intersection of artificial intelligence, law, tec
 ---
 **Hi, I’m Tannvi!** I’m a policy analyst at the [Centre for Responsible AI, IIT Madras](https://cerai.iitm.ac.in/), where I work on responsible AI, privacy and data governance, and on how new technology meets people and institutions. I started out in [law](/cv/) and found my way into research and policy.
 
-When I’m not doing that, I write [poems and short stories](/scratch/), [reread Camus](/soapbox/the-cost-of-a-story/), and keep a [list of things to do before I die](/before-i-die/).
-
 ## How I got here
 
 When I was 14, a boy at school threatened to post a morphed picture of me online: my face, someone else’s body. By the time I found out, printed copies had already reached the boys’ washroom. I kept his letter, walked into the principal’s office, and asked for something to be done. He got a warning. The pictures came down. That was the solution on offer.
