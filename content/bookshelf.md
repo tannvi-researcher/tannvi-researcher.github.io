@@ -1,10 +1,3 @@
-# Camus, always
-- The Myth of Sisyphus | Albert Camus | 9780141182001
-- The Stranger | Albert Camus | 9780141198064
-- A Happy Death | Albert Camus | 9780141186580
-- The Plague | Albert Camus | 9780141185132
-- Letters (with Maria Casarès) | Albert Camus | 9780241400456 | https://m.media-amazon.com/images/I/71Yog48dh5L._SY522_.jpg
-
 # Read this year
 - On Earth We’re Briefly Gorgeous | Ocean Vuong | 9780525562023
 - Normal People | Sally Rooney | 9781984822185
@@ -25,3 +18,10 @@
 - Wuthering Heights | Emily Brontë | 9780141439556
 - The Great Gatsby | F. Scott Fitzgerald | 9780743273565
 - Love in the Time of Cholera | Gabriel García Márquez | 9780307389732
+
+# Camus, always
+- The Myth of Sisyphus | Albert Camus | 9780141182001
+- The Stranger | Albert Camus | 9780141198064
+- A Happy Death | Albert Camus | 9780141186580
+- The Plague | Albert Camus | 9780141185132
+- Letters (with Maria Casarès) | Albert Camus | 9780241400456 | https://m.media-amazon.com/images/I/71Yog48dh5L._SY522_.jpg
