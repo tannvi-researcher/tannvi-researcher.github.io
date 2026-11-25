@@ -156,7 +156,7 @@ function parseShelf() {
   const shelves = []; let cur = null;
   for (const line of read('content/bookshelf.md').split('\n')) {
     const h = line.match(/^#\s+(.+)/); if (h) { cur = { title: h[1].trim(), books: [] }; shelves.push(cur); continue; }
-    const b = line.match(/^-\s+(.+)/); if (b && cur) { const [title, author, isbn] = b[1].split('|').map(x => x.trim()); cur.books.push({ title, author, isbn, href: `https://www.amazon.in/s?k=${isbn}` }); }
+    const b = line.match(/^-\s+(.+)/); if (b && cur) { const [title, author, isbn, cover] = b[1].split('|').map(x => x.trim()); cur.books.push({ title, author, isbn, cover, href: `https://www.amazon.in/s?k=${isbn}` }); }
   }
   return shelves.filter(x => x.books.length);
 }
@@ -415,8 +415,7 @@ ${desk.length ? `
 ${shelf.length ? `<section class="shelf reveal">
   <div class="section-label"><span>Bookshelf</span></div>
   <div class="shelf-body">
-  <p class="shelf-note">Some of my favourite books. Tap a cover to find it.</p>
-  ${shelf.map((sh, si) => `<div class="shelf-row"><h3>${esc(sh.title)}</h3><div class="shelf-books">${sh.books.map((bk, bi) => `<a class="shelf-book sb-${(si * 3 + bi) % 6}" href="${esc(bk.href)}" target="_blank" rel="noopener" title="Buy ${esc(smartText(bk.title))} on Amazon"><span class="sb-title">${esc(smartText(bk.title))}</span><span class="sb-author">${esc(bk.author)}</span><img class="sb-cover" src="https://covers.openlibrary.org/b/isbn/${bk.isbn}-L.jpg?default=false" data-alt-src="https://images-na.ssl-images-amazon.com/images/P/${isbn10(bk.isbn)}.01.L.jpg" alt="Cover of ${esc(smartText(bk.title))}" loading="lazy"></a>`).join('')}</div></div>`).join('\n  ')}
+  ${shelf.map((sh, si) => `<div class="shelf-row"><h3>${esc(sh.title)}</h3><div class="shelf-books">${sh.books.map((bk, bi) => `<a class="shelf-book sb-${(si * 3 + bi) % 6}" href="${esc(bk.href)}" target="_blank" rel="noopener" title="Buy ${esc(smartText(bk.title))} on Amazon"><span class="sb-title">${esc(smartText(bk.title))}</span><span class="sb-author">${esc(bk.author)}</span><img class="sb-cover" src="${bk.cover ? esc(bk.cover) : `https://images-na.ssl-images-amazon.com/images/P/${isbn10(bk.isbn)}.01.L.jpg`}" data-alt-src="https://covers.openlibrary.org/b/isbn/${bk.isbn}-L.jpg?default=false" alt="Cover of ${esc(smartText(bk.title))}" loading="lazy"></a>`).join('')}</div></div>`).join('\n  ')}
   </div>
 </section>
 ` : ''}

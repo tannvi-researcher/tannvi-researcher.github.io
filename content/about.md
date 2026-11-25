@@ -9,8 +9,6 @@ When I’m not doing that, I write [poems and short stories](/scratch/), [reread
 
 ## How I got here
 
-Here’s how I got to where I am…
-
 When I was 14, a boy at school threatened to post a morphed picture of me online: my face, someone else’s body. By the time I found out, printed copies had already reached the boys’ washroom. I kept his letter, walked into the principal’s office, and asked for something to be done. He got a warning. The pictures came down. That was the solution on offer.
 
 I still don’t know whether every copy did. The picture was crude, and it wouldn’t have fooled anyone. Today, a convincing one would take a phone and a few seconds.

@@ -1033,7 +1033,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 /* ---------- homepage: how I got here + bookshelf ---------- */
 .about-lead strong { font-weight: 500; color: var(--rose); }
 .story-body p { max-width: 62ch; margin: 0 0 1.1em; line-height: 1.7; }
-.story-body p:first-child { font-style: italic; color: var(--mute); }
+
 .shelf-row { margin: 0 0 34px; }
 .shelf-row h3 { font-weight: 400; font-style: italic; font-size: 1.15rem; color: var(--mute); margin: 0 0 14px; }
 .shelf-books { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 16px; padding-bottom: 14px; border-bottom: 6px solid rgba(90, 60, 45, .22); border-radius: 0 0 3px 3px; }
