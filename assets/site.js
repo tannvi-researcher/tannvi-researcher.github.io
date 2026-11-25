@@ -367,3 +367,16 @@
   stop.addEventListener('click', reset);
   window.addEventListener('pagehide', function () { synth.cancel(); });
 })();
+
+// bookshelf covers: try Open Library, then Amazon by ISBN-10; keep the drawn cover if neither has one
+(function () {
+  document.querySelectorAll('.sb-cover').forEach(function (img) {
+    function fallback() {
+      var alt = img.getAttribute('data-alt-src');
+      if (alt) { img.removeAttribute('data-alt-src'); img.src = alt; } else { img.remove(); }
+    }
+    img.addEventListener('error', fallback);
+    img.addEventListener('load', function () { if (img.naturalWidth < 20) fallback(); else img.classList.add('is-loaded'); });
+    if (img.complete) { if (!img.naturalWidth) fallback(); else if (img.naturalWidth < 20) fallback(); }
+  });
+})();

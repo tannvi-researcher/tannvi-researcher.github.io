@@ -161,6 +161,7 @@ function parseShelf() {
   return shelves.filter(x => x.books.length);
 }
 const shelf = parseShelf();
+function isbn10(i13) { const core = String(i13).replace(/\D/g, '').slice(3, 12); let sum = 0; for (let k = 0; k < 9; k++) sum += (10 - k) * +core[k]; const c = (11 - (sum % 11)) % 11; return core + (c === 10 ? 'X' : String(c)); }
 
 
 const CITIES = {
@@ -386,6 +387,11 @@ ${cityFig('bangalore', 'city-blr', link)}
   <div class="section-label"><span>How I got here</span></div>
   <div class="story-body">${sections['How I got here'] || ''}</div>
 </section>
+
+<section class="now reveal">
+  <div class="section-label"><span>Now</span></div>
+  <div class="now-card"><span class="pulse" aria-hidden="true"></span>${sections['Now'] || ''}</div>
+</section>
 ${desk.length ? `
 <section class="desk reveal">
   <div class="section-label"><span>On my desk</span></div>
@@ -394,11 +400,23 @@ ${desk.length ? `
   </div>
 </section>` : ''}
 
+<section class="timeline-wrap">
+  <div class="section-label"><span>Before this</span></div>
+  <ol class="timeline">
+    ${before.map((li, i) => `<li class="reveal"><span class="numeral">${roman[i] || i + 1}</span><div>${li.replace(/<\/?li>/g, '')}</div></li>`).join('\n    ')}
+  </ol>
+</section>
+
+<section class="also reveal">
+  <div class="section-label"><span>Also</span></div>
+  <div class="also-body">${sections['Also'] || ''}${sections['Outside of that'] || ''}</div>
+</section>
+
 ${shelf.length ? `<section class="shelf reveal">
   <div class="section-label"><span>Bookshelf</span></div>
   <div class="shelf-body">
   <p class="shelf-note">Some of my favourite books. Tap a cover to find it.</p>
-  ${shelf.map((sh, si) => `<div class="shelf-row"><h3>${esc(sh.title)}</h3><div class="shelf-books">${sh.books.map((bk, bi) => `<a class="shelf-book sb-${(si * 3 + bi) % 6}" href="${esc(bk.href)}" target="_blank" rel="noopener" title="Buy ${esc(smartText(bk.title))} on Amazon"><span class="sb-title">${esc(smartText(bk.title))}</span><span class="sb-author">${esc(bk.author)}</span><img class="sb-cover" src="https://covers.openlibrary.org/b/isbn/${bk.isbn}-M.jpg?default=false" alt="Cover of ${esc(smartText(bk.title))}" loading="lazy" onerror="this.remove()"></a>`).join('')}</div></div>`).join('\n  ')}
+  ${shelf.map((sh, si) => `<div class="shelf-row"><h3>${esc(sh.title)}</h3><div class="shelf-books">${sh.books.map((bk, bi) => `<a class="shelf-book sb-${(si * 3 + bi) % 6}" href="${esc(bk.href)}" target="_blank" rel="noopener" title="Buy ${esc(smartText(bk.title))} on Amazon"><span class="sb-title">${esc(smartText(bk.title))}</span><span class="sb-author">${esc(bk.author)}</span><img class="sb-cover" src="https://covers.openlibrary.org/b/isbn/${bk.isbn}-L.jpg?default=false" data-alt-src="https://images-na.ssl-images-amazon.com/images/P/${isbn10(bk.isbn)}.01.L.jpg" alt="Cover of ${esc(smartText(bk.title))}" loading="lazy"></a>`).join('')}</div></div>`).join('\n  ')}
   </div>
 </section>
 ` : ''}
