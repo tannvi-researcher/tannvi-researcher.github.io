@@ -90,3 +90,4 @@ intro: Crossed-out ones are done.
 85. Cycle across two cities.
 86. Go on a cycling trip up a mountain.
 87. Swim in fresh water.
+88. Visit Lille, France.
