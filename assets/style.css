@@ -1029,3 +1029,26 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 /* tiles stay dark in the paper theme, so their hover text must stay light */
 .tile-hover, .tile-hover p, .tile-hover em { color: #f3ece1; }
 .tile-hover time { color: rgba(243, 236, 225, .65); }
+
+/* ---------- homepage: how I got here + bookshelf ---------- */
+.about-lead strong { font-weight: 500; color: var(--rose); }
+.story-body p { max-width: 62ch; margin: 0 0 1.1em; line-height: 1.7; }
+.story-body p:first-child { font-style: italic; color: var(--mute); }
+.shelf-row { margin: 0 0 34px; }
+.shelf-row h3 { font-weight: 400; font-style: italic; font-size: 1.15rem; color: var(--mute); margin: 0 0 14px; }
+.shelf-books { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 16px; padding-bottom: 14px; border-bottom: 6px solid rgba(90, 60, 45, .22); border-radius: 0 0 3px 3px; }
+.shelf-book { position: relative; aspect-ratio: 2 / 3; border-radius: 3px 8px 8px 3px; padding: 14px 12px 12px 18px; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: #f6eee4; box-shadow: inset 6px 0 0 rgba(0, 0, 0, .18), inset 7px 0 0 rgba(255, 255, 255, .08), 0 10px 18px -12px rgba(40, 25, 18, .7); transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; overflow: hidden; }
+.shelf-book::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, rgba(255, 255, 255, .12), transparent 40%); pointer-events: none; }
+.shelf-book:hover { transform: translateY(-6px) rotate(-1deg); box-shadow: inset 6px 0 0 rgba(0, 0, 0, .18), 0 18px 26px -14px rgba(40, 25, 18, .8); }
+.sb-title { font-style: italic; font-size: 1.02rem; line-height: 1.15; text-wrap: balance; }
+.sb-author { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; opacity: .78; }
+.sb-0 { background: #7a2232; } .sb-1 { background: #3d4a5c; } .sb-2 { background: #6b5a3a; }
+.sb-3 { background: #4f3a52; } .sb-4 { background: #3f5246; } .sb-5 { background: #8a5a35; }
+@media (max-width: 640px) {
+  .shelf-books { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; -webkit-overflow-scrolling: touch; }
+  .shelf-book { flex: 0 0 104px; scroll-snap-align: start; }
+  .sb-title { font-size: .92rem; }
+}
+.about-lead p + p { margin-top: .9em; }
+.story-body a { text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(138, 31, 49, .45); }
+.story-body a:hover { text-decoration-color: currentColor; }

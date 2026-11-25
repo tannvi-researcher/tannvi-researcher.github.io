@@ -149,6 +149,19 @@ function parseDesk() {
   return out.filter(d => d.items.length);
 }
 const desk = parseDesk();
+// Bookshelf: content/bookshelf.md, "# shelf" then "- Title | Author | link" lines
+function parseShelf() {
+  const f = path.join(ROOT, 'content/bookshelf.md');
+  if (!fs.existsSync(f)) return [];
+  const shelves = []; let cur = null;
+  for (const line of read('content/bookshelf.md').split('\n')) {
+    const h = line.match(/^#\s+(.+)/); if (h) { cur = { title: h[1].trim(), books: [] }; shelves.push(cur); continue; }
+    const b = line.match(/^-\s+(.+)/); if (b && cur) { const [title, author, href] = b[1].split('|').map(x => x.trim()); cur.books.push({ title, author, href }); }
+  }
+  return shelves.filter(x => x.books.length);
+}
+const shelf = parseShelf();
+
 
 const CITIES = {
   delhi: { file: 'assets/maps/delhi.svg', name: 'new delhi', coords: '28.61° n · 77.21° e' },
@@ -369,9 +382,9 @@ ${cityFig('bangalore', 'city-blr', link)}
   <div class="about-lead reveal">${lead}</div>
 </section>
 
-<section class="now reveal">
-  <div class="section-label"><span>Now</span></div>
-  <div class="now-card"><span class="pulse" aria-hidden="true"></span>${sections['Now'] || ''}</div>
+<section class="story reveal">
+  <div class="section-label"><span>How I got here</span></div>
+  <div class="story-body">${sections['How I got here'] || ''}</div>
 </section>
 ${desk.length ? `
 <section class="desk reveal">
@@ -381,18 +394,13 @@ ${desk.length ? `
   </div>
 </section>` : ''}
 
-<section class="timeline-wrap">
-  <div class="section-label"><span>Before this</span></div>
-  <ol class="timeline">
-    ${before.map((li, i) => `<li class="reveal"><span class="numeral">${roman[i] || i + 1}</span><div>${li.replace(/<\/?li>/g, '')}</div></li>`).join('\n    ')}
-  </ol>
+${shelf.length ? `<section class="shelf reveal">
+  <div class="section-label"><span>Bookshelf</span></div>
+  <div class="shelf-body">
+  ${shelf.map((sh, si) => `<div class="shelf-row"><h3>${esc(sh.title)}</h3><div class="shelf-books">${sh.books.map((bk, bi) => `<a class="shelf-book sb-${(si * 3 + bi) % 6}" href="${esc(bk.href)}" target="_blank" rel="noopener"><span class="sb-title">${esc(smartText(bk.title))}</span><span class="sb-author">${esc(bk.author)}</span></a>`).join('')}</div></div>`).join('\n  ')}
+  </div>
 </section>
-
-<section class="also reveal">
-  <div class="section-label"><span>Also</span></div>
-  <div class="also-body">${sections['Also'] || ''}${sections['Outside of that'] || ''}</div>
-</section>
-
+` : ''}
 <section class="lately">
   <div class="section-label"><span>Lately</span></div>
   <div class="lately-body">
