@@ -15,7 +15,9 @@ When I was 14, a boy at school threatened to post a morphed picture of me online
 
 I still don’t know whether every copy did. The picture was crude, and it wouldn’t have fooled anyone. Today, a convincing one would take a phone and a few seconds.
 
-That picture is a large part of why I chose law. I wanted to make sure no one gets to treat another person like that, and to be the one who could get them a real remedy, not just a warning. In law school I spent months with a small team that got non-consensual images taken down online. The first thing our senior taught us was never to promise a client full removal. The law could offer something partial, and only after the damage was done.
+That picture is a large part of why I chose law.
+
+In law school I spent months with a small team that got non-consensual images taken down online. The first thing our senior taught us was never to promise a client full removal. The law could offer something partial, and only after the damage was done.
 
 So my question slowly changed. It stopped being only about punishing the person who makes the picture, and became about who controls how information is accessed and shared in the first place. I’ve been following that question ever since, from data protection law at a firm to responsible AI research today.
 
