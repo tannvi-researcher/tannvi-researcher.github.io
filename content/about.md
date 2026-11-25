@@ -17,7 +17,7 @@ I still don’t know whether every copy did. The picture was crude, and it would
 
 That picture is a large part of why I chose law.
 
-In law school I spent months with a small team that got non-consensual images taken down online. The first thing our senior taught us was never to promise a client full removal. The law could offer something partial, and only after the damage was done.
+In law school I spent months with a small team that got [non-consensual images](https://cyberblogindia.in/get-revenge-porn-videos-removed/) [taken down online](https://cyberblogindia.in/removal-of-nude-photos-from-google-search-results/). The first thing our senior taught us was never to promise a client full removal. The law could offer something partial, and only after the damage was done.
 
 So my question slowly changed. It stopped being only about punishing the person who makes the picture, and became about who controls how information is accessed and shared in the first place. I’ve been following that question ever since, from data protection law at a firm to responsible AI research today.
 
