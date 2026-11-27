@@ -3,6 +3,7 @@
 - Normal People | Sally Rooney | 9781984822185
 - Days at the Morisaki Bookshop | Satoshi Yagisawa | 9780063278677
 - The Meursault Investigation | Kamel Daoud | 9781590517512
+- Mostly Harmless | Douglas Adams | 9780345418777
 
 # On justice and power
 - A Theory of Justice | John Rawls | 9780674000780
